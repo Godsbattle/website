@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools for Low End Computers on GodsBattle</title>
+    <link>http://localhost:1313/tags/tools-for-low-end-computers/</link>
+    <description>Recent content in Tools for Low End Computers on GodsBattle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>admin@godsbattle.xyz (Christian Obanaka)</managingEditor>
+    <webMaster>admin@godsbattle.xyz (Christian Obanaka)</webMaster>
+    <copyright>Copy, right?🤔</copyright>
+    <lastBuildDate>Fri, 02 Sep 2022 04:23:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/tools-for-low-end-computers/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HONE PC Optimizer! - Boost your performance!</title>
+      <link>http://localhost:1313/posts/hone-pc-booster/</link>
+      <pubDate>Fri, 02 Sep 2022 04:23:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/posts/hone-pc-booster/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/hone-pc-booster/featured.jpeg" />
+    </item>
+    
+    <item>
+      <title>🔧Best Screen Recorder For Low-End PC 2022 | BETTER STABILITY/PERFORMANCE</title>
+      <link>http://localhost:1313/posts/best-screen-recorder/</link>
+      <pubDate>Tue, 28 Jun 2022 09:29:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/posts/best-screen-recorder/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/best-screen-recorder/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>🔧[UPDATED] BlueStacks 5 Settings for Low End PC | Bluestacks 5 Lag Fix for Low End PC</title>
+      <link>http://localhost:1313/posts/bluestacks-optimization-2022/</link>
+      <pubDate>Tue, 28 Jun 2022 09:20:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/posts/bluestacks-optimization-2022/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/bluestacks-optimization-2022/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

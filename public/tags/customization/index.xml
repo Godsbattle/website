@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customization on GodsBattle</title>
+    <link>http://localhost:1313/tags/customization/</link>
+    <description>Recent content in Customization on GodsBattle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>admin@godsbattle.xyz (Christian Obanaka)</managingEditor>
+    <webMaster>admin@godsbattle.xyz (Christian Obanaka)</webMaster>
+    <copyright>Copy, right?🤔</copyright>
+    <lastBuildDate>Sat, 11 Jan 2025 07:46:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/customization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>🌫🌊Make your desktop CLEAN &amp; AESTHETIC! [FAST &amp; EASY] - 2022</title>
+      <link>http://localhost:1313/posts/aesthetic-desktop-setup/</link>
+      <pubDate>Sat, 11 Jan 2025 07:46:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/posts/aesthetic-desktop-setup/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/aesthetic-desktop-setup/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

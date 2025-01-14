@@ -1,0 +1,29 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "GodsBattle"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+   logo = "img/logotransparentalt.png"
+   secondaryLogo = "img/logotransparent.png"
+   description = "Quality Tech Videos, How-To Guides, Web-Video Producer, In this channel  you'll know more about the useful tutorials, how-to guides and other things. Educating people on random things. I love trading & tech, and have a passion for teaching and helping - where possible."
+   copyright = "Copy, right?🤔"
+
+ [params.author]
+   name = "Christian Obanaka"
+   email = "admin@godsbattle.xyz"
+   image = "img/godsbattlelogo.png"
+   imageQuality = 96
+   headline = "Web-Video Producer & Trader"
+   bio = "Web-Video Producer & Trader"
+   links = [ 
+     { youtube = "https://youtube.com/godsbattle" },
+     { email = "mailto:admin@godsbattle.xyz" },
+     { instagram = "https://instagram.com/godsbattlefx" },
+     { x-twitter = "https://twitter.com/godsbattlefx" },
+   ]

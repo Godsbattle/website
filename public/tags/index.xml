@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on GodsBattle</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on GodsBattle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>admin@godsbattle.xyz (Christian Obanaka)</managingEditor>
+    <webMaster>admin@godsbattle.xyz (Christian Obanaka)</webMaster>
+    <copyright>Copy, right?🤔</copyright>
+    <lastBuildDate>Sat, 11 Jan 2025 07:46:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Customization</title>
+      <link>http://localhost:1313/tags/customization/</link>
+      <pubDate>Sat, 11 Jan 2025 07:46:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/tags/customization/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Sat, 11 Jan 2025 07:46:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>PC Optimizations</title>
+      <link>http://localhost:1313/tags/pc-optimizations/</link>
+      <pubDate>Sun, 30 Jul 2023 09:03:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/tags/pc-optimizations/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Tools for Low End Computers</title>
+      <link>http://localhost:1313/tags/tools-for-low-end-computers/</link>
+      <pubDate>Fri, 02 Sep 2022 04:23:00 -0700</pubDate>
+      <author>admin@godsbattle.xyz (Christian Obanaka)</author>
+      <guid>http://localhost:1313/tags/tools-for-low-end-computers/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
