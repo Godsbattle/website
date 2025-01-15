@@ -1,5 +1,5 @@
 theme = "blowfish" # UNCOMMENT THIS LINE
-baseURL = "https://f8311574.website-30p.pages.dev/"
+baseURL = "https://ed8c1716.website-30p.pages.dev/"
 defaultContentLanguage = "en"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles

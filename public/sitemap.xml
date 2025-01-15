@@ -9,20 +9,14 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-01-11T07:46:00-07:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://localhost:1313/posts/aesthetic-desktop-setup/</loc>
     <lastmod>2025-01-11T07:46:00-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/atlas-os/</loc>
-    <lastmod>2024-01-02T04:41:00-07:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-01-11T07:46:00-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

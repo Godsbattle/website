@@ -18,7 +18,7 @@
       <author>admin@godsbattle.xyz (Christian Obanaka)</author>
       <guid>http://localhost:1313/posts/aesthetic-desktop-setup/</guid>
       <description></description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/aesthetic-desktop-setup/featured.png" />
     </item>
     
     <item>

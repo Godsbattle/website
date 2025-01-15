@@ -16,13 +16,13 @@
   weight = 10
 
 [[main]]
-  name = "-"
+  name = "YouTube"
   pre = "YouTube"
   url = "https://youtube.com/godsbattle"  
   weight = 20 
  
  [[main]]
-  name = ""
+  name = "Community"
   pre = "discord"
   url = "https://discord.gg/R4gfrjq3YZ"  
   weight = 30  
