@@ -1,7 +1,7 @@
 ---
-title: '🌫🌊Make your desktop CLEAN & AESTHETIC! [FAST & EASY] - 2022'
+title: 'Make your desktop CLEAN & AESTHETIC! [FAST & EASY]'
 date: 2025-01-11T07:46:00.001-07:00
-draft: false 
+draft: true
 tags: ["customization", "windows"]
 ---
 
