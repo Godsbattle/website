@@ -4,18 +4,24 @@
 
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-01-11T07:46:00-07:00</lastmod>
+    <lastmod>2025-01-14T09:03:00-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/aesthetic-desktop-setup/</loc>
-    <lastmod>2025-01-11T07:46:00-07:00</lastmod>
+    <loc>http://localhost:1313/posts/atlas-os-5-months-later/</loc>
+    <lastmod>2025-01-14T09:03:00-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-01-14T09:03:00-07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/aesthetic-desktop-setup/</loc>
     <lastmod>2025-01-11T07:46:00-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
