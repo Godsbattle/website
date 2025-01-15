@@ -16,7 +16,7 @@
   weight = 10
 
 [[main]]
-  name = ""
+  name = "-"
   pre = "YouTube"
   url = "https://youtube.com/godsbattle"  
   weight = 20 
