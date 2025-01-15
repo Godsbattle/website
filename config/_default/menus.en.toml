@@ -15,11 +15,11 @@
   pageRef = "posts"
   weight = 10
 
-[[main]]
-  name = "-"
-  pre = "YouTube"
-  url = "https://youtube.com/godsbattle"  
-  weight = 20 
+#[[main]]
+#  name = ""
+#  pre = "YouTube"
+#  url = "https://youtube.com/godsbattle"  
+#  weight = 20 
  
  [[main]]
   name = ""
