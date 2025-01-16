@@ -54,8 +54,8 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [article]
   showDate = false
-  showViews = true
-  showLikes = true
+  showViews = false
+  showLikes = false
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
@@ -125,13 +125,13 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   cardViewScreenWidth = false
 
 [firebase]
-   apiKey = "AIzaSyBDLVwc1AMJKiHcKVp2irGsY4qco-2ma1s"
-   authDomain = "godsbattlehugo.firebaseapp.com"
-   projectId = "godsbattlehugo"
-   storageBucket = "godsbattlehugo.firebasestorage.app"
-   messagingSenderId = "462744964477"
-   appId = "1:462744964477:web:246c660c409c32f4569014"
-   measurementId = "G-1F56GP4YK0"
+#   apiKey = "AIzaSyBDLVwc1AMJKiHcKVp2irGsY4qco-2ma1s"
+#   authDomain = "godsbattlehugo.firebaseapp.com"
+#   projectId = "godsbattlehugo"
+#   storageBucket = "godsbattlehugo.firebasestorage.app"
+#   messagingSenderId = "462744964477"
+#   appId = "1:462744964477:web:246c660c409c32f4569014"
+#   measurementId = "G-1F56GP4YK0"
 
 [fathomAnalytics]
   # site = "ABC12345"
