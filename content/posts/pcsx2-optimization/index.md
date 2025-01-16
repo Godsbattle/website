@@ -6,19 +6,7 @@ tags:
 - PC Optimizations
 ---
 
-  
-
-  
-
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMwBBVeC4osfseVxXlZmxorEoB227U8QT0JDt_gTVsFjKZqN3s7BpnM8yrG7ylQn2TMrDz266f23q_SPqQxA8XnBsXLZqCcRvghPfiqfIkHzbGjn7jKGnlPUVwDm5y0gSSbV0g5u5EgkyH-za_7LU95kDWRW3obuNwmpWm1ird1lNZx2FAL_9vvS5V/w640-h360/lemmetelly.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMwBBVeC4osfseVxXlZmxorEoB227U8QT0JDt_gTVsFjKZqN3s7BpnM8yrG7ylQn2TMrDz266f23q_SPqQxA8XnBsXLZqCcRvghPfiqfIkHzbGjn7jKGnlPUVwDm5y0gSSbV0g5u5EgkyH-za_7LU95kDWRW3obuNwmpWm1ird1lNZx2FAL_9vvS5V/s1280/lemmetelly.jpg)
-
-  
-
-  
-
-  
-
-  
+ 
 
   
 

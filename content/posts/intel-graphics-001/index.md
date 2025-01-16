@@ -4,13 +4,6 @@ date: 2023-09-30T10:08:00.006-07:00
 draft: false
 ---
 
- [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizBLV19YhfOIvb4NI0rNReXjIgL3D0e-8avjkswafLqJHlfuhAcVsTrLFmcOJ62sFFID_PX4-Yw5wuHZAxpPzWQShNJR93IpnsXoBLQxVjkSm6wprd386zdkFocaE2vBooHAkM2dtciCKdvYIc3LrP40vXNHQunCGe4mZQ12VfrrB-ECppLtlir8_1IC0/s16000/Intel%20Graphics%20Booster.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizBLV19YhfOIvb4NI0rNReXjIgL3D0e-8avjkswafLqJHlfuhAcVsTrLFmcOJ62sFFID_PX4-Yw5wuHZAxpPzWQShNJR93IpnsXoBLQxVjkSm6wprd386zdkFocaE2vBooHAkM2dtciCKdvYIc3LrP40vXNHQunCGe4mZQ12VfrrB-ECppLtlir8_1IC0/s1920/Intel%20Graphics%20Booster.png)
-
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOhrYigQyi6QocqNuzRVoW9cAIXsxYW2IalyNU5J1IIqqOoYXQ3SPDm6vdJOvjYio5PZq1nYQBMs7QUOlV0x_gjJUAwtjQXqnfrefkdjbAjSkAaJ32eHUYGQvLInG5nh0P4hkCDZ-boaKBB2209y4LRN_vRHuy4e1ARTHRXFn4gXwejmBuLNxmFGZiadM/s320/Download-Button-Transparent-Background-PNG.png)](https://trashycontinuousbubbly.com/bgpdq1ugf?key=e2ad94f29438998219440b18f6dcfd94)
-
-  
-
-  
 
 Introduction:
 
