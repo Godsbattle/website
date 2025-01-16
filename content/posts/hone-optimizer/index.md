@@ -2,8 +2,7 @@
 title: 'HONE : The BEST PC Optimizer'
 date: 2023-07-30T09:03:00.009-07:00
 draft: false 
-tags: 
-- PC Optimizations
+tags: ["PC Optimizations", "Windows"]
 ---
 
 

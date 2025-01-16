@@ -1,7 +1,8 @@
 ---
 title: 'Intel Graphics Control Panel - Extra Performance Boost with Beta!'
 date: 2023-09-30T10:08:00.006-07:00
-draft: false
+draft: false 
+tags: ["PC Optimizations", "Windows"]
 ---
 
 

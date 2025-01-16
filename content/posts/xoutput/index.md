@@ -1,7 +1,8 @@
 ---
 title: 'The Best Alternative for X360ce Software'
 date: 2022-07-13T02:55:00.007-07:00
-draft: false
+draft: false 
+tags: ["Gaming", "Controller", "Windows"]
 ---
 
 {{< alert >}}

@@ -1,7 +1,8 @@
 ---
-title: 'How to Speed up your Windows 10 Performance🔥 | Optimize Windows 10 for Gaming ** FPS BOOST TRICK **'
+title: 'How to Speed up your Windows 10 Performance | Optimize Windows 10 for Gaming!'
 date: 2022-10-11T04:44:00.002-07:00
-draft: false
+draft: false 
+tags: ["PC Optimizations", "Windows"]
 ---
 
 

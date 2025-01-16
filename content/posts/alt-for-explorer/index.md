@@ -2,7 +2,7 @@
 title: 'Modern Alternative for Microsoft File Manager (Explorer)'
 date: 2022-06-28T02:41:00.008-07:00
 draft: false 
-url: /content/posts/alt-for-explorer/
+tags: ["Customization", "Windows"]
 ---
 
   

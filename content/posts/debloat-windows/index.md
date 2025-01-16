@@ -1,9 +1,8 @@
 ---
-title: '🔧How to Debloat Windows 7, 8.1, 10 and 11 to Maximize Performance.'
+title: 'How to Debloat Windows 7, 8.1, 10 and 11 to Maximize Performance.'
 date: 2022-06-15T05:28:00.004-07:00
 draft: false
-tags: 
-- PC Optimizations
+tags: ["PC Optimizations", "Windows"]
 ---
 
 Debloat Windows for better gaming performance and Free 70% RAM Usage.

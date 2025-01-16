@@ -1,9 +1,8 @@
 ---
-title: '🔧Best Screen Recorder For Low-End PC 2022 | BETTER STABILITY/PERFORMANCE'
+title: 'Best Screen Recorder For Low-End PC | BETTER STABILITY/PERFORMANCE'
 date: 2022-06-28T09:29:00.008-07:00
 draft: false
-tags: 
-- Tools for Low End Computers
+tags: ["Tools for Low End Computers", "Windows"]
 ---
 
   

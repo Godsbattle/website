@@ -1,6 +1,7 @@
 ---
 title: 'Unleash Your PC''s Potential: The Best Custom Windows Operating Systems'
 date: 2023-09-07T00:20:00.000-07:00
+tags: ["PC Optimizations", "Windows"]
 draft: false
 ---
 

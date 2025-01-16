@@ -1,9 +1,8 @@
 ---
-title: '🔧[UPDATED] Dramatically increase FPS/performance on ANY PC (2022) Lag/Stuttering fix'
+title: '[UPDATED] Dramatically increase FPS/performance on ANY PC Lag/Stuttering fix'
 date: 2022-06-28T09:17:00.005-07:00
 draft: false
-tags: 
-- PC Optimizations
+tags: ["PC Optimizations", "Windows"]
 ---
 
 

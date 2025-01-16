@@ -1,7 +1,8 @@
 ---
-title: 'Use these FREE tools to Optimize your CPU for Gaming in Windows - 2022'
+title: 'Use these FREE tools to Optimize your CPU for Gaming in Windows'
 date: 2022-10-05T07:55:00.003-07:00
-draft: false
+draft: false 
+tags: ["PC Optimizations", "Windows"]
 ---
 
 

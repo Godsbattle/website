@@ -1,7 +1,8 @@
 ---
-title: 'How To Remove RECYCLE BIN from your Desktop - 2022'
+title: 'How To Remove RECYCLE BIN from your Desktop'
 date: 2022-08-05T10:10:00.006-07:00
-draft: false
+draft: false 
+tags: ["Customization", "Windows"]
 ---
 
 
