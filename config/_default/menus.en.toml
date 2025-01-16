@@ -14,18 +14,18 @@
   name = "Posts"
   pageRef = "posts"
   weight = 10
+ 
+ [[main]]
+  name = ""
+  pre = "youtube"
+  url = "https://youtube.com/godsbattle"  
+  weight = 20  
 
 [[main]]
   name = "About"
   url = "/about"  
-  weight = 20 
+  weight = 30 
  
- [[main]]
-  name = ""
-  pre = "discord"
-  url = "https://discord.gg/R4gfrjq3YZ"  
-  weight = 30  
-
 #[[main]]
 #  name = "Parent"
 #  weight = 20

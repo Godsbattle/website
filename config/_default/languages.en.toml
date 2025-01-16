@@ -25,5 +25,6 @@ title = "GodsBattle | Quality Tech Tutorials"
      { youtube = "https://youtube.com/godsbattle" },
      { email = "mailto:admin@godsbattle.xyz" },
      { instagram = "https://instagram.com/godsbattlefx" },
-     { x-twitter = "https://twitter.com/godsbattlefx" },
+     { x-twitter = "https://twitter.com/godsbattlefx" },  
+     { discord = "https://discord.gg/R4gfrjq3YZ" },
    ]
