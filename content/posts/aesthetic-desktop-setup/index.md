@@ -14,5 +14,5 @@ In this video, I show you How you can make your desktop look clean and aesthetic
 
   
 
-- [**AESTHETIC DESKTOP PACK DOWNLOAD**](https://www.mediafire.com/file/8eb4ovveowyvcap/Aesthetic_Desktop_%2528GB%2529.zip/file)
-- [**RAINMETER OFFICIAL WEBSITE**](https://www.rainmeter.net/)
+- [AESTHETIC DESKTOP PACK DOWNLOAD](https://www.mediafire.com/file/8eb4ovveowyvcap/Aesthetic_Desktop_%2528GB%2529.zip/file)
+- [RAINMETER OFFICIAL WEBSITE](https://www.rainmeter.net/)
