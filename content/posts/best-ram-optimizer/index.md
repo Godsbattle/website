@@ -139,7 +139,6 @@ Feel free to reach out via email or check out the [FAQs](https://www.wisecleaner
 
 ---
 
-**Boost your system performance effortlessly with more PC Optimizations!**
-{{< article link="/tags/pc-optimizations/" >}}
+[**Boost your system performance effortlessly with more PC Optimizations!**](/tags/pc-optimizations/)
 ---
 
