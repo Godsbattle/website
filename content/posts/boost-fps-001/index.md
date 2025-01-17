@@ -2,7 +2,7 @@
 title: 'Boost your Computer''s Performance - Optimize PC for Gaming!'
 date: 2022-10-13T05:34:00.008-07:00
 draft: false
-tags: ["PC Optimization", "Windows"]
+tags: ["PC Optimizations", "Windows"]
 ---
 
 
