@@ -55,7 +55,7 @@ If you’re looking for a simple yet powerful way to make your Windows desktop l
 If you want to follow the tutorial in real-time, check out the full video [here](https://www.youtube.com/watch?v=S8i_Z1AFw8c&t=8s).
 
 ---
-Feel free to leave any questions or share your custom desktop setups in the comments below!
+Feel free to leave any questions or share your custom desktop setups in the comments section!
 
   
 ## Download Links
