@@ -1,13 +1,14 @@
 ---
-title: 'Make your desktop CLEAN & AESTHETIC! [FAST & EASY]'
+title: 'Make your Windows Desktop look CLEAN & AESTHETIC!'
 date: 2025-01-11T07:46:00.001-07:00
 draft: false
 tags: ["Customization", "Windows"]
 ---
 
+**Watch Video Here** 
+---
+#{{< youtube S8i_Z1AFw8c&t=8s >}}  
 
-WANT YOUR DESKTOP TO LOOK MORE AESTHETICALLY PLEASING?
-======================================================
 
 In this video, I show you How you can make your desktop look clean and aesthetic using a single mod on windows. This is a step by step process which you can follow to recreate your messy desktop into a brand new and aesthetically pleasing desktop with tons of customization options. If you are looking to customise your windows desktop then this the perfect guide for you
 
