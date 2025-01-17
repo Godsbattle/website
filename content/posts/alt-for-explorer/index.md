@@ -7,7 +7,10 @@ tags: ["Customization", "Windows"]
 
 # Files: The Free, Powerful, and Intuitive File Manager for Windows
 
-[![Watch the tutorial video](https://img.youtube.com/vi/4GoJOQrbawQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=4GoJOQrbawQ&t=21s)
+**Watch Video Here** 
+---
+{{< youtube 4GoJOQrbawQ >}}  
+
 
 **Files** is a modern, open-source file manager for Windows that brings a fresh and intuitive design to the file management experience. With a variety of powerful features and customization options, **Files** is perfect for those who want a more efficient and aesthetically pleasing way to organize their files. Best of all, it’s completely **FREE**!
 
