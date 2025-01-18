@@ -117,8 +117,7 @@ Once installed, follow these easy steps:
 ## 🔗 **Additional Links & Resources**
 
 - [Official Website](https://www.wisecleaner.com)
-- [Download the Portable Version](https://www.wisecleaner.com/Wise-Memory-Optimizer.html)
-- [Visit the GitHub Repo](https://github.com/wise-cleaner)
+
 
 ---
 

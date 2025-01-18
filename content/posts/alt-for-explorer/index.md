@@ -49,7 +49,8 @@ If you’re looking for a lightweight and feature-packed file manager for Window
 ---
 
 ### Check it Out
-- [Official Website](https://files.community/)
+- [Official Website](https://files.community/) 
+---
 **GitHub Repo**
 {{< github repo="files-community/Files" >}}
 
