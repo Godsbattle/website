@@ -1,2 +1,2 @@
 ﻿# GodsBattleHugo
-commit test
+Official Website for GodsBattle 
