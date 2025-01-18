@@ -50,7 +50,8 @@ If you’re looking for a lightweight and feature-packed file manager for Window
 
 ### Check it Out
 - [Official Website](https://files.community/)
-- [GitHub Repository](https://github.com/files-community/Files)
+**GitHub Repo**
+{{< github repo="files-community/Files" >}}
 
 ---
 **Get started today and give your file management a fresh look with Files!**
