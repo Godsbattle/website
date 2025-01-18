@@ -10,8 +10,8 @@ tags: ["Tools for Low End Computers", "Windows"]
 
 If you've ever struggled with lag while recording gameplay on your PC, you're not alone. Lag can severely impact the quality of your recordings, making the gaming experience less enjoyable for you and your viewers. The good news is that with the right tools and optimizations, you can **record gameplay without lag** and enjoy smooth, high-quality videos.
 
-{{< /alert >}}
-If you don’t see an improvement in performance, **optimize your computer** to ensure smooth gameplay and recording.
+{{< alert >}}
+**DISCLAIMER**: If you don’t see an improvement in performance, **optimize your computer** to ensure smooth gameplay and recording.
 {{< /alert >}} 
 
 ---

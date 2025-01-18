@@ -11,7 +11,7 @@ tags: ["Windows"]
 
 This tutorial will help you create a bootable USB drive to install Windows using the **fastest and easiest method** available in 2022. This is the **updated guide**, so you can follow the steps and quickly get your USB drive ready for Windows installation.
  
-{{< /alert >}}
+{{< alert >}}
  **DISCLAIMER**: Anything you do in this video is at your own risk. Please make sure to follow the instructions carefully.
 {{< /alert >}} 
 

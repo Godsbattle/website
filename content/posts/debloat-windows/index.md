@@ -31,7 +31,7 @@ Windows Debloating involves removing or disabling unnecessary pre-installed feat
 
 ---
 
-{{< /alert >}}
+{{< alert >}}
 **Note:** Debloating Windows can help to make your system more responsive and optimized, especially for gaming. It’s a quick and easy solution to enhance performance without upgrading your hardware.
 {{< /alert >}} 
 

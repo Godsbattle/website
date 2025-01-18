@@ -21,7 +21,7 @@ This guide will help you fix stuttering issues in games by freeing up your **Mem
 Following this guide will make sure your system is set up for maximum performance on both **new and old PCs**!
 
 ---
-{{< /alert >}}
+{{< alert >}}
 **DISCLAIMER**: To further enhance performance, consider installing my **Custom OS (GGOS)** for improved speed and efficiency!
 {{< /alert >}} 
 
