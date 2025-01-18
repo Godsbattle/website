@@ -16,14 +16,14 @@ title = "GodsBattle | Quality Tech Tutorials"
 
  [params.author]
    name = "Christian Obanaka"
-   email = "admin@godsbattle.xyz"
+   email = "christian@godsbattle.net"
    image = "img/godsbattlelogo.webp"
    imageQuality = 96
    headline = "Web-Video Producer & Trader"
    bio = "Web-Video Producer & Trader"
    links = [ 
      { youtube = "https://youtube.com/godsbattle" },
-     { email = "mailto:admin@godsbattle.xyz" },
+     { email = "mailto:christian@godsbattle.net" },
      { instagram = "https://instagram.com/godsbattlefx" },
      { x-twitter = "https://twitter.com/godsbattlefx" },  
      { discord = "https://discord.gg/R4gfrjq3YZ" },
