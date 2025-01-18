@@ -1,6 +1,6 @@
 ---
 title: 'How To Play All PC Games With Any Controller or Generic USB Gamepad [X360CE]'
-date: 2022-06-15T06:13:00.021-07:00
+date: 2023-08-15T06:13:00.021-07:00
 draft: false  
 tags: ["Gaming", "Controller", "Windows"]
 ---

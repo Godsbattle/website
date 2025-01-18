@@ -1,6 +1,6 @@
 ---
 title: 'Super Clean RAM for Immediate Gaming Performance Boost!'
-date: 2022-06-28T09:13:00.003-07:00
+date: 2022-05-30T09:13:00.003-07:00
 draft: false
 tags: ["PC Optimizations", "Windows"]
 ---

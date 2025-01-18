@@ -1,6 +1,6 @@
 ---
 title: 'Atlas OS: 5 Months Later - STOCK IS BETTER?'
-date: 2025-01-14T09:03:00.009-07:00
+date: 2024-04-23T09:03:00.009-07:00
 draft: false 
 tags: ["Windows", "PC Optimizations" , "Tools for Low End Computers"]
 ---

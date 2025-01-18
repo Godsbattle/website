@@ -1,6 +1,6 @@
 ---
 title: 'FULLY Install VISUAL C++ Redistributable Runtimes All-in-One'
-date: 2022-06-15T06:22:00.012-07:00
+date: 2021-09-10T06:22:00.012-07:00
 draft: false 
 tags: ["Windows"]
 ---

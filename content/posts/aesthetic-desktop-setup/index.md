@@ -1,6 +1,6 @@
 ---
 title: 'Make your Windows Desktop look CLEAN & AESTHETIC!'
-date: 2025-01-11T07:46:00.001-07:00
+date: 2022-09-22T07:46:00.001-07:00
 draft: false
 tags: ["Customization", "Windows"]
 ---

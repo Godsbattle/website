@@ -1,6 +1,6 @@
 ---
 title: 'Best Text To Speech for Video Editors (PC/Mobile)'
-date: 2022-06-28T02:50:00.007-07:00
+date: 2022-06-03T02:50:00.007-07:00
 draft: false
 ---
  

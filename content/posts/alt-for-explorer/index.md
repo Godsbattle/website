@@ -1,6 +1,6 @@
 ---
 title: 'Modern Alternative for Microsoft File Manager (Explorer)'
-date: 2022-06-28T02:41:00.008-07:00
+date: 2022-06-06T02:41:00.008-07:00
 draft: false 
 tags: ["Customization", "Windows"]
 ---

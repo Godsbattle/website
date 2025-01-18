@@ -1,6 +1,6 @@
 ---
 title: 'BEST Effective Tricks To Speed Up Windows Performance!'
-date: 2022-06-28T02:19:00.008-07:00
+date: 2022-06-25T02:19:00.008-07:00
 draft: false
 tags: ["PC Optimizations", "Windows"]
 ---

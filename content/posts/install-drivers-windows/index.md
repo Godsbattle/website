@@ -1,6 +1,6 @@
 ---
 title: 'Download and Install All Drivers Automatically in 1 Click - Gaming/Performance'
-date: 2022-09-30T16:40:00.000-07:00
+date: 2022-10-01T16:40:00.000-07:00
 draft: false
 tags: ["PC Optimizations", "Windows"]
 ---

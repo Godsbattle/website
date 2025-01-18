@@ -1,6 +1,6 @@
 ---
 title: 'BlueStacks 5 Settings for Low End PC | Bluestacks 5 Lag Fix for Low End PC'
-date: 2022-06-28T09:20:00.008-07:00
+date: 2022-05-20T09:20:00.008-07:00
 draft: false
 tags: ["Tools for Low End Computers", "Windows"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: ' Create Bootable USB Drives (EASIEST & FASTEST WAY) '
-date: 2022-06-28T09:36:00.002-07:00
+date: 2022-05-13T09:36:00.002-07:00
 draft: false 
 tags: ["Windows"]
 ---

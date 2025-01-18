@@ -1,6 +1,6 @@
 ---
 title: 'How To Install Drivers On Your PC - MORE PC Smoothness and Performance!'
-date: 2022-06-28T09:25:00.007-07:00
+date: 2022-05-18T09:25:00.007-07:00
 draft: false
 tags: ["PC Optimizations", "Windows"]
 ---
