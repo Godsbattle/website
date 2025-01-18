@@ -55,7 +55,6 @@ Now that you have the Intel Graphics Control Center up and running, let's optimi
 
 The video tutorial for this process will be available soon! Once it's out, you can watch it below for a detailed, step-by-step guide. Stay tuned for more updates!
 
-#{{< youtube <video-id> >}}
 
 ---
 
