@@ -18,9 +18,13 @@ Ensure that your system is equipped with the necessary **Visual C++ Runtimes** t
 
 [**CLICK HERE TO DOWNLOAD Visual C++ Runtimes**](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)
  
-{{< button icon="download" href="#button" target="_self" >}}
-Download
+{{< button icon="fire" href="#button" target="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" >}}
+Download Here! 
 {{< /button >}}
+ 
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+This is an error!
+{{< /alert >}}
 
 ---
 
