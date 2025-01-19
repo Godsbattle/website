@@ -55,7 +55,10 @@ This customization option is a game-changer for users who are experiencing issue
 ### Step 1: **Download X360ce Emulator**
 The first step is to download the emulator from the official site:
 
-[**Download X360ce**](https://www.x360ce.com/)
+**Download X360ce**
+{{< button href="https://www.x360ce.com/" >}}
+Download
+{{< /button >}} 
 
 ### Step 2: **Extract and Launch**
 Once you've downloaded the ZIP file, extract it and open the **X360ce executable**. The program will automatically scan for connected controllers and allow you to configure them.

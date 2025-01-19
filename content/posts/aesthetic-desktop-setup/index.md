@@ -59,5 +59,10 @@ Feel free to leave any questions or share your custom desktop setups in the comm
 
   
 ## Download Links
-- [Aesthetic Desktop Pack](https://www.mediafire.com/file/8eb4ovveowyvcap/Aesthetic_Desktop_%2528GB%2529.zip/file)
-- [Rainmeter Official Website](https://www.rainmeter.net/)
+{{< button href="https://www.mediafire.com/file/8eb4ovveowyvcap/Aesthetic_Desktop_%2528GB%2529.zip/file" >}}
+Download Aesthetic Desktop Pack
+{{< /button >}} 
+
+{{< button href="https://www.rainmeter.net/" >}}
+Rainmeter Official Website
+{{< /button >}}
