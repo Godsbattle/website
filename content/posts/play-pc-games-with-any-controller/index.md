@@ -54,12 +54,9 @@ This customization option is a game-changer for users who are experiencing issue
 
 ### Step 1: **Download X360ce Emulator**
 The first step is to download the emulator from the official site:
-
-**Download X360ce**  
-
----
+ 
 {{< button href="https://www.x360ce.com/" >}}
-Download
+Download Here
 {{< /button >}} 
 
 ### Step 2: **Extract and Launch**

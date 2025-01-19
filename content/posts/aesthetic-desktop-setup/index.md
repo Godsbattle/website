@@ -58,13 +58,12 @@ If you want to follow the tutorial in real-time, check out the full video [here]
 Feel free to leave any questions or share your custom desktop setups in the comments section!
 
   
-## Download Links
+## Aesthetic Desktop Pack
 {{< button href="https://www.mediafire.com/file/8eb4ovveowyvcap/Aesthetic_Desktop_%2528GB%2529.zip/file" >}}
-Download Aesthetic Desktop Pack
+Download 
 {{< /button >}}  
 
---- 
-
+## Rainmeter Official Website
 {{< button href="https://www.rainmeter.net/" >}}
-Rainmeter Official Website
+Rainmeter
 {{< /button >}}
