@@ -17,6 +17,10 @@ tags: ["Windows"]
 Ensure that your system is equipped with the necessary **Visual C++ Runtimes** to avoid compatibility issues with software. These runtimes are essential for many applications to function correctly on Windows.
 
 [**CLICK HERE TO DOWNLOAD Visual C++ Runtimes**](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)
+ 
+{{< button icon='download' href="#button" target="_self" >}}
+Download
+{{< /button >}}
 
 ---
 
