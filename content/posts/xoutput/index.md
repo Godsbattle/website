@@ -7,7 +7,7 @@ tags: ["Gaming", "Controller", "Windows"]
 # XOutput: The Ultimate Solution for Using Any Controller on Windows 
 
 For more details, check out the video here:  
-[**Watch the video here**](https://youtu.be/M-D9OHRQ37A?si=rCOqMQXJTG_i8Gqa)  
+{{< youtubeLite id="M-D9OHRQ37A" label="The Best Alternative for X360ce Software" >}} 
 
 {{< alert >}}
 **INFO!** NEW/UPDATED VIDEO COMING SOON FOR 2025 - NEW CHANGES!
