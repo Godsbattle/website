@@ -9,8 +9,7 @@ tags: ["Customization", "Windows"]
 
 **Watch Video Here** 
 ---
-{{< youtube 4GoJOQrbawQ >}}  
-
+{{< youtubeLite id="4GoJOQrbawQ" label="Modern Alternative for Microsoft File Manager (Explorer)" >}}
 
 **Files** is a modern, open-source file manager for Windows that brings a fresh and intuitive design to the file management experience. With a variety of powerful features and customization options, **Files** is perfect for those who want a more efficient and aesthetically pleasing way to organize their files. Best of all, it’s completely **FREE**!
 

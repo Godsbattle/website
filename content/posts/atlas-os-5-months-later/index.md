@@ -10,7 +10,7 @@ tags: ["Windows", "PC Optimizations" , "Tools for Low End Computers"]
 
 Introduction
 ---
-
+{{< youtubeLite id="ucwxFX11eSQ" label="Atlas OS: 5 Months Later - STOCK IS BETTER?" >}}
 
 **_Atlas OS_** is a modification for Windows operating system which tweaks your system settings to get best performance of your pc. 
 
@@ -35,13 +35,13 @@ Mainly, you could tweak your PC yourself, provided you know to troubleshoot and 
 {{< /alert >}}
 
 Here are some of the videos I found for a full guide on tweaking the PC yourself. 
- 
- {{< youtube rcYpbPaaVw4 >}}  
+   
+ {{< youtubeLite id="rcYpbPaaVw4" label="Nico Knows Tech" >}} 
 Credit : [Nico Knows Tech](https://www.youtube.com/@NicoKnowsTech)
 
 ---
 
- {{< youtube iBiNfa32AnE >}}  
+ {{< youtubeLite id="iBiNfa32AnE" label="Khorvie Tech" >}}  
 Credit : [Khorvie Tech](https://www.youtube.com/@khorvietech)
  
 ---
@@ -61,4 +61,3 @@ Checkout my previous article on this topic!
 
 **Watch Video Here** 
 ---
-{{< youtube ucwxFX11eSQ >}}  

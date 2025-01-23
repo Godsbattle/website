@@ -7,7 +7,7 @@ tags: ["Customization", "Windows"]
 
 **Watch Video Here** 
 ---
-{{< youtube S8i_Z1AFw8c >}} 
+{{< youtubeLite id="S8i_Z1AFw8c" label="Make your Windows Desktop look CLEAN & AESTHETIC!" >}}
 
 
 # How to Make Your Windows Desktop Clean and Aesthetic Using a Single Mod
