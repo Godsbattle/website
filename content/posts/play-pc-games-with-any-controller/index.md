@@ -6,7 +6,7 @@ tags: ["Gaming", "Controller", "Windows"]
 ---
 # Ultimate Xbox 360 Controller Emulator (X360ce) Guide: Still Works in 2025!
 
-{{< youtube oVP70tXZHsk >}}
+{{< youtubeLite id="oVP70tXZHsk" label="How To Play All PC Games With Any Controller or Generic USB Gamepad" >}}  
 
 This video has **over a million views** and is one of the most requested tutorials on my channel! In this guide, we’ll go over everything you need to know about the **Xbox 360 Controller Emulator (X360ce)**, an essential tool that enables you to connect virtually any external controller to your PC and use it just like an Xbox 360 controller. Whether you’re using a *gamepad*, a *joystick* for flight simulators, or a *steering wheel and pedals* for racing games, **X360ce** allows you to fully customize your setup for an optimal and immersive gaming experience.
 
@@ -56,7 +56,7 @@ This customization option is a game-changer for users who are experiencing issue
 The first step is to download the emulator from the official site:
  
 {{< button href="https://www.x360ce.com/" >}}
-Download Here
+Download X360CE
 {{< /button >}} 
 
 ### Step 2: **Extract and Launch**
