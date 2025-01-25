@@ -7,7 +7,7 @@ tags: ["Tools for Low End Computers", "Windows"]
 
 # 🚀 **BEST SETTINGS FOR BLUESTACKS!!**
 
-{{< youtube Txz_GYaWd_s >}}
+{{< youtubeLite id="Txz_GYaWd_s" label="BlueStacks 5 Settings for Low End PC | Bluestacks 5 Lag Fix for Low End PC" >}}  
 
 If you're a gamer looking to get the best performance out of **BlueStacks 5**, this guide is for you. Whether you're playing **Free Fire, BGMI, PUBGM, CODM**, or any other game, optimizing BlueStacks will significantly improve performance and reduce lag. These settings are optimized for computers with **2 to 8GB RAM**, whether you're on a **new PC** or an **old PC, desktop, or laptop**.
 

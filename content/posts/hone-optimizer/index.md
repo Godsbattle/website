@@ -1,5 +1,5 @@
 ---
-title: 'HONE : The BEST PC Optimizer'
+title: 'The BEST PC Optimizer'
 date: 2023-07-16T09:03:00.009-07:00
 draft: false 
 tags: ["PC Optimizations", "Windows"]
@@ -8,7 +8,7 @@ tags: ["PC Optimizations", "Windows"]
 
 ## **Watch Video Here**
 
-{{< youtube WNQTFqN5Gng >}}
+{{< youtubeLite id="WNQTFqN5Gng" label="HONE : The BEST PC Optimizer" >}}  
 
 ## Introduction
 

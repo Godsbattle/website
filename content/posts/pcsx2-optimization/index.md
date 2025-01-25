@@ -9,9 +9,9 @@ tags: ["PC Optimizations", "Windows", "Tools for Low End Computers"]
 
   
 
-# 🔧 PCSX2 Best Settings 2022 (60FPS+) 1-4GB RAM
+# 🔧 PCSX2 Best Settings (60FPS+) 1-4GB RAM
 
-{{< youtube FQPogZ0atuA >}}
+{{< youtubeLite id="FQPogZ0atuA" label="PCSX2 Best Settings For Low End PC" >}}  
 
 ---
 

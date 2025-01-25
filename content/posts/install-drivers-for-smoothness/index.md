@@ -7,7 +7,7 @@ tags: ["PC Optimizations", "Windows"]
 
 ## **Watch Video Here**
 
-{{< youtube 2Px-sdPAs5w >}}
+{{< youtubeLite id="2Px-sdPAs5w" label="How To Install Drivers On Your PC" >}}  
 
 ---
 

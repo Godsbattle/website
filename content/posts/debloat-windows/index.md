@@ -6,7 +6,7 @@ tags: ["PC Optimizations", "Windows"]
 ---
 ## 🚀 **Debloat Windows for Better Gaming Performance and Free 70% RAM Usage**
 
-{{< youtube 9dzTm078wHg >}}
+{{< youtubeLite id="9dzTm078wHg" label="How to Debloat Windows 7, 8.1, 10 and 11 to Maximize Performance" >}}  
 
 If you're looking to improve your gaming performance and free up a significant portion of your system's RAM, **Debloating Windows** can make a huge difference. By removing unnecessary background services and tasks, you can optimize your system for smoother gaming and improved overall performance.
 

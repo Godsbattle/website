@@ -6,7 +6,7 @@ draft: false
  
 ## 🎨 **Haikei: The Ultimate Web-Based Design Tool for SVG Assets**
 
-{{< youtube sWcyeZYJBIM >}}
+{{< youtubeLite id="sWcyeZYJBIM" label="Generate Unique SVG Shapes, Backgrounds, and Patterns" >}}  
 
 Haikei is a web-based design tool that lets you generate unique SVG design assets for a variety of projects, including websites, social media, blog posts, desktop and mobile wallpapers, posters, and more! The web generators provide an easy way to **discover, customize, randomize, and export generative SVG design assets** ready to use with your favorite design tools.
 

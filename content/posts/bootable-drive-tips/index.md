@@ -7,7 +7,7 @@ tags: ["Windows"]
 
 ## 🚀 **Create Bootable USB Drives FAST!!!** 🔧
 
-{{< youtube Gug2DFlkBuA >}}
+{{< youtubeLite id="Gug2DFlkBuA" label="Create Bootable USB Drives (EASIEST & FASTEST WAY)" >}}  
 
 This tutorial will help you create a bootable USB drive to install Windows using the **fastest and easiest method** available in 2022. This is the **updated guide**, so you can follow the steps and quickly get your USB drive ready for Windows installation.
  

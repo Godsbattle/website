@@ -7,7 +7,7 @@ tags: ["PC Optimizations", "Windows"]
 
 ## **NEED TO INSTALL YOUR COMPUTER DRIVERS?**
 
-{{< youtube 99qn0XAnyEg >}}
+{{< youtubeLite id="99qn0XAnyEg" label="Download and Install All Drivers Automatically in 1 Click" >}}  
 
 In this video, I’ve shown you how you can easily install your computer drivers on any version of Windows. Keeping your drivers updated is essential for improving your system’s overall performance and fixing common issues. 
 

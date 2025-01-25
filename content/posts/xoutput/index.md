@@ -10,7 +10,7 @@ For more details, check out the video here:
 {{< youtubeLite id="M-D9OHRQ37A" label="The Best Alternative for X360ce Software" >}} 
 
 {{< alert >}}
-**INFO!** NEW/UPDATED VIDEO COMING SOON FOR 2025 - NEW CHANGES!
+NEW/UPDATED VIDEO COMING SOON FOR 2025 - NEW CHANGES!
 {{< /alert >}}
  
 

@@ -6,7 +6,7 @@ tags: ["Tools for Low End Computers", "Windows"]
 ---
 # 🎮 **How To Record Gameplay Without Lag in PC - Tutorial**
 
-{{< youtube _6DtIAVpwLo >}}
+{{< youtubeLite id="_6DtIAVpwLo" label="Best Screen Recorder For Low-End PC | BETTER STABILITY/PERFORMANCE" >}}  
 
 If you've ever struggled with lag while recording gameplay on your PC, you're not alone. Lag can severely impact the quality of your recordings, making the gaming experience less enjoyable for you and your viewers. The good news is that with the right tools and optimizations, you can **record gameplay without lag** and enjoy smooth, high-quality videos.
 

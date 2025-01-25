@@ -13,7 +13,7 @@ These optimizations can be applied to **any computer or laptop** on any version 
 ---
 
 ## Watch the Video:
-{{< youtube XNJdU2nMWeo >}}
+{{< youtubeLite id="XNJdU2nMWeo" label="BEST Effective Tricks To Speed Up Windows Performance!" >}}  
 
 ---
 

@@ -14,7 +14,7 @@ MemReduct works on **any computer** or **laptop**, and is **compatible with all 
 ---
 
 ## Watch the Video:
-{{< youtube PGFYxYAIrEk >}}
+{{< youtubeLite id="PGFYxYAIrEk" label="Super Clean RAM for Immediate Gaming Performance Boost!" >}}  
 
 ---
 

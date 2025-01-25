@@ -16,7 +16,7 @@ Download Here
 ---
 
 ## Watch the Video:
-{{< youtube t3GeO5W8m2s >}}
+{{< youtubeLite id="t3GeO5W8m2s" label="FULLY Install VISUAL C++ Redistributable Runtimes All-in-One" >}}  
 
 ---
 

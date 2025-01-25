@@ -1,12 +1,12 @@
 ---
-title: 'Boost your Computer''s Performance - Optimize PC for Gaming!'
+title: 'Boost your Computer''s Performance!'
 date: 2022-10-13T05:34:00.008-07:00
 draft: false
 tags: ["PC Optimizations", "Windows"]
 ---
 ## 🚀 **DO YOU WANT TO IMPROVE YOUR GAMING PERFORMANCE?**
 
-{{< youtube loOVS4dDldE >}}
+{{< youtubeLite id="loOVS4dDldE" label="Boost your Computer''s Performance - Optimize PC for Gaming!" >}}  
 
 **Advanced SystemCare Pro** is a powerful application designed to improve the performance of your computer by making various tweaks and fixing issues that slow it down. Whether you're gaming or simply using your computer for everyday tasks, **Advanced SystemCare Pro** provides a complete solution to fix system slowdowns and boost your PC's performance.
 

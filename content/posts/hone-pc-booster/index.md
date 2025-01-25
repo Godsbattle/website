@@ -7,7 +7,7 @@ tags: ["PC Optimizations", "Windows", "Tools for Low End Computers"]
 
 ## **INCREASE FPS, REDUCE INPUT LAG, OPTIMIZE NETWORK** 
 
-{{< youtube odZkuNLfMkI >}}
+{{< youtubeLite id="odZkuNLfMkI" label="HONE PC Optimizer! - Boost your performance!" >}}  
 
 ---
 

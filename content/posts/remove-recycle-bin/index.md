@@ -23,7 +23,7 @@ To remove the **Recycle Bin** from your desktop, you can utilize the **DISM Pack
 
 Watch the video below for a step-by-step guide on how to do this effectively.
 
-{{< youtube i_4EKBwelv0 >}}
+{{< youtubeLite id="i_4EKBwelv0" label="How To Remove RECYCLE BIN from your Desktop" >}}  
 
 ---
 

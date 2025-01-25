@@ -10,7 +10,7 @@ tags: ["PC Optimizations", "Windows"]
 
 ## Watch the Video Here:
 
-{{< youtube 2IbtZI_a-lI >}}
+{{< youtubeLite id="2IbtZI_a-lI" label="Use these FREE tools to Optimize your CPU for Gaming in Windows" >}}  
 
 
 In this video, I have showcased some **free tools** that can help you optimize your **CPU (Processor)**. These optimizations are especially useful if you’ve just installed Windows or got a new computer. By applying these tweaks, you can **avoid performance dips and stutters**, ensuring that your PC performs at its best for gaming and other resource-intensive tasks.

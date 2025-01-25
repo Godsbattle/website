@@ -16,7 +16,7 @@ This video covers various **optimization tricks** to get the most out of your lo
 ---
 
 ## Watch the Video:
-{{< youtube eo2GhjJ23vs >}}
+{{< youtubeLite id="eo2GhjJ23vs" label="Speed up your Windows 10 Performance" >}}  
 
 ---
 

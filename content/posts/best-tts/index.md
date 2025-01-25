@@ -6,7 +6,7 @@ draft: false
  
 # 🗣️ **Most Natural and Fluent Text to Speech (Many Accents/Languages)**
 
-{{< youtube Y_Zgk60miQs >}}
+{{< youtubeLite id="Y_Zgk60miQs" label="Best Text To Speech for Video Editors (PC/Mobile)" >}}  
 
 In this tutorial, I walk you through all the steps on how to generate the **best Text to Speech (TTS)** out there, perfect for video editors and creators. Whether you're working on a project, tutorial, or any other type of content, **Clipchamp’s** powerful tools can help you create high-quality audio that sounds natural and fluent in multiple accents and languages.
 
