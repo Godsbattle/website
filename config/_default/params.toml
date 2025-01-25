@@ -151,7 +151,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 [buymeacoffee]
    identifier = "godsbattle"
    globalWidget = true
-   globalWidgetMessage = "Support me!"
+   globalWidgetMessage = "Hi 🙋🏾‍♂️"
    globalWidgetColor = "#233DFF"
    globalWidgetPosition = "Right"
 
