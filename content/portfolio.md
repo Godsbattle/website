@@ -1,10 +1,13 @@
 ---
 title: "Portfolio"  
-featureimage: /images/portfolio.gif
 ---
 
 
-Here’s my portfolio. You can view it directly below or [download it here](https://godsbattle.net/images/CVPortfolio.pdf).
+Here’s my portfolio. You can view it directly below or [download it here](https://godsbattle.net/images/CVPortfolio.pdf).     
+
+{{< button href="https://godsbattle.net/images/CVPortfolio.pdf" >}}
+Download Here
+{{< /button >}} 
 
 <iframe 
     src="/images/CVPortfolio.pdf" 
