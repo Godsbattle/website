@@ -1,6 +1,6 @@
 ---
 title: "Portfolio"  
-featureimage: images\portfolio.gif
+featureimage: /images/portfolio.gif
 ---
 
 
