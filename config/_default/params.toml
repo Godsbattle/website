@@ -29,7 +29,7 @@ disableTextInHeader = false
  smartTOCHideUnfocusedChildren = true
 
 giteaDefaultServer = "https://git.fsfe.org"
-forgejoDefaultServer = "https://v8.next.forgejo.org"
+forgejoDefaultServer = "https://v8.next.forgejo.org"  
 
 [header]
   layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
