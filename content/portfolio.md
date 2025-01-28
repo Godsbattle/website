@@ -1,7 +1,5 @@
 ---
 title: "Portfolio"
-aliases:
-  - "https://portfolio.godsbattle.net/"
 ---
 
 
