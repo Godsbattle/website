@@ -1,5 +1,6 @@
 ---
-title: "Portfolio"
+title: "Portfolio"  
+featureimage: static\images\portfolio.gif
 ---
 
 
