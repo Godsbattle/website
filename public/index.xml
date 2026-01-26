@@ -8,7 +8,7 @@
     <language>en</language>
     <managingEditor>christian@godsbattle.net (Christian Obanaka)</managingEditor>
     <webMaster>christian@godsbattle.net (Christian Obanaka)</webMaster>
-    <copyright>© 2025 GodsBattle</copyright>
+    <copyright>© 2026 GodsBattle</copyright>
     <lastBuildDate>Tue, 23 Apr 2024 09:03:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -287,6 +287,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
       <guid>http://localhost:1313/about/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>http://localhost:1313/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>christian@godsbattle.net (Christian Obanaka)</author>
+      <guid>http://localhost:1313/portfolio/</guid>
       <description></description>
       
     </item>
