@@ -6,8 +6,8 @@
 # https://blowfish.page/docs/configuration/#theme-parameters
 
 colorScheme = "blowfish"
-defaultAppearance = "dark" # valid options: light or dark
-autoSwitchAppearance = false
+defaultAppearance = "light" # valid options: light or dark
+autoSwitchAppearance = true
 
 enableSearch = true
 enableCodeCopy = true
@@ -20,7 +20,7 @@ mainSections = ["posts"]
 disableImageOptimization = false
 disableTextInHeader = true
 
-# defaultBackgroundImage = "img/blowfishbg.svg" # used as default for background images 
+defaultBackgroundImage = "img/blowfishbg.svg" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
  highlightCurrentMenuArea = true
