@@ -11,6 +11,7 @@ autoSwitchAppearance = true
 
 enableSearch = true
 enableCodeCopy = true
+enableStyledScrollbar = true
 
 replyByEmail = false
 
