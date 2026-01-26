@@ -5,7 +5,8 @@ defaultContentLanguage = "en"
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
 enableRobotsTXT = true
-summaryLength = 0
+paginate = 20
+summaryLength = 30
 
 buildDrafts = false
 buildFuture = false
@@ -14,8 +15,8 @@ enableEmoji = true
 
 # googleAnalytics = ""
 
-[pagination]
-  pagerSize = 100
+# [pagination]
+#  pagerSize = 100
 
 [imaging]
   anchor = 'Center'
