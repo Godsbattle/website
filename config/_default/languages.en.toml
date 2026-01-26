@@ -12,19 +12,18 @@ title = "GodsBattle | Quality Tech Tutorials"
    logo = "img/logotransparent.svg"
    secondaryLogo = "img/logotransparentalt.svg"
    description = "Quality Tech Videos, How-To Guides, Web-Video Producer, In this blog you'll know more about the useful tutorials, how-to guides and other things. Educating people on random things. I love trading & tech, and have a passion for teaching and helping - where possible."
-   copyright = "© 2025 GodsBattle"
+   copyright = "© 2026 GodsBattle"
 
  [params.author]
    name = "Christian Obanaka"
    email = "christian@godsbattle.net"
    image = "img/godsbattlelogo.webp"
    imageQuality = 96
-   headline = "Web-Video Producer & Trader"
-   bio = "Web-Video Producer & Trader"
+   headline = "Web-Video Producer & Futures Trader"
+   bio = "Web-Video Producer & Futures Trader"
    links = [ 
      { youtube = "https://youtube.com/godsbattle" },
      { email = "mailto:christian@godsbattle.net" },
-     { instagram = "https://instagram.com/godsbattlefx" },
-     { x-twitter = "https://twitter.com/godsbattlefx" },  
-     { discord = "https://discord.gg/R4gfrjq3YZ" },
+     { instagram = "https://instagram.com/chrisgoingturbo" },
+     { x-twitter = "https://twitter.com/chrisgoingturbo" },  
    ]
