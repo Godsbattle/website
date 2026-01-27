@@ -21,7 +21,7 @@ mainSections = ["posts"]
 disableImageOptimization = false
 disableTextInHeader = true
 
-defaultBackgroundImage = "img/blowfishbg.svg" # used as default for background images 
+# defaultBackgroundImage = "img/blowfishbg.svg" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
  highlightCurrentMenuArea = true
@@ -41,7 +41,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "hero" # valid options: page, profile, hero, card, background, custom
+  layout = "background" # valid options: page, profile, hero, card, background, custom
   homepageImage = "img/cgtbg.png" # used in: hero, and card
   showRecent = true
   showRecentItems = 25
