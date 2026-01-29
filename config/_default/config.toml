@@ -1,3 +1,10 @@
 
 # version 4
 googleAnalytics = "G-1F56GP4YK0"
+
+
+[imaging]
+  anchor = 'Center'
+
+[pagination]
+  pagerSize = 27
