@@ -34,7 +34,7 @@ layoutBackgroundHeaderSpace: false
     </thead>
     <tbody>
         <tr>
-            <td rowspan=3><img class="customEntitiyLogo" src="theproptrade.png"/></td>
+            <td rowspan=3><img class="customEntitiyLogo" src="theproptradealt.png"/></td>
             <td rowspan=3><a href="https://www.theproptrade.com/" target="_blank">thePropTrade</a></td>
             <td>Community Manager</td>
             <td>2025 - Present</td>
