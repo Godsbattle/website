@@ -19,23 +19,23 @@
 [[main]]
   name = "Posts"
   pageRef = "posts"
-  weight = 20 
+  weight = 10 
+
+[[main]]
+  name = "Resume"
+  url = "/resume"
+  weight = 20
+
+[[main]]
+  name = "👨🏾‍🚀 Prop Tracker"
+  url = "https://selar.com/335737k1f5"
+  weight = 20
 
 [[main]]
   name = "About"
   url = "/about"  
-  weight = 30 
+  weight = 40
  
-[[main]]
-  name = "Resume"
-  url = "resume"
-  weight = 20
-
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
 
 #[[main]]
 #  name = "example sub-menu 2"
