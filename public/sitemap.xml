@@ -183,11 +183,14 @@
   </url>
   <url>
     <loc>https://godsbattle.net/portfolio/</loc>
+<<<<<<< HEAD
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://godsbattle.net/resume/</loc>
+=======
+>>>>>>> parent of e29f917 (Resume)
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
