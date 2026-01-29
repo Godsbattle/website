@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on GodsBattle | Quality Tech Tutorials</title>
-    <link>https://godsbattle.net/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on GodsBattle | Quality Tech Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>christian@godsbattle.net (Christian Obanaka)</managingEditor>
     <webMaster>christian@godsbattle.net (Christian Obanaka)</webMaster>
     <copyright>© 2026 GodsBattle</copyright>
-    <lastBuildDate>Tue, 23 Apr 2024 09:03:00 -0700</lastBuildDate><atom:link href="https://godsbattle.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Apr 2024 09:03:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PC Optimizations</title>
-      <link>https://godsbattle.net/tags/pc-optimizations/</link>
+      <link>http://localhost:1313/tags/pc-optimizations/</link>
       <pubDate>Tue, 23 Apr 2024 09:03:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/tags/pc-optimizations/</guid>
+      <guid>http://localhost:1313/tags/pc-optimizations/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Tools for Low End Computers</title>
-      <link>https://godsbattle.net/tags/tools-for-low-end-computers/</link>
+      <link>http://localhost:1313/tags/tools-for-low-end-computers/</link>
       <pubDate>Tue, 23 Apr 2024 09:03:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/tags/tools-for-low-end-computers/</guid>
+      <guid>http://localhost:1313/tags/tools-for-low-end-computers/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://godsbattle.net/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Tue, 23 Apr 2024 09:03:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Controller</title>
-      <link>https://godsbattle.net/tags/controller/</link>
+      <link>http://localhost:1313/tags/controller/</link>
       <pubDate>Tue, 15 Aug 2023 06:13:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/tags/controller/</guid>
+      <guid>http://localhost:1313/tags/controller/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Gaming</title>
-      <link>https://godsbattle.net/tags/gaming/</link>
+      <link>http://localhost:1313/tags/gaming/</link>
       <pubDate>Tue, 15 Aug 2023 06:13:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/tags/gaming/</guid>
+      <guid>http://localhost:1313/tags/gaming/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Customization</title>
-      <link>https://godsbattle.net/tags/customization/</link>
+      <link>http://localhost:1313/tags/customization/</link>
       <pubDate>Thu, 22 Sep 2022 07:46:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/tags/customization/</guid>
+      <guid>http://localhost:1313/tags/customization/</guid>
       <description></description>
       
     </item>

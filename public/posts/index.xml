@@ -2,283 +2,293 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GodsBattle | Quality Tech Tutorials</title>
-    <link>https://godsbattle.net/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content on GodsBattle | Quality Tech Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>christian@godsbattle.net (Christian Obanaka)</managingEditor>
     <webMaster>christian@godsbattle.net (Christian Obanaka)</webMaster>
     <copyright>© 2026 GodsBattle</copyright>
-    <lastBuildDate>Tue, 23 Apr 2024 09:03:00 -0700</lastBuildDate><atom:link href="https://godsbattle.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Apr 2024 09:03:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Atlas OS: 5 Months Later</title>
-      <link>https://godsbattle.net/posts/atlas-os-5-months-later/</link>
+      <link>http://localhost:1313/posts/atlas-os-5-months-later/</link>
       <pubDate>Tue, 23 Apr 2024 09:03:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/atlas-os-5-months-later/</guid>
+      <guid>http://localhost:1313/posts/atlas-os-5-months-later/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/atlas-os-5-months-later/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/atlas-os-5-months-later/featured.webp" />
     </item>
     
     <item>
       <title>Intel Graphics Control Panel Beta</title>
-      <link>https://godsbattle.net/posts/intel-graphics-001/</link>
+      <link>http://localhost:1313/posts/intel-graphics-001/</link>
       <pubDate>Sat, 30 Sep 2023 10:08:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/intel-graphics-001/</guid>
+      <guid>http://localhost:1313/posts/intel-graphics-001/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/intel-graphics-001/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/intel-graphics-001/featured.webp" />
     </item>
     
     <item>
       <title>The Best Custom Windows Operating Systems</title>
-      <link>https://godsbattle.net/posts/unleash-your-pcs-potential-the-best-custom-windows-operating-systems/</link>
+      <link>http://localhost:1313/posts/unleash-your-pcs-potential-the-best-custom-windows-operating-systems/</link>
       <pubDate>Sun, 10 Sep 2023 00:20:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/unleash-your-pcs-potential-the-best-custom-windows-operating-systems/</guid>
+      <guid>http://localhost:1313/posts/unleash-your-pcs-potential-the-best-custom-windows-operating-systems/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/unleash-your-pcs-potential-the-best-custom-windows-operating-systems/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/unleash-your-pcs-potential-the-best-custom-windows-operating-systems/featured.webp" />
     </item>
     
     <item>
       <title>How To Play All PC Games With Any Controller or Generic USB Gamepad</title>
-      <link>https://godsbattle.net/posts/play-pc-games-with-any-controller/</link>
+      <link>http://localhost:1313/posts/play-pc-games-with-any-controller/</link>
       <pubDate>Tue, 15 Aug 2023 06:13:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/play-pc-games-with-any-controller/</guid>
+      <guid>http://localhost:1313/posts/play-pc-games-with-any-controller/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/play-pc-games-with-any-controller/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/play-pc-games-with-any-controller/featured.webp" />
     </item>
     
     <item>
       <title>The BEST PC Optimizer</title>
-      <link>https://godsbattle.net/posts/hone-optimizer/</link>
+      <link>http://localhost:1313/posts/hone-optimizer/</link>
       <pubDate>Sun, 16 Jul 2023 09:03:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/hone-optimizer/</guid>
+      <guid>http://localhost:1313/posts/hone-optimizer/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/hone-optimizer/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/hone-optimizer/featured.webp" />
     </item>
     
     <item>
       <title>Boost your Computer&#39;s Performance!</title>
-      <link>https://godsbattle.net/posts/boost-fps-001/</link>
+      <link>http://localhost:1313/posts/boost-fps-001/</link>
       <pubDate>Thu, 13 Oct 2022 05:34:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/boost-fps-001/</guid>
+      <guid>http://localhost:1313/posts/boost-fps-001/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/boost-fps-001/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/boost-fps-001/featured.webp" />
     </item>
     
     <item>
       <title>How to Speed up your Windows 10 Performance | Optimize Windows 10 for Gaming!</title>
-      <link>https://godsbattle.net/posts/speed-up-windows-10/</link>
+      <link>http://localhost:1313/posts/speed-up-windows-10/</link>
       <pubDate>Tue, 11 Oct 2022 04:44:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/speed-up-windows-10/</guid>
+      <guid>http://localhost:1313/posts/speed-up-windows-10/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/speed-up-windows-10/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/speed-up-windows-10/featured.webp" />
     </item>
     
     <item>
       <title>Use these FREE tools to Optimize your CPU for Gaming in Windows</title>
-      <link>https://godsbattle.net/posts/optimize-cpu/</link>
+      <link>http://localhost:1313/posts/optimize-cpu/</link>
       <pubDate>Wed, 05 Oct 2022 07:55:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/optimize-cpu/</guid>
+      <guid>http://localhost:1313/posts/optimize-cpu/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/optimize-cpu/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/optimize-cpu/featured.webp" />
     </item>
     
     <item>
       <title>Download and Install All Drivers Automatically in 1 Click - Gaming/Performance</title>
-      <link>https://godsbattle.net/posts/install-drivers-windows/</link>
+      <link>http://localhost:1313/posts/install-drivers-windows/</link>
       <pubDate>Sat, 01 Oct 2022 16:40:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/install-drivers-windows/</guid>
+      <guid>http://localhost:1313/posts/install-drivers-windows/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/install-drivers-windows/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/install-drivers-windows/featured.webp" />
     </item>
     
     <item>
       <title>Make your Windows Desktop look CLEAN &amp; AESTHETIC!</title>
-      <link>https://godsbattle.net/posts/aesthetic-desktop-setup/</link>
+      <link>http://localhost:1313/posts/aesthetic-desktop-setup/</link>
       <pubDate>Thu, 22 Sep 2022 07:46:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/aesthetic-desktop-setup/</guid>
+      <guid>http://localhost:1313/posts/aesthetic-desktop-setup/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/aesthetic-desktop-setup/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/aesthetic-desktop-setup/featured.webp" />
     </item>
     
     <item>
       <title>HONE PC Optimizer! - Boost your performance!</title>
-      <link>https://godsbattle.net/posts/hone-pc-booster/</link>
+      <link>http://localhost:1313/posts/hone-pc-booster/</link>
       <pubDate>Fri, 02 Sep 2022 04:23:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/hone-pc-booster/</guid>
+      <guid>http://localhost:1313/posts/hone-pc-booster/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/hone-pc-booster/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/hone-pc-booster/featured.webp" />
     </item>
     
     <item>
       <title>Best RAM Optimizer for Windows! - Low End Computers</title>
-      <link>https://godsbattle.net/posts/best-ram-optimizer/</link>
+      <link>http://localhost:1313/posts/best-ram-optimizer/</link>
       <pubDate>Tue, 16 Aug 2022 09:25:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/best-ram-optimizer/</guid>
+      <guid>http://localhost:1313/posts/best-ram-optimizer/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/best-ram-optimizer/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/best-ram-optimizer/featured.webp" />
     </item>
     
     <item>
       <title>How To Remove RECYCLE BIN from your Desktop</title>
-      <link>https://godsbattle.net/posts/remove-recycle-bin/</link>
+      <link>http://localhost:1313/posts/remove-recycle-bin/</link>
       <pubDate>Fri, 05 Aug 2022 10:10:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/remove-recycle-bin/</guid>
+      <guid>http://localhost:1313/posts/remove-recycle-bin/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/remove-recycle-bin/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/remove-recycle-bin/featured.webp" />
     </item>
     
     <item>
       <title>The Best Alternative for X360ce Software</title>
-      <link>https://godsbattle.net/posts/xoutput/</link>
+      <link>http://localhost:1313/posts/xoutput/</link>
       <pubDate>Thu, 14 Jul 2022 02:55:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/xoutput/</guid>
+      <guid>http://localhost:1313/posts/xoutput/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/xoutput/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/xoutput/featured.webp" />
     </item>
     
     <item>
       <title>BEST Effective Tricks To Speed Up Windows Performance!</title>
-      <link>https://godsbattle.net/posts/speed-up-windows-effectively/</link>
+      <link>http://localhost:1313/posts/speed-up-windows-effectively/</link>
       <pubDate>Sat, 25 Jun 2022 02:19:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/speed-up-windows-effectively/</guid>
+      <guid>http://localhost:1313/posts/speed-up-windows-effectively/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/speed-up-windows-effectively/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/speed-up-windows-effectively/featured.webp" />
     </item>
     
     <item>
       <title>[FREE] Generate Unique SVG Shapes, Backgrounds, and Patterns | ready to use with your design tools.</title>
-      <link>https://godsbattle.net/posts/generate-unique-svg/</link>
+      <link>http://localhost:1313/posts/generate-unique-svg/</link>
       <pubDate>Mon, 20 Jun 2022 08:16:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/generate-unique-svg/</guid>
+      <guid>http://localhost:1313/posts/generate-unique-svg/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/generate-unique-svg/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/generate-unique-svg/featured.webp" />
     </item>
     
     <item>
       <title>Modern Alternative for Microsoft File Manager (Explorer)</title>
-      <link>https://godsbattle.net/posts/alt-for-explorer/</link>
+      <link>http://localhost:1313/posts/alt-for-explorer/</link>
       <pubDate>Mon, 06 Jun 2022 02:41:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/alt-for-explorer/</guid>
+      <guid>http://localhost:1313/posts/alt-for-explorer/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/alt-for-explorer/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/alt-for-explorer/featured.webp" />
     </item>
     
     <item>
       <title>Best Text To Speech for Video Editors (PC/Mobile)</title>
-      <link>https://godsbattle.net/posts/best-tts/</link>
+      <link>http://localhost:1313/posts/best-tts/</link>
       <pubDate>Fri, 03 Jun 2022 02:50:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/best-tts/</guid>
+      <guid>http://localhost:1313/posts/best-tts/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/best-tts/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/best-tts/featured.webp" />
     </item>
     
     <item>
       <title>Super Clean RAM for Immediate Gaming Performance Boost!</title>
-      <link>https://godsbattle.net/posts/super-clean-ram/</link>
+      <link>http://localhost:1313/posts/super-clean-ram/</link>
       <pubDate>Mon, 30 May 2022 09:13:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/super-clean-ram/</guid>
+      <guid>http://localhost:1313/posts/super-clean-ram/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/super-clean-ram/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/super-clean-ram/featured.webp" />
     </item>
     
     <item>
       <title>Dramatically increase FPS/performance on ANY PC Lag/Stuttering fix</title>
-      <link>https://godsbattle.net/posts/dramatically-increase-fps/</link>
+      <link>http://localhost:1313/posts/dramatically-increase-fps/</link>
       <pubDate>Tue, 24 May 2022 09:17:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/dramatically-increase-fps/</guid>
+      <guid>http://localhost:1313/posts/dramatically-increase-fps/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/dramatically-increase-fps/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/dramatically-increase-fps/featured.webp" />
     </item>
     
     <item>
       <title>BlueStacks 5 Settings for Low End PC | Bluestacks 5 Lag Fix for Low End PC</title>
-      <link>https://godsbattle.net/posts/bluestacks-optimization-2022/</link>
+      <link>http://localhost:1313/posts/bluestacks-optimization-2022/</link>
       <pubDate>Fri, 20 May 2022 09:20:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/bluestacks-optimization-2022/</guid>
+      <guid>http://localhost:1313/posts/bluestacks-optimization-2022/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/bluestacks-optimization-2022/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/bluestacks-optimization-2022/featured.webp" />
     </item>
     
     <item>
       <title>How To Install Drivers On Your PC - MORE PC Smoothness and Performance!</title>
-      <link>https://godsbattle.net/posts/install-drivers-for-smoothness/</link>
+      <link>http://localhost:1313/posts/install-drivers-for-smoothness/</link>
       <pubDate>Wed, 18 May 2022 09:25:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/install-drivers-for-smoothness/</guid>
+      <guid>http://localhost:1313/posts/install-drivers-for-smoothness/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/install-drivers-for-smoothness/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/install-drivers-for-smoothness/featured.webp" />
     </item>
     
     <item>
       <title>Best Screen Recorder For Low-End PC | BETTER STABILITY/PERFORMANCE</title>
-      <link>https://godsbattle.net/posts/best-screen-recorder/</link>
+      <link>http://localhost:1313/posts/best-screen-recorder/</link>
       <pubDate>Mon, 16 May 2022 09:29:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/best-screen-recorder/</guid>
+      <guid>http://localhost:1313/posts/best-screen-recorder/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/best-screen-recorder/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/best-screen-recorder/featured.webp" />
     </item>
     
     <item>
       <title>How To Increase FPS and Speed Up PCSX2 For Very Low End PCs - PCSX2 Best Settings For Low End PC</title>
-      <link>https://godsbattle.net/posts/pcsx2-optimization/</link>
+      <link>http://localhost:1313/posts/pcsx2-optimization/</link>
       <pubDate>Sat, 14 May 2022 09:33:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/pcsx2-optimization/</guid>
+      <guid>http://localhost:1313/posts/pcsx2-optimization/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/pcsx2-optimization/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/pcsx2-optimization/featured.webp" />
     </item>
     
     <item>
       <title> Create Bootable USB Drives (EASIEST &amp; FASTEST WAY) </title>
-      <link>https://godsbattle.net/posts/bootable-drive-tips/</link>
+      <link>http://localhost:1313/posts/bootable-drive-tips/</link>
       <pubDate>Fri, 13 May 2022 09:36:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/bootable-drive-tips/</guid>
+      <guid>http://localhost:1313/posts/bootable-drive-tips/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/bootable-drive-tips/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/bootable-drive-tips/featured.webp" />
     </item>
     
     <item>
       <title>FULLY Install VISUAL C&#43;&#43; Redistributable Runtimes All-in-One</title>
-      <link>https://godsbattle.net/posts/visual-c/</link>
+      <link>http://localhost:1313/posts/visual-c/</link>
       <pubDate>Fri, 10 Sep 2021 06:22:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/visual-c/</guid>
+      <guid>http://localhost:1313/posts/visual-c/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/visual-c/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/visual-c/featured.webp" />
     </item>
     
     <item>
       <title>How to Debloat Windows 7, 8.1, 10 and 11 to Maximize Performance.</title>
-      <link>https://godsbattle.net/posts/debloat-windows/</link>
+      <link>http://localhost:1313/posts/debloat-windows/</link>
       <pubDate>Tue, 18 May 2021 05:28:00 -0700</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>https://godsbattle.net/posts/debloat-windows/</guid>
+      <guid>http://localhost:1313/posts/debloat-windows/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/debloat-windows/featured.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/debloat-windows/featured.webp" />
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/gumroad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>christian@godsbattle.net (Christian Obanaka)</author>
+      <guid>http://localhost:1313/posts/gumroad/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/gumroad/featured.webp" />
     </item>
     
   </channel>
