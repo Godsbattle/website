@@ -24,7 +24,7 @@ layoutBackgroundHeaderSpace: false
 
 {{< timeline >}}
 
-{{< timelineItem icon="theproptrade" header="thePropTrade" badge="Current!" subheader="November 2025 - Present" >}}
+{{< timelineItem icon="theproptrade" header="thePropTrade" badge="Nov 2025 - Present" subheader="" >}}
 
 {{< keyword icon="theproptrade" >}}  <b>Community Manager</b> {{< /keyword >}}
 
@@ -39,7 +39,7 @@ layoutBackgroundHeaderSpace: false
 
 {{< /timelineItem >}}
 
-{{< timelineItem icon="pipfarm" header="PipFarm" badge="" subheader="February 2025 - November 2025" >}}
+{{< timelineItem icon="pipfarm" header="PipFarm" badge="Feb 2025 - Nov 2025" subheader="" >}}
 {{< keyword icon="pipfarm" >}} <b>Community & Affiliate Manager</b> {{< /keyword >}}
 <ul>
   <li>Grew Discord community from 5,000 to <b>10,000</b> members within the first five months by
@@ -54,7 +54,7 @@ implementing targeted engagement strategies and content calendars.</li>
 
 {{< /timelineItem >}}
 
-{{< timelineItem icon="pokerfuckindao" header="PokerDAO" badge="First!" subheader="April 2022 - December 2023" >}}
+{{< timelineItem icon="pokerfuckindao" header="PokerDAO" badge="Apr 2022 - Dec 2023" subheader="" >}}
 {{< keyword icon="pokerfuckindao" >}} <b>Community Manager</b> {{< /keyword >}}
 
 <ul>
@@ -75,3 +75,15 @@ implementing targeted engagement strategies and content calendars.</li>
 {{< /timeline >}}
 
 ## Education & Projects 😮‍💨
+
+### Skills
+
+
+|                       |                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Software development  | {{< keywordList >}} {{< keyword icon =  "python" >}} Python {{< /keyword >}} {{< keyword icon =  "poetry" >}} Poetry {{< /keyword >}} {{< keyword icon =  "pytest" >}} Pytest {{< /keyword >}} {{< keyword icon =  "git" >}} Git {{< /keyword >}} {{< keyword icon =  "github_actions" >}} GitHub Actions {{< /keyword >}} {{< keyword icon =  "circle_ci" >}} CircleCI {{< /keyword >}} {{< /keywordList >}} |
+| Machine learning      | {{< keywordList >}} {{< keyword icon =  "numpy" >}} NumPy {{< /keyword >}} {{< keyword icon =  "pandas" >}} Pandas {{< /keyword >}} {{< keyword icon =  "scikit-learn" >}} Scikit-learn {{< /keyword >}} {{< keyword icon =  "pytorch" >}} PyTorch {{< /keyword >}} {{< keyword icon =  "jax" >}} JAX {{< /keyword >}} {{< /keywordList >}}                                                                   |
+| Optimisation          | {{< keywordList >}} {{< keyword icon =  "cvxpy" >}} CVXPY {{< /keyword >}} {{< keyword icon =  "optuna" >}} Optuna {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                                                                                                      |
+| Visualisation         | {{< keywordList >}} {{< keyword icon =  "matplotlib" >}} Matplotlib {{< /keyword >}} {{< keyword icon =  "plotly" >}} Plotly {{< /keyword >}} {{< keyword icon =  "streamlit" >}} Streamlit {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                             |
+| Experiment management | {{< keywordList >}} {{< keyword icon =  "clearml" >}} ClearML {{< /keyword >}} {{< keyword icon =  "mlflow" >}} MLflow {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                                                                                                  |
+| Cloud                 | {{< keywordList >}} {{< keyword icon =  "docker" >}} Docker {{< /keyword >}} {{< keyword icon =  "gcp" >}} GCP {{< /keyword >}} {{< keyword icon =  "aws" >}} AWS {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                                                       |

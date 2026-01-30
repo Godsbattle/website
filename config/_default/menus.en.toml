@@ -21,20 +21,20 @@
   pageRef = "posts"
   weight = 10 
 
-[[main]]
-  name = "Resume"
-  url = "/resume"
-  weight = 20
+#[[main]]
+#  name = "Resume"
+#  url = "/resume"
+#  weight = 20
 
 [[main]]
   name = "👨🏾‍🚀 Prop Tracker"
   url = "https://selar.com/335737k1f5"
   weight = 20
 
-[[main]]
-  name = "About"
-  url = "/about"  
-  weight = 40
+#[[main]]
+#  name = "About"
+#  url = "/about"  
+#  weight = 40
  
 
 #[[main]]
@@ -70,10 +70,10 @@
 # the copyright notice. Configure as per the main menu above.
 
 
- [[footer]]
-   name = "Tags"
-   pageRef = "tags"
-   weight = 10
+# [[footer]]
+#   name = "Tags"
+#   pageRef = "tags"
+#   weight = 10
 
 # [[footer]]
 #   name = "Categories"
