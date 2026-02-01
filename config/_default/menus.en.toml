@@ -14,7 +14,7 @@
   name = ""
   pre = "youtube"
   url = "https://youtube.com/godsbattle"  
-  weight = 10  
+  weight = 5  
  
 [[main]]
   name = "Posts"
@@ -29,12 +29,29 @@
 [[main]]
   name = "👨🏾‍🚀 Prop Tracker"
   url = "https://selar.com/335737k1f5"
-  weight = 20
+  weight = 30
 
-#[[main]]
-#  name = "About"
-#  url = "/about"  
-#  weight = 40
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 40
+
+[[main]]
+  name = "Resume"
+  parent = "About"
+  pageRef = "resume"
+  pre= "list"
+  weight = 1
+
+[[main]]
+  name = "Contact"
+  parent = "About"
+  pageRef = "contact"
+  pre= "envelope"
+  weight = 2
+
+
+
  
 
 #[[main]]

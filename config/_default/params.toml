@@ -18,6 +18,7 @@ replyByEmail = false
 mainSections = ["posts"]
 # robots = ""
 
+disableImageZoom = true
 disableImageOptimization = false
 disableTextInHeader = true
 

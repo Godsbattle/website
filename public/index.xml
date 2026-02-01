@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GodsBattle | Quality Tech Tutorials</title>
+    <title>GodsBattle | Christian Obanaka</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on GodsBattle | Quality Tech Tutorials</description>
+    <description>Recent content on GodsBattle | Christian Obanaka</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>christian@godsbattle.net (Christian Obanaka)</managingEditor>
     <webMaster>christian@godsbattle.net (Christian Obanaka)</webMaster>
-    <copyright>© 2026 chrisgoingturbo 🚀</copyright>
+    <copyright>© 2026 Christian Obanaka 🚀</copyright>
     <lastBuildDate>Tue, 23 Apr 2024 09:03:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -283,16 +283,6 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>http://localhost:1313/about/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://localhost:1313/posts/gumroad/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
@@ -302,21 +292,21 @@
     </item>
     
     <item>
-      <title>Portfolio</title>
-      <link>http://localhost:1313/portfolio/</link>
+      <title>Contact</title>
+      <link>http://localhost:1313/about/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>http://localhost:1313/portfolio/</guid>
+      <guid>http://localhost:1313/about/contact/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Resume</title>
-      <link>http://localhost:1313/resume/</link>
+      <link>http://localhost:1313/about/resume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>christian@godsbattle.net (Christian Obanaka)</author>
-      <guid>http://localhost:1313/resume/</guid>
+      <guid>http://localhost:1313/about/resume/</guid>
       <description></description>
       
     </item>
