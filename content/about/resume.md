@@ -66,7 +66,7 @@ Currently managing thePropTrade, with steady community growth and ongoing improv
 
   {{< tab label="Achievements" >}}
     <ul>
-    <li><p><a href="https://vidiq.com/certificates/Fgz03Zk3GS/?utm_campaign=achievementsemail&utm_content=9000_subscribers&utm_source=sendgrid&utm_medium=email">{{< icon "fire" >}} 9,000 YouTube Subscribers</a></p></li>
+    <li><p><a href="https://vidiq.com/certificates/Fgz03Zk3GS/?utm_campaign=achievementsemail&utm_content=9000_subscribers&utm_source=sendgrid&utm_medium=email" target="_blank" >{{< icon "fire" >}} 9,000 YouTube Subscribers</a></p></li>
     <li><p><a href="https://vidiq.com/certificates/w1bqoYgFge/?utm_campaign=achievementsemail&utm_content=4000000_views&utm_source=sendgrid&utm_medium=email">{{< icon "fire" >}} Over 4.5 Million Views on YouTube </a></p></li>
     </ul>
     {{< /tab >}}
