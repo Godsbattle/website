@@ -60,7 +60,6 @@ Currently managing thePropTrade, with steady community growth and ongoing improv
   {{< tab label="Projects" >}}
     <ul>
     <li><p><a href="/posts">{{< icon "link" >}} GodsBattle</a></p></li>
-    <li><p><a href="https://www.godsbattle.net/">{{< icon "link" >}} chrisgoingturbo 🚀 </a></p></li>
     <li><p><a href="https://products.godsbattle.net/">{{< icon "link" >}} 👨🏾‍🚀 Prop Tracker </a></p></li>
     </ul>
     {{< /tab >}}
