@@ -10,7 +10,7 @@ sharingLinks = false
 ## Experience
 
 {{< timeline >}}
-{{< timelineItem icon="theproptrade" header="thePropTrade" badge="Nov 2025 to Present" subheader="Community Manager" >}}
+{{< timelineItem icon="star" header="thePropTrade" badge="Nov 2025 to Present" subheader="Community Manager" >}}
 {{< keyword icon="star" >}} Current {{< /keyword >}}
 
 <p>
@@ -21,7 +21,7 @@ Currently managing thePropTrade, with steady community growth and ongoing improv
 {{< /button >}}
 {{< /timelineItem >}}
 
-{{< timelineItem icon="pipfarm" header="PipFarm" badge="Feb 2025 to Nov 2025" subheader="Community and Affiliate Manager" >}}
+{{< timelineItem icon="star" header="PipFarm" badge="Feb 2025 to Nov 2025" subheader="Community and Affiliate Manager" >}}
 
 <p>
   Scaled a Discord trading community from <strong>5,000 to 10,000 members</strong> in five months through targeted engagement, competitions, and affiliate partnerships—driving a <strong>40% increase in activity</strong> and a <strong>25% boost in referrals</strong>.
@@ -32,7 +32,7 @@ Currently managing thePropTrade, with steady community growth and ongoing improv
 {{< /button >}}
 {{< /timelineItem >}}
 
-{{< timelineItem icon="pokerfuckindao" header="PokerDAO" badge="Apr 2022 to Dec 2023" subheader="Community Manager" >}}
+{{< timelineItem icon="star" header="PokerDAO" badge="Apr 2022 to Dec 2023" subheader="Community Manager" >}}
 
 <p>
   Built and moderated Discord and Telegram communities, growing membership from <strong>3,000 to 7,500</strong> through interactive events and Web3-focused content, while improving support workflows to reduce response times by <strong>50%</strong> and foster an inclusive member experience.
