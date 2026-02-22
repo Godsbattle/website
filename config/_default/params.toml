@@ -22,7 +22,7 @@ disableImageZoom = true
 disableImageOptimization = false
 disableTextInHeader = true
 
-defaultBackgroundImage = "" # used as default for background images 
+defaultBackgroundImage = "img/chillanimatedbg.svg" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
  highlightCurrentMenuArea = true
@@ -43,14 +43,14 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/animatedbg.svg" # used in: hero, and card
-  showRecent = false
-  showRecentItems = 1
+  homepageImage = "img/chillanimatedbg.svg" # used in: hero, and card
+  showRecent = true
+  showRecentItems = 6
   showMoreLink = true
   showMoreLinkDest = '/posts/'
   cardView = true
   cardViewScreenWidth = false
-  layoutBackgroundBlur = false # only used when layout equals background
+  layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
   showDate = false
@@ -63,7 +63,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
-  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+  layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
@@ -84,7 +84,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [list]
   showHero = true
-  heroStyle = "profile" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
   showBreadcrumbs = false
