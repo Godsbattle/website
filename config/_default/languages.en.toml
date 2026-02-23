@@ -1,4 +1,3 @@
-disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
@@ -12,19 +11,4 @@ title = "GodsBattle | Christian Obanaka"
    logo = "img/logotransparentalt.svg"
    secondaryLogo = "img/logotransparent.svg"
    description = "Quality Tech Videos, How-To Guides, Web-Video Producer, In this blog you'll know more about the useful tutorials, how-to guides and other things. Educating people on random things. I love trading & tech, and have a passion for teaching and helping - where possible."
-   copyright = "© 2026 Christian Obanaka 🚀"
-
- [params.author]
-   name = "Christian Obanaka"
-   email = "christian@godsbattle.net"
-   image = "img/godsbattlelogo.webp"
-   imageQuality = 96
-   headline = "Community Manager and Futures Trader"
-   bio = "Community Manager and Futures Trader"
-   links = [ 
-     { youtube = "https://youtube.com/godsbattle" },
-     { envelope = "mailto:christian@godsbattle.net" },
-     { instagram = "https://instagram.com/chrisgoingturbo" },
-     { x-twitter = "https://x.com/chrisgoingturbo" },
-     { shop = "https://selar.com/335737k1f5" }, 
-   ]
+  # copyright = "© 2026 Christian Obanaka 🚀"

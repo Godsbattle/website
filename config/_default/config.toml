@@ -3,7 +3,7 @@
 theme = "blowfish"
 baseURL = "https://godsbattle.net/"
 defaultContentLanguage = "en"
-
+disableLanguages = ['pt-pt']
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
@@ -14,6 +14,28 @@ summaryLength = 0
 
 buildDrafts = false
 buildFuture = false
+
+enableEmoji = true
+hasCJKLanguage = true
+
+# googleAnalytics = ""
+
+[pagination]
+  pagerSize = 27
+
+[params.author]
+  name = "Christian Obanaka"
+  image = "img/godsbattlelogo.webp"
+#  headline = "chrisgoingturbo"
+  subtitle = "🚀 Community Manager · Futures Trader · noob dev, graphics designer & web video producer"
+  bio = "Community Manager and Futures Trader"
+  links = [ 
+    { youtube = "https://youtube.com/godsbattle" },
+    { envelope = "mailto:christian@godsbattle.net" },
+    { instagram = "https://instagram.com/chrisgoingturbo" },
+    { x-twitter = "https://x.com/chrisgoingturbo" },
+    { shop = "https://selar.com/335737k1f5" }, 
+  ]
 
 
 [imaging]
