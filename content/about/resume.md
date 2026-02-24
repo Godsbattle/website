@@ -32,7 +32,7 @@ Currently managing thePropTrade, with steady community growth and ongoing improv
 {{< /button >}}
 {{< /timelineItem >}}
 
-{{< timelineItem icon="pokerfuckindao" header="PokerDAO" badge="Apr 2022 to Dec 2023" subheader="Community Manager" >}}
+{{< timelineItem icon="pokerfuckindao" header="PokerDAO" badge="Apr 2022 to Dec 2024" subheader="Community Manager" >}}
 
 <p>
   Built and moderated Discord and Telegram communities, growing membership from <strong>3,000 to 7,500</strong> through interactive events and Web3-focused content, while improving support workflows to reduce response times by <strong>50%</strong> and foster an inclusive member experience.
