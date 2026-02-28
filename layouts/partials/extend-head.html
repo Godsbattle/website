@@ -1,22 +1,24 @@
 <style>
-  /* White-filter brand icons (theproptrade, pokerfuckindao, etc.) are
-     invisible in light mode. Invert so they appear dark on light backgrounds. */
+  /* ─── Logo ─────────────────────────────────────────────────────────────── */
+
+  /* White-filter brand icons invisible in light mode — invert on light bg */
   :root:not(.dark) .monochrome-logo {
     filter: invert(1);
   }
 
-  /* Override theme default of 80px — keep logo compact next to site name */
+  /* Keep logo compact next to site name */
   .logo svg {
     width: 3rem !important;
     height: 3rem !important;
   }
 
-  /* Logo fills inherit text color, so it matches light/dark mode automatically */
+  /* Logo fills inherit text colour → auto light/dark */
   .logo svg path {
     fill: currentColor;
   }
 
-  /* Bio role cycling animation */
+  /* ─── Bio role cycling ──────────────────────────────────────────────────── */
+
   .bio-role {
     display: inline-block;
     font-weight: 300;
@@ -35,16 +37,63 @@
 
   .bio-role.entering { animation: bioSnapIn  0.15s ease-out forwards; }
   .bio-role.leaving  { animation: bioSnapOut 0.1s  ease-in  forwards; }
+
+  /* ─── Tag colour system ─────────────────────────────────────────────────── */
+
+  a[href^="/tags/"] {
+    border-radius: 2px !important;
+    padding: 2px 7px !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+    background-color: rgb(var(--tag-c) / 0.12) !important;
+    color: rgb(var(--tag-c)) !important;
+    border: 1px solid rgb(var(--tag-c) / 0.35) !important;
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+
+  a[href^="/tags/"]:hover {
+    background-color: rgb(var(--tag-c) / 0.22) !important;
+    border-color: rgb(var(--tag-c) / 0.6) !important;
+  }
+
+  /* Per-tag accent colours */
+  a[href^="/tags/gaming"]                      { --tag-c: 239 68 68;    } /* signal red    */
+  a[href^="/tags/windows"]                     { --tag-c: 59 130 246;   } /* electric blue */
+  a[href^="/tags/tools-for-low-end-computers"] { --tag-c: 34 197 94;    } /* acid green    */
+  a[href^="/tags/pc-optimizations"]            { --tag-c: 168 85 247;   } /* violet        */
+  a[href^="/tags/design"]                      { --tag-c: 249 115 22;   } /* orange        */
+  a[href^="/tags/web"]                         { --tag-c: 6 182 212;    } /* cyan          */
+  a[href^="/tags/video-editing"]               { --tag-c: 236 72 153;   } /* hot pink      */
+  a[href^="/tags/customization"]               { --tag-c: 234 179 8;    } /* amber         */
+  a[href^="/tags/controller"]                  { --tag-c: 20 184 166;   } /* teal          */
+
+  /* ─── Minimal typographic polish ───────────────────────────────────────── */
+
+  /* Crisp hairline dividers */
+  .dark hr { border-color: rgba(255,255,255,0.07); }
+  :root:not(.dark) hr { border-color: rgba(0,0,0,0.07); }
+
+  /* Cards: subtle border, no shadow */
+  .dark article.card {
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    box-shadow: none !important;
+  }
+  :root:not(.dark) article.card {
+    border: 1px solid rgba(0,0,0,0.07) !important;
+    box-shadow: none !important;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
-      { text: 'Community Manager', color: '#fbbf24' },
-      { text: 'Futures Trader',    color: '#fb923c' },
-      { text: 'Noob Dev',          color: '#f87171' },
-      { text: 'Graphics Designer', color: '#fcd34d' },
-      { text: 'Web Video Producer',color: '#fdba74' }
+      { text: 'Community Manager', color: '#ff3b5c' },
+      { text: 'Futures Trader',    color: '#4facfe' },
+      { text: 'Noob Dev',          color: '#43e97b' },
+      { text: 'Graphics Designer', color: '#fa709a' },
+      { text: 'Web Video Producer',color: '#fee140' }
     ];
     var idx = 0;
 
