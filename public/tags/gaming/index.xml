@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gaming on GodsBattle | Christian Obanaka</title>
+    <title>Gaming on GodsBattle</title>
     <link>http://localhost:1313/tags/gaming/</link>
-    <description>Recent content in Gaming on GodsBattle | Christian Obanaka</description>
+    <description>Recent content in Gaming on GodsBattle</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Christian Obanaka</copyright>
-    <lastBuildDate>Sat, 30 Sep 2023 10:08:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Intel Graphics Control Panel Beta</title>
-      <link>http://localhost:1313/posts/intel-graphics-001/</link>
-      <pubDate>Sat, 30 Sep 2023 10:08:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/intel-graphics-001/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/intel-graphics-001/featured.webp" />
-    </item>
+    <lastBuildDate>Tue, 15 Aug 2023 06:13:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How To Play All PC Games With Any Controller or Generic USB Gamepad</title>
@@ -30,66 +20,6 @@
     </item>
     
     <item>
-      <title>The BEST PC Optimizer</title>
-      <link>http://localhost:1313/posts/hone-optimizer/</link>
-      <pubDate>Sun, 16 Jul 2023 09:03:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/hone-optimizer/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/hone-optimizer/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Boost your Computer&#39;s Performance!</title>
-      <link>http://localhost:1313/posts/boost-fps-001/</link>
-      <pubDate>Thu, 13 Oct 2022 05:34:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/boost-fps-001/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/boost-fps-001/featured.webp" />
-    </item>
-    
-    <item>
-      <title>How to Speed up your Windows 10 Performance | Optimize Windows 10 for Gaming!</title>
-      <link>http://localhost:1313/posts/speed-up-windows-10/</link>
-      <pubDate>Tue, 11 Oct 2022 04:44:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/speed-up-windows-10/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/speed-up-windows-10/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Use these FREE tools to Optimize your CPU for Gaming in Windows</title>
-      <link>http://localhost:1313/posts/optimize-cpu/</link>
-      <pubDate>Wed, 05 Oct 2022 07:55:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/optimize-cpu/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/optimize-cpu/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Download and Install All Drivers Automatically in 1 Click - Gaming/Performance</title>
-      <link>http://localhost:1313/posts/install-drivers-windows/</link>
-      <pubDate>Sat, 01 Oct 2022 16:40:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/install-drivers-windows/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/install-drivers-windows/featured.webp" />
-    </item>
-    
-    <item>
-      <title>HONE PC Optimizer! - Boost your performance!</title>
-      <link>http://localhost:1313/posts/hone-pc-booster/</link>
-      <pubDate>Fri, 02 Sep 2022 04:23:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/hone-pc-booster/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/hone-pc-booster/featured.webp" />
-    </item>
-    
-    <item>
       <title>The Best Alternative for X360ce Software</title>
       <link>http://localhost:1313/posts/xoutput/</link>
       <pubDate>Thu, 14 Jul 2022 02:55:00 -0700</pubDate>
@@ -97,66 +27,6 @@
       <guid>http://localhost:1313/posts/xoutput/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/xoutput/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Super Clean RAM for Immediate Gaming Performance Boost!</title>
-      <link>http://localhost:1313/posts/super-clean-ram/</link>
-      <pubDate>Mon, 30 May 2022 09:13:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/super-clean-ram/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/super-clean-ram/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Dramatically increase FPS/performance on ANY PC Lag/Stuttering fix</title>
-      <link>http://localhost:1313/posts/dramatically-increase-fps/</link>
-      <pubDate>Tue, 24 May 2022 09:17:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/dramatically-increase-fps/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/dramatically-increase-fps/featured.webp" />
-    </item>
-    
-    <item>
-      <title>BlueStacks 5 Settings for Low End PC | Bluestacks 5 Lag Fix for Low End PC</title>
-      <link>http://localhost:1313/posts/bluestacks-optimization-2022/</link>
-      <pubDate>Fri, 20 May 2022 09:20:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/bluestacks-optimization-2022/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/bluestacks-optimization-2022/featured.webp" />
-    </item>
-    
-    <item>
-      <title>How To Install Drivers On Your PC - MORE PC Smoothness and Performance!</title>
-      <link>http://localhost:1313/posts/install-drivers-for-smoothness/</link>
-      <pubDate>Wed, 18 May 2022 09:25:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/install-drivers-for-smoothness/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/install-drivers-for-smoothness/featured.webp" />
-    </item>
-    
-    <item>
-      <title>How To Increase FPS and Speed Up PCSX2 For Very Low End PCs - PCSX2 Best Settings For Low End PC</title>
-      <link>http://localhost:1313/posts/pcsx2-optimization/</link>
-      <pubDate>Sat, 14 May 2022 09:33:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/pcsx2-optimization/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/pcsx2-optimization/featured.webp" />
-    </item>
-    
-    <item>
-      <title>How to Debloat Windows 7, 8.1, 10 and 11 to Maximize Performance.</title>
-      <link>http://localhost:1313/posts/debloat-windows/</link>
-      <pubDate>Tue, 18 May 2021 05:28:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/debloat-windows/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/debloat-windows/featured.webp" />
     </item>
     
   </channel>

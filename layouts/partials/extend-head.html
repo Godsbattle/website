@@ -1,29 +1,17 @@
 <style>
-<<<<<<< HEAD
-  /* ─── Logo ─────────────────────────────────────────────────────────────── */
-
-=======
   /* White-filter brand icons (theproptrade, pokerfuckindao, etc.) are
      invisible in light mode. Invert so they appear dark on light backgrounds. */
->>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   :root:not(.dark) .monochrome-logo {
     filter: invert(1);
   }
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
   /* Override theme default of 80px — keep logo compact next to site name */
->>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   .logo svg {
     width: 3rem !important;
     height: 3rem !important;
   }
 
-<<<<<<< HEAD
-=======
   /* Logo fills inherit text color, so it matches light/dark mode automatically */
->>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   .logo svg path {
     fill: currentColor;
   }
@@ -47,53 +35,6 @@
 
   .bio-role.entering { animation: bioSnapIn  0.15s ease-out forwards; }
   .bio-role.leaving  { animation: bioSnapOut 0.1s  ease-in  forwards; }
-<<<<<<< HEAD
-
-  /* ─── Tag colour system ─────────────────────────────────────────────────── */
-  /*
-     Uses comma-format CSS variables so rgba() expands correctly:
-     --tag-c: R, G, B  →  rgba(var(--tag-c), 0.12)
-  */
-
-  a[href^="/tags/"] {
-    border-radius: 3px !important;
-    padding: 2px 8px !important;
-    font-size: 0.7rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.06em !important;
-    text-transform: uppercase !important;
-    display: inline-block !important;
-    background-color: rgba(var(--tag-c), 0.12) !important;
-    color: rgba(var(--tag-c), 1) !important;
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: rgba(var(--tag-c), 0.35) !important;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
-    text-decoration: none !important;
-  }
-
-  a[href^="/tags/"]:hover {
-    background-color: rgba(var(--tag-c), 0.22) !important;
-    border-color: rgba(var(--tag-c), 0.6) !important;
-  }
-
-  /* Per-tag accent colours — comma format for rgba() compatibility */
-  a[href^="/tags/gaming"]                      { --tag-c: 239, 68,  68;  } /* signal red  */
-  a[href^="/tags/windows"]                     { --tag-c: 59,  130, 246; } /* elec. blue  */
-  a[href^="/tags/tools-for-low-end-computers"] { --tag-c: 34,  197, 94;  } /* acid green  */
-  a[href^="/tags/pc-optimizations"]            { --tag-c: 168, 85,  247; } /* violet      */
-  a[href^="/tags/design"]                      { --tag-c: 249, 115, 22;  } /* orange      */
-  a[href^="/tags/web"]                         { --tag-c: 6,   182, 212; } /* cyan        */
-  a[href^="/tags/video-editing"]               { --tag-c: 236, 72,  153; } /* hot pink    */
-  a[href^="/tags/customization"]               { --tag-c: 234, 179, 8;   } /* amber       */
-  a[href^="/tags/controller"]                  { --tag-c: 20,  184, 166; } /* teal        */
-
-  /* ─── Hairline dividers ─────────────────────────────────────────────────── */
-
-  .dark hr { border-color: rgba(255, 255, 255, 0.07); }
-  :root:not(.dark) hr { border-color: rgba(0, 0, 0, 0.07); }
-=======
->>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
 </style>
 
 <script>
@@ -129,6 +70,3 @@
     }, 2500);
   });
 </script>
-=======
-</style>
->>>>>>> parent of 9a47acf (Merge claude/cool-mcnulty: tag updates, bio animation, logo refinements)

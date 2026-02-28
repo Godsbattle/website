@@ -2,6 +2,7 @@
 title: '[FREE] Generate Unique SVG Shapes, Backgrounds, and Patterns | ready to use with your design tools.'
 date: 2022-06-20T08:16:00.003-07:00
 draft: false
+tags: ["Design", "Web"]
 ---
  
 ## 🎨 **Haikei: The Ultimate Web-Based Design Tool for SVG Assets**

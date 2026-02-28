@@ -20,7 +20,7 @@ mainSections = ["posts"]
 
 disableImageZoom = true
 disableImageOptimization = false
-disableTextInHeader = true
+disableTextInHeader = false
 
 defaultBackgroundImage = "" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
@@ -40,11 +40,7 @@ defaultBackgroundImage = "" # used as default for background images
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-<<<<<<< HEAD
-  homepageImage = "" # intentionally empty — clean layout without animated bg
-=======
   homepageImage = "img/chillanimatedbg.svg" # used in: hero, and card
->>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   showRecent = true
   showRecentItems = 3
   showMoreLink = true
