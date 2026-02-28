@@ -2,7 +2,7 @@
 title: 'Best Screen Recorder For Low-End PC | BETTER STABILITY/PERFORMANCE'
 date: 2022-05-16T09:29:00.008-07:00
 draft: false
-tags: ["Tools for Low End Computers", "Windows"]
+tags: ["PC Optimizations", "Tools for Low End Computers", "Windows"]
 ---
 # 🎮 **How To Record Gameplay Without Lag in PC - Tutorial**
 

@@ -1,7 +1,7 @@
 ---
 title: 'The Best Custom Windows Operating Systems'
 date: 2023-09-10T00:20:00.000-07:00
-tags: ["PC Optimizations", "Windows"]
+tags: ["PC Optimizations", "Windows", "Tools for Low End Computers"]
 draft: false
 ---
 

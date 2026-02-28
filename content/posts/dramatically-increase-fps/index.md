@@ -2,7 +2,7 @@
 title: 'Dramatically increase FPS/performance on ANY PC Lag/Stuttering fix'
 date: 2022-05-24T09:17:00.005-07:00
 draft: false
-tags: ["PC Optimizations", "Windows"]
+tags: ["PC Optimizations", "Windows", "Tools for Low End Computers", "Gaming"]
 ---
 
 ## 🚀 **Fix Stuttering in Games & Maximize Performance on Windows**
