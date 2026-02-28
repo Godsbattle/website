@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on GodsBattle</title>
+    <title>Tags on GodsBattle | Christian Obanaka</title>
     <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on GodsBattle</description>
+    <description>Recent content in Tags on GodsBattle | Christian Obanaka</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Christian Obanaka</copyright>
@@ -65,36 +65,6 @@
       <pubDate>Thu, 22 Sep 2022 07:46:00 -0700</pubDate>
       
       <guid>http://localhost:1313/tags/customization/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Design</title>
-      <link>http://localhost:1313/tags/design/</link>
-      <pubDate>Mon, 20 Jun 2022 08:16:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/design/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>http://localhost:1313/tags/web/</link>
-      <pubDate>Mon, 20 Jun 2022 08:16:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/web/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Video Editing</title>
-      <link>http://localhost:1313/tags/video-editing/</link>
-      <pubDate>Fri, 03 Jun 2022 02:50:00 -0700</pubDate>
-      
-      <guid>http://localhost:1313/tags/video-editing/</guid>
       <description></description>
       
     </item>

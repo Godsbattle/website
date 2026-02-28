@@ -2,7 +2,7 @@
 title: 'Intel Graphics Control Panel Beta'
 date: 2023-09-30T10:08:00.006-07:00
 draft: false 
-tags: ["PC Optimizations", "Windows", "Gaming"]
+tags: ["PC Optimizations", "Windows"]
 ---
 
 ## Introduction
