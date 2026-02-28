@@ -35,29 +35,11 @@
   .bio-role.entering { animation: bioSnapIn  0.15s ease-out forwards; }
   .bio-role.leaving  { animation: bioSnapOut 0.1s  ease-in  forwards; }
 
-  /* ─── Tag highlight — yellow ───────────────────────────────────────────── */
+  /* ─── Tag highlight — yellow text only ─────────────────────────────────── */
 
   a[href^="/tags/"] {
-    --tag-c: 250, 204, 21;
-    border-radius: 3px !important;
-    padding: 2px 8px !important;
-    font-size: 0.7rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.06em !important;
-    text-transform: uppercase !important;
-    display: inline-block !important;
-    background-color: rgba(var(--tag-c), 0.12) !important;
-    color: rgba(var(--tag-c), 1) !important;
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: rgba(var(--tag-c), 0.35) !important;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    color: rgb(250, 204, 21) !important;
     text-decoration: none !important;
-  }
-
-  a[href^="/tags/"]:hover {
-    background-color: rgba(var(--tag-c), 0.22) !important;
-    border-color: rgba(var(--tag-c), 0.6) !important;
   }
 
   /* ─── Hairline dividers ─────────────────────────────────────────────────── */
