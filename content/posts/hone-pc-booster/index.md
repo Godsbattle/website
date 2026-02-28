@@ -2,7 +2,7 @@
 title: 'HONE PC Optimizer! - Boost your performance!'
 date: 2022-09-02T04:23:00.012-07:00
 draft: false
-tags: ["PC Optimizations", "Windows", "Tools for Low End Computers", "Gaming"]
+tags: ["PC Optimizations", "Windows", "Tools for Low End Computers"]
 ---
 
 ## **INCREASE FPS, REDUCE INPUT LAG, OPTIMIZE NETWORK** 

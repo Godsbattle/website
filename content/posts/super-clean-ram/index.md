@@ -2,7 +2,7 @@
 title: 'Super Clean RAM for Immediate Gaming Performance Boost!'
 date: 2022-05-30T09:13:00.003-07:00
 draft: false
-tags: ["PC Optimizations", "Windows", "Tools for Low End Computers", "Gaming"]
+tags: ["PC Optimizations", "Windows"]
 ---
 
 # Fix Stuttering in Games: Super Clean Your RAM for Maximum Performance

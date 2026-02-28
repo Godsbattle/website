@@ -2,7 +2,7 @@
 title: 'How to Speed up your Windows 10 Performance | Optimize Windows 10 for Gaming!'
 date: 2022-10-11T04:44:00.002-07:00
 draft: false 
-tags: ["PC Optimizations", "Windows", "Tools for Low End Computers", "Gaming"]
+tags: ["PC Optimizations", "Windows"]
 ---
 
 # Do You Want to Improve Your Gaming Performance?
