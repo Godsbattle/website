@@ -40,21 +40,21 @@
     </item>
     
     <item>
-      <title>Controller</title>
-      <link>http://localhost:1313/tags/controller/</link>
-      <pubDate>Tue, 15 Aug 2023 06:13:00 -0700</pubDate>
+      <title>Gaming</title>
+      <link>http://localhost:1313/tags/gaming/</link>
+      <pubDate>Sat, 30 Sep 2023 10:08:00 -0700</pubDate>
       
-      <guid>http://localhost:1313/tags/controller/</guid>
+      <guid>http://localhost:1313/tags/gaming/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>Gaming</title>
-      <link>http://localhost:1313/tags/gaming/</link>
+      <title>Controller</title>
+      <link>http://localhost:1313/tags/controller/</link>
       <pubDate>Tue, 15 Aug 2023 06:13:00 -0700</pubDate>
       
-      <guid>http://localhost:1313/tags/gaming/</guid>
+      <guid>http://localhost:1313/tags/controller/</guid>
       <description></description>
       
     </item>
