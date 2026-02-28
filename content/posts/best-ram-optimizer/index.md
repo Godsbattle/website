@@ -2,7 +2,7 @@
 title: 'Best RAM Optimizer for Windows! - Low End Computers'
 date: 2022-08-16T09:25:00.000-07:00
 draft: false
-tags: ["PC Optimizations", "Windows"]
+tags: ["PC Optimizations", "Windows", "Tools for Low End Computers"]
 ---
 
 # 🌟 **Wise Memory Optimizer: Boost Your PC's Performance for FREE!**

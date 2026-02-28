@@ -20,7 +20,7 @@ mainSections = ["posts"]
 
 disableImageZoom = true
 disableImageOptimization = false
-disableTextInHeader = true
+disableTextInHeader = false
 
 defaultBackgroundImage = "" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles

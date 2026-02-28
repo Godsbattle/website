@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on GodsBattle | Christian Obanaka</title>
+    <title>Windows on GodsBattle</title>
     <link>http://localhost:1313/tags/windows/</link>
-    <description>Recent content in Windows on GodsBattle | Christian Obanaka</description>
+    <description>Recent content in Windows on GodsBattle</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Christian Obanaka</copyright>
@@ -167,6 +167,16 @@
       <guid>http://localhost:1313/posts/alt-for-explorer/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/alt-for-explorer/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Best Text To Speech for Video Editors (PC/Mobile)</title>
+      <link>http://localhost:1313/posts/best-tts/</link>
+      <pubDate>Fri, 03 Jun 2022 02:50:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/best-tts/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/best-tts/featured.webp" />
     </item>
     
     <item>
