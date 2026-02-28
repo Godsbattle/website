@@ -1,1 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Customization on GodsBattle</title><link>https://godsbattle.net/tags/customization/</link><description>Recent content in Customization on GodsBattle</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2026 Christian Obanaka</copyright><lastBuildDate>Thu, 22 Sep 2022 07:46:00 -0700</lastBuildDate><atom:link href="https://godsbattle.net/tags/customization/index.xml" rel="self" type="application/rss+xml"/><item><title>Make your Windows Desktop look CLEAN &amp; AESTHETIC!</title><link>https://godsbattle.net/posts/aesthetic-desktop-setup/</link><pubDate>Thu, 22 Sep 2022 07:46:00 -0700</pubDate><guid>https://godsbattle.net/posts/aesthetic-desktop-setup/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/aesthetic-desktop-setup/featured.webp"/></item><item><title>How To Remove RECYCLE BIN from your Desktop</title><link>https://godsbattle.net/posts/remove-recycle-bin/</link><pubDate>Fri, 05 Aug 2022 10:10:00 -0700</pubDate><guid>https://godsbattle.net/posts/remove-recycle-bin/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/remove-recycle-bin/featured.webp"/></item><item><title>Modern Alternative for Microsoft File Manager (Explorer)</title><link>https://godsbattle.net/posts/alt-for-explorer/</link><pubDate>Mon, 06 Jun 2022 02:41:00 -0700</pubDate><guid>https://godsbattle.net/posts/alt-for-explorer/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://godsbattle.net/posts/alt-for-explorer/featured.webp"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customization on GodsBattle</title>
+    <link>http://localhost:1313/tags/customization/</link>
+    <description>Recent content in Customization on GodsBattle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Christian Obanaka</copyright>
+    <lastBuildDate>Thu, 22 Sep 2022 07:46:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/customization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Make your Windows Desktop look CLEAN &amp; AESTHETIC!</title>
+      <link>http://localhost:1313/posts/aesthetic-desktop-setup/</link>
+      <pubDate>Thu, 22 Sep 2022 07:46:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/aesthetic-desktop-setup/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/aesthetic-desktop-setup/featured.webp" />
+    </item>
+    
+    <item>
+      <title>How To Remove RECYCLE BIN from your Desktop</title>
+      <link>http://localhost:1313/posts/remove-recycle-bin/</link>
+      <pubDate>Fri, 05 Aug 2022 10:10:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/remove-recycle-bin/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/remove-recycle-bin/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Modern Alternative for Microsoft File Manager (Explorer)</title>
+      <link>http://localhost:1313/posts/alt-for-explorer/</link>
+      <pubDate>Mon, 06 Jun 2022 02:41:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/alt-for-explorer/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/alt-for-explorer/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

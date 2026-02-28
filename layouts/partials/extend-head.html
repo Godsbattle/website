@@ -1,21 +1,33 @@
 <style>
+<<<<<<< HEAD
   /* ─── Logo ─────────────────────────────────────────────────────────────── */
 
+=======
+  /* White-filter brand icons (theproptrade, pokerfuckindao, etc.) are
+     invisible in light mode. Invert so they appear dark on light backgrounds. */
+>>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   :root:not(.dark) .monochrome-logo {
     filter: invert(1);
   }
 
+<<<<<<< HEAD
+=======
+  /* Override theme default of 80px — keep logo compact next to site name */
+>>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   .logo svg {
     width: 3rem !important;
     height: 3rem !important;
   }
 
+<<<<<<< HEAD
+=======
+  /* Logo fills inherit text color, so it matches light/dark mode automatically */
+>>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
   .logo svg path {
     fill: currentColor;
   }
 
-  /* ─── Bio role cycling ──────────────────────────────────────────────────── */
-
+  /* Bio role cycling animation */
   .bio-role {
     display: inline-block;
     font-weight: 300;
@@ -34,6 +46,7 @@
 
   .bio-role.entering { animation: bioSnapIn  0.15s ease-out forwards; }
   .bio-role.leaving  { animation: bioSnapOut 0.1s  ease-in  forwards; }
+<<<<<<< HEAD
 
   /* ─── Tag colour system ─────────────────────────────────────────────────── */
   /*
@@ -78,16 +91,18 @@
 
   .dark hr { border-color: rgba(255, 255, 255, 0.07); }
   :root:not(.dark) hr { border-color: rgba(0, 0, 0, 0.07); }
+=======
+>>>>>>> parent of 35e95f2 (Minimalist black & white theme overhaul)
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
-      { text: 'Community Manager', color: '#ff3b5c' },
-      { text: 'Futures Trader',    color: '#4facfe' },
-      { text: 'Noob Dev',          color: '#43e97b' },
-      { text: 'Graphics Designer', color: '#fa709a' },
-      { text: 'Web Video Producer',color: '#fee140' }
+      { text: 'Community Manager', color: '#fbbf24' },
+      { text: 'Futures Trader',    color: '#fb923c' },
+      { text: 'Noob Dev',          color: '#f87171' },
+      { text: 'Graphics Designer', color: '#fcd34d' },
+      { text: 'Web Video Producer',color: '#fdba74' }
     ];
     var idx = 0;
 
