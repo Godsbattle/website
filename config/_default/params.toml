@@ -39,8 +39,8 @@ defaultBackgroundImage = "" # used as default for background images
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "" # used in: hero, and card
+  layout = "background" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "" # intentionally empty — clean layout without animated bg
   showRecent = true
   showRecentItems = 3
   showMoreLink = true
