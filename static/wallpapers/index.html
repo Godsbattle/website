@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wallpapers — GOING TURBO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      padding: 50px 24px 80px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #fff;
+    }
+    h1 { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.35); letter-spacing: 0.15em; text-transform: uppercase; }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+    .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .dim { font-size: 0.7rem; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+    .preview {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.7);
+    }
+    /* phone preview — show at max 300px wide */
+    .preview-phone { width: min(300px, 80vw); }
+    /* mac/cover preview — show at max 900px wide */
+    .preview-wide   { width: min(900px, 100%); }
+    svg { display: block; width: 100%; height: auto; }
+    .btn {
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: rgba(255,255,255,0.13); }
+    hr { width: 100%; max-width: 900px; border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+  </style>
+</head>
+<body>
+
+<h1>Going Turbo — Wallpapers</h1>
+
+<!-- ═══════════════════════════════════════════
+     iPhone 16 Pro  —  1206 × 2622
+════════════════════════════════════════════ -->
+<div class="card">
+  <div style="text-align:center">
+    <div class="label">iPhone 16 Pro</div>
+    <div class="dim">1206 × 2622 px</div>
+  </div>
+  <div class="preview preview-phone">
+    <svg id="iphone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1206 2622" width="1206" height="2622">
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');</style>
+        <pattern id="dots-ip" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="11" cy="11" r="0.9" fill="rgba(255,255,255,0.09)"/>
+        </pattern>
+        <linearGradient id="tg-ip" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0.78)"/>
+        </linearGradient>
+        <radialGradient id="bg-ip" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="rgba(255,255,255,0.07)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <filter id="glow-ip" x="-20%" y="-30%" width="140%" height="160%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+          <feFlood flood-color="#ffffff" flood-opacity="0.26" result="col"/>
+          <feComposite in="col" in2="blur" operator="in" result="g"/>
+          <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect width="1206" height="2622" fill="#0a0a0a"/>
+      <rect width="1206" height="2622" fill="url(#dots-ip)"/>
+      <ellipse cx="603" cy="1311" rx="560" ry="700" fill="url(#bg-ip)"/>
+      <text
+        x="603" y="1246"
+        font-family="'Inter', system-ui, -apple-system, sans-serif"
+        font-size="100"
+        font-weight="900"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="url(#tg-ip)"
+        filter="url(#glow-ip)"
+        letter-spacing="-3">GOING</text>
+      <text
+        x="603" y="1376"
+        font-family="'Inter', system-ui, -apple-system, sans-serif"
+        font-size="100"
+        font-weight="900"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="url(#tg-ip)"
+        filter="url(#glow-ip)"
+        letter-spacing="-3">TURBO</text>
+    </svg>
+  </div>
+  <button class="btn" onclick="dl('iphone','going-turbo-iphone16pro.png',1206,2622)">⬇ Export PNG</button>
+</div>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════
+     MacBook (M4)  —  2560 × 1600
+════════════════════════════════════════════ -->
+<div class="card">
+  <div style="text-align:center">
+    <div class="label">MacBook M4</div>
+    <div class="dim">2560 × 1600 px</div>
+  </div>
+  <div class="preview preview-wide">
+    <svg id="mac" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1600" width="2560" height="1600">
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');</style>
+        <pattern id="dots-mac" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+          <circle cx="13" cy="13" r="1.1" fill="rgba(255,255,255,0.09)"/>
+        </pattern>
+        <linearGradient id="tg-mac" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0.78)"/>
+        </linearGradient>
+        <radialGradient id="bg-mac" cx="50%" cy="50%" r="45%">
+          <stop offset="0%"   stop-color="rgba(255,255,255,0.07)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <filter id="glow-mac" x="-12%" y="-60%" width="124%" height="220%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="22" result="blur"/>
+          <feFlood flood-color="#ffffff" flood-opacity="0.26" result="col"/>
+          <feComposite in="col" in2="blur" operator="in" result="g"/>
+          <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect width="2560" height="1600" fill="#0a0a0a"/>
+      <rect width="2560" height="1600" fill="url(#dots-mac)"/>
+      <ellipse cx="1280" cy="800" rx="1100" ry="600" fill="url(#bg-mac)"/>
+      <text
+        x="1280" y="800"
+        font-family="'Inter', system-ui, -apple-system, sans-serif"
+        font-size="160"
+        font-weight="900"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="url(#tg-mac)"
+        filter="url(#glow-mac)"
+        letter-spacing="-6">GOING TURBO</text>
+    </svg>
+  </div>
+  <button class="btn" onclick="dl('mac','going-turbo-macbook-m4.png',2560,1600)">⬇ Export PNG</button>
+</div>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════
+     X / Twitter Cover  —  1500 × 500
+════════════════════════════════════════════ -->
+<div class="card">
+  <div style="text-align:center">
+    <div class="label">X / Twitter Cover</div>
+    <div class="dim">1500 × 500 px</div>
+  </div>
+  <div class="preview preview-wide">
+    <svg id="xcover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');</style>
+        <pattern id="dots-xc" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="11" cy="11" r="0.9" fill="rgba(255,255,255,0.09)"/>
+        </pattern>
+        <linearGradient id="tg-xc" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0.78)"/>
+        </linearGradient>
+        <radialGradient id="bg-xc" cx="50%" cy="50%" r="45%">
+          <stop offset="0%"   stop-color="rgba(255,255,255,0.07)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </radialGradient>
+        <filter id="glow-xc" x="-12%" y="-60%" width="124%" height="220%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+          <feFlood flood-color="#ffffff" flood-opacity="0.28" result="col"/>
+          <feComposite in="col" in2="blur" operator="in" result="glow"/>
+          <feMerge>
+            <feMergeNode in="glow"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <rect width="1500" height="500" fill="#0a0a0a"/>
+      <rect width="1500" height="500" fill="url(#dots-xc)"/>
+      <ellipse cx="750" cy="250" rx="680" ry="280" fill="url(#bg-xc)"/>
+      <text
+        x="750" y="250"
+        font-family="'Inter', system-ui, -apple-system, sans-serif"
+        font-size="100"
+        font-weight="900"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="url(#tg-xc)"
+        filter="url(#glow-xc)"
+        letter-spacing="-4">GOING TURBO</text>
+    </svg>
+  </div>
+  <button class="btn" onclick="dl('xcover','going-turbo-x-cover.png',1500,500)">⬇ Export PNG</button>
+</div>
+
+<script>
+function dl(id, filename, w, h) {
+  var svg = document.getElementById(id);
+  var blob = new Blob([new XMLSerializer().serializeToString(svg)], {type:'image/svg+xml'});
+  var url  = URL.createObjectURL(blob);
+  var img  = new Image();
+  img.onload = function() {
+    var c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    c.getContext('2d').drawImage(img, 0, 0, w, h);
+    URL.revokeObjectURL(url);
+    var a = document.createElement('a');
+    a.download = filename;
+    a.href = c.toDataURL('image/png');
+    a.click();
+  };
+  img.src = url;
+}
+</script>
+</body>
+</html>

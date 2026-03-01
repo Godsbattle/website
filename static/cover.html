@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X Cover — GOING TURBO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 40px 20px;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .preview-wrap {
+      width: min(1500px, 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+    svg { display: block; width: 100%; height: auto; }
+    .actions { display: flex; gap: 12px; }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-svg  { background: #7c3aed; color: #fff; }
+    .btn-png  { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
+    .note { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-align: center; }
+  </style>
+</head>
+<body>
+
+<div class="preview-wrap" id="svgWrap">
+<svg id="cover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');
+    </style>
+
+    <!-- Dot grid -->
+    <pattern id="dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="0.9" fill="rgba(255,255,255,0.09)"/>
+    </pattern>
+
+    <!-- Headline text gradient (white only) -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.78)"/>
+    </linearGradient>
+
+    <!-- Centre radial glow (white) -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="45%">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+
+    <!-- White text glow filter -->
+    <filter id="textGlow" x="-12%" y="-60%" width="124%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.28" result="col"/>
+      <feComposite in="col" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── BG ── -->
+  <rect width="1500" height="500" fill="#0a0a0a"/>
+  <rect width="1500" height="500" fill="url(#dots)"/>
+
+  <!-- Background white radial glow -->
+  <ellipse cx="750" cy="250" rx="680" ry="280" fill="url(#bgGlow)"/>
+
+  <!-- ── Headline ── -->
+  <text
+    x="750" y="250"
+    font-family="'Inter', system-ui, -apple-system, sans-serif"
+    font-size="100"
+    font-weight="900"
+    text-anchor="middle"
+    dominant-baseline="central"
+    fill="url(#textGrad)"
+    filter="url(#textGlow)"
+    letter-spacing="-4">GOING TURBO</text>
+</svg>
+</div>
+
+<div class="actions">
+  <button class="btn btn-svg" onclick="downloadSVG()">⬇ Download SVG</button>
+  <button class="btn btn-png" onclick="downloadPNG()">⬇ Export PNG (1500×500)</button>
+</div>
+<p class="note">PNG export renders at 1500 × 500 px — ready to upload to X/Twitter</p>
+
+<script>
+function downloadSVG() {
+  var svg = document.getElementById('cover');
+  var blob = new Blob([new XMLSerializer().serializeToString(svg)], {type: 'image/svg+xml'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'going-turbo-cover.svg';
+  a.click();
+}
+
+function downloadPNG() {
+  var svg = document.getElementById('cover');
+  var serialized = new XMLSerializer().serializeToString(svg);
+  var img = new Image();
+  var blob = new Blob([serialized], {type: 'image/svg+xml'});
+  var url = URL.createObjectURL(blob);
+  img.onload = function() {
+    var canvas = document.createElement('canvas');
+    canvas.width = 1500;
+    canvas.height = 500;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, 1500, 500);
+    URL.revokeObjectURL(url);
+    var a = document.createElement('a');
+    a.download = 'going-turbo-cover.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  };
+  img.src = url;
+}
+</script>
+</body>
+</html>
