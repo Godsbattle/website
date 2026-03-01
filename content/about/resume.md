@@ -19,15 +19,39 @@ sharingLinks = false
     to { --gt-angle: 360deg; }
   }
 
+  /* ── Card surface ── */
   li > .flex > .break-words {
     position: relative;
     isolation: isolate;
+    background: rgba(255,255,255,0.035) !important;
+    border: 1px solid rgba(255,255,255,0.07);
   }
-  li > .flex > .break-words::before {
+
+  /* Diagonal stripe + specular highlight texture (sits behind content) */
+  li > .flex > .break-words::after {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 0.5rem; /* matches rounded-lg */
+    border-radius: 0.5rem;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.055) 0%, transparent 50%),
+      repeating-linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 18px,
+        rgba(255,255,255,0.022) 18px,
+        rgba(255,255,255,0.022) 20px
+      );
+  }
+
+  /* Animated gradient border (sweeps around the card edge) */
+  li > .flex > .break-words::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 0.5rem;
     padding: 1px;
     background: conic-gradient(
       from var(--gt-angle),
@@ -45,7 +69,23 @@ sharingLinks = false
     animation: gt-spin 5s linear infinite;
     pointer-events: none;
   }
-  /* Light mode – subtler dark stroke */
+
+  /* ── Light mode variants ── */
+  :root:not(.dark) li > .flex > .break-words {
+    background: rgba(0,0,0,0.02) !important;
+    border-color: rgba(0,0,0,0.07);
+  }
+  :root:not(.dark) li > .flex > .break-words::after {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 50%),
+      repeating-linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 18px,
+        rgba(0,0,0,0.018) 18px,
+        rgba(0,0,0,0.018) 20px
+      );
+  }
   :root:not(.dark) li > .flex > .break-words::before {
     background: conic-gradient(
       from var(--gt-angle),
