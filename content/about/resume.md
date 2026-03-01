@@ -22,8 +22,6 @@ sharingLinks = false
   li > .flex > .break-words {
     position: relative;
     isolation: isolate;
-    will-change: transform;
-    transform-style: preserve-3d;
   }
 
   /* Subtle glare — only visible on hover */
