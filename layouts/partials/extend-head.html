@@ -123,6 +123,16 @@
 </style>
 
 <script>
+/* Force dark mode on touch/mobile — runs synchronously before init.html */
+(function () {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.documentElement.classList.add('dark');
+    try { localStorage.setItem('appearance', 'dark'); } catch (e) {}
+  }
+})();
+</script>
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
       { text: 'Community Manager', color: 'var(--bio-1)' },
