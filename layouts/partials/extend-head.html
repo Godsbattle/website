@@ -133,6 +133,24 @@
 </script>
 
 <script>
+/* Safari: force repaint on dark/light mode toggle — fixes stale compositing layer cache */
+(function () {
+  var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if (!isSafari) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    new MutationObserver(function () {
+      var b = document.body;
+      b.style.display = 'none';
+      void b.offsetHeight;
+      b.style.display = '';
+    }).observe(document.documentElement, {
+      attributes: true, attributeFilter: ['class']
+    });
+  });
+})();
+</script>
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
       { text: 'Community Manager', color: 'var(--bio-1)' },
