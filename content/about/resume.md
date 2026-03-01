@@ -26,6 +26,25 @@ sharingLinks = false
     transform-style: preserve-3d;
   }
 
+  /* Subtle glare — only visible on hover */
+  li > .flex > .break-words::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      ellipse 60% 50% at var(--glare-x, 50%) var(--glare-y, 30%),
+      rgba(255,255,255,0.06),
+      transparent 70%
+    );
+  }
+  li > .flex > .break-words:hover::after {
+    opacity: 1;
+  }
+
   li > .flex > .break-words::before {
     content: '';
     position: absolute;
@@ -48,15 +67,24 @@ sharingLinks = false
     animation: gt-spin 5s linear infinite;
     pointer-events: none;
   }
-  /* Light mode – subtler dark stroke */
+  /* Light mode – more pronounced dark stroke */
   :root:not(.dark) li > .flex > .break-words::before {
     background: conic-gradient(
       from var(--gt-angle),
       transparent 50%,
-      rgba(0,0,0,0.05) 63%,
-      rgba(0,0,0,0.22) 80%,
-      rgba(0,0,0,0.05) 93%,
+      rgba(0,0,0,0.12) 63%,
+      rgba(0,0,0,0.45) 80%,
+      rgba(0,0,0,0.12) 93%,
       transparent 100%
+    );
+  }
+
+  /* Light mode glare — dark tint instead of white */
+  :root:not(.dark) li > .flex > .break-words::after {
+    background: radial-gradient(
+      ellipse 60% 50% at var(--glare-x, 50%) var(--glare-y, 30%),
+      rgba(0,0,0,0.055),
+      transparent 70%
     );
   }
 
@@ -130,6 +158,9 @@ sharingLinks = false
         card.style.transition = 'none'; /* instant tracking */
         card.style.transform  =
           'perspective(1000px) rotateX(' + (py * -6) + 'deg) rotateY(' + (px * 6) + 'deg) scale3d(1.015,1.015,1.015)';
+
+        card.style.setProperty('--glare-x', ((px + 0.5) * 100) + '%');
+        card.style.setProperty('--glare-y', ((py + 0.5) * 100) + '%');
       });
 
       card.addEventListener('mouseleave', function () {
