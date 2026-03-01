@@ -24,23 +24,25 @@ sharingLinks = false
     isolation: isolate;
   }
 
-  /* Subtle glare — only visible on hover */
-  li > .flex > .break-words::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.5rem;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    background: radial-gradient(
-      ellipse 60% 50% at var(--glare-x, 50%) var(--glare-y, 30%),
-      rgba(255,255,255,0.06),
-      transparent 70%
-    );
-  }
-  li > .flex > .break-words:hover::after {
-    opacity: 1;
+  /* Glare + tilt — pointer devices only */
+  @media (hover: hover) and (pointer: fine) {
+    li > .flex > .break-words::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 0.5rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: radial-gradient(
+        ellipse 60% 50% at var(--glare-x, 50%) var(--glare-y, 30%),
+        rgba(255,255,255,0.06),
+        transparent 70%
+      );
+    }
+    li > .flex > .break-words:hover::after {
+      opacity: 1;
+    }
   }
 
   li > .flex > .break-words::before {
@@ -78,12 +80,14 @@ sharingLinks = false
   }
 
   /* Light mode glare — dark tint instead of white */
-  :root:not(.dark) li > .flex > .break-words::after {
-    background: radial-gradient(
-      ellipse 60% 50% at var(--glare-x, 50%) var(--glare-y, 30%),
-      rgba(0,0,0,0.055),
-      transparent 70%
-    );
+  @media (hover: hover) and (pointer: fine) {
+    :root:not(.dark) li > .flex > .break-words::after {
+      background: radial-gradient(
+        ellipse 60% 50% at var(--glare-x, 50%) var(--glare-y, 30%),
+        rgba(0,0,0,0.055),
+        transparent 70%
+      );
+    }
   }
 
   /* Timeline date badges — more pronounced */
@@ -139,8 +143,10 @@ sharingLinks = false
 </script>
 
 <script>
-/* ── 3D tilt on experience cards ── */
+/* ── 3D tilt on experience cards (pointer devices only) ── */
 (function () {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
   function init() {
     document.querySelectorAll('li > .flex > .break-words').forEach(function (card) {
 
