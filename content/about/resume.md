@@ -9,6 +9,54 @@ sharingLinks = false
 +++
 
 <style>
+  /* ── Animated gradient border on experience cards ── */
+  @property --gt-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes gt-spin {
+    to { --gt-angle: 360deg; }
+  }
+
+  li > .flex > .break-words {
+    position: relative;
+    isolation: isolate;
+  }
+  li > .flex > .break-words::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem; /* matches rounded-lg */
+    padding: 1px;
+    background: conic-gradient(
+      from var(--gt-angle),
+      transparent 50%,
+      rgba(255,255,255,0.1) 63%,
+      rgba(255,255,255,0.65) 80%,
+      rgba(255,255,255,0.1) 93%,
+      transparent 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: gt-spin 5s linear infinite;
+    pointer-events: none;
+  }
+  /* Light mode – subtler dark stroke */
+  :root:not(.dark) li > .flex > .break-words::before {
+    background: conic-gradient(
+      from var(--gt-angle),
+      transparent 50%,
+      rgba(0,0,0,0.05) 63%,
+      rgba(0,0,0,0.22) 80%,
+      rgba(0,0,0,0.05) 93%,
+      transparent 100%
+    );
+  }
+
   /* Timeline date badges — more pronounced */
   span.rounded-md.border.border-primary-400 {
     border-color: rgba(255,255,255,0.4) !important;
