@@ -184,42 +184,6 @@
   <p class="mt-4 text-xs opacity-30 tracking-wide uppercase">v1 — built for funded traders</p>
 </div>
 
-<!-- Polar success interceptor — MUST load before embed.global.js
-     Registers the message listener first so stopImmediatePropagation()
-     prevents Polar's deferred handler from navigating window.location -->
-<script>
-(function () {
-  var done = false;
-  window.addEventListener('message', function (e) {
-    if (done || !e.data || typeof e.data !== 'object') return;
-    var d = e.data;
-
-    /* Cover all known Polar message shapes across embed versions */
-    var confirmed =
-      (d.polar === true && d.event === 'checkout.confirmed') ||
-      (d.type === 'polar:checkout:updated' && d.data && d.data.status === 'confirmed') ||
-      d.type === 'polar:checkout:confirmed' ||
-      d.status === 'confirmed';
-
-    if (!confirmed) return;
-    done = true;
-
-    /* If Polar includes a success URL, open it in a new tab */
-    var url =
-      (d.checkout && d.checkout.successUrl) ||
-      (d.data   && (d.data.successUrl || d.data.success_url)) ||
-      d.successUrl;
-    if (url) window.open(url, '_blank', 'noopener');
-
-    /* Block Polar's embed handler from also navigating window.location */
-    try { e.stopImmediatePropagation(); } catch (x) {}
-
-    /* Notify the rest of the page */
-    window.dispatchEvent(new CustomEvent('pt:checkout:done'));
-  });
-})();
-</script>
-
 <!-- Polar embed: opens checkout overlay on click -->
 <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
 
@@ -254,31 +218,22 @@
 </script>
 
 <script>
-/* ── CTA ripple + branded confetti on Polar checkout completion ── */
+/* ── CTA: ripple + confetti on click ── */
 (function () {
-
-  /* 1. Ripple on click */
   var btn = document.querySelector('.pt-cta');
-  if (btn) {
-    btn.addEventListener('click', function (e) {
-      var r    = btn.getBoundingClientRect();
-      var size = Math.max(r.width, r.height) * 2;
-      var x    = e.clientX - r.left  - size / 2;
-      var y    = e.clientY - r.top   - size / 2;
-      var rpl  = document.createElement('span');
-      rpl.className = 'pt-ripple';
-      rpl.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + x + 'px;top:' + y + 'px;';
-      btn.appendChild(rpl);
-      setTimeout(function () { rpl.remove(); }, 600);
-    });
-  }
+  if (!btn) return;
 
-  /* 2. Branded confetti burst */
-  var confettiFired = false;
-  function fireConfetti() {
-    if (confettiFired) return;
-    confettiFired = true;
+  btn.addEventListener('click', function (e) {
+    /* Ripple */
+    var r    = btn.getBoundingClientRect();
+    var size = Math.max(r.width, r.height) * 2;
+    var rpl  = document.createElement('span');
+    rpl.className = 'pt-ripple';
+    rpl.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + (e.clientX - r.left - size / 2) + 'px;top:' + (e.clientY - r.top - size / 2) + 'px;';
+    btn.appendChild(rpl);
+    setTimeout(function () { rpl.remove(); }, 600);
 
+    /* Confetti */
     var canvas = document.createElement('canvas');
     canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
     document.body.appendChild(canvas);
@@ -286,73 +241,44 @@
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
     var W = canvas.width, H = canvas.height;
-
-    /* site-palette colours */
     var colors = ['#ffffff','#e2e8f0','#93c5fd','#c4b5fd','#5eead4','#fda4af','#fdba74'];
     var particles = [];
-    /* two confetti cannons */
     var origins = [{ x: W * 0.28, y: H * 0.68 }, { x: W * 0.72, y: H * 0.68 }];
-
     for (var i = 0; i < 150; i++) {
-      var o     = origins[i % 2];
-      var side  = o.x < W / 2 ? 1 : -1;
-      var speed = Math.random() * 9 + 4;
-      var deg   = -90 + side * (Math.random() * 45);
-      var rad   = deg * Math.PI / 180;
+      var o = origins[i % 2], side = o.x < W / 2 ? 1 : -1;
+      var rad = (-90 + side * (Math.random() * 45)) * Math.PI / 180;
+      var spd = Math.random() * 9 + 4;
       particles.push({
         x: o.x + (Math.random() - 0.5) * 30, y: o.y,
-        vx: Math.cos(rad) * speed,
-        vy: Math.sin(rad) * speed,
+        vx: Math.cos(rad) * spd, vy: Math.sin(rad) * spd,
         size: Math.random() * 7 + 3,
         color: colors[Math.floor(Math.random() * colors.length)],
-        rotation: Math.random() * 360,
-        rotSpeed: (Math.random() - 0.5) * 10,
+        rotation: Math.random() * 360, rotSpeed: (Math.random() - 0.5) * 10,
         shape: Math.random() > 0.4 ? 'rect' : 'circle',
-        wobble: Math.random() * Math.PI * 2,
-        wobbleSpeed: Math.random() * 0.08 + 0.04
+        wobble: Math.random() * Math.PI * 2, wobbleSpeed: Math.random() * 0.08 + 0.04
       });
     }
-
-    var start    = Date.now();
-    var duration = 3600;
-
-    function draw() {
-      var elapsed  = Date.now() - start;
+    var start = Date.now(), duration = 3600;
+    (function draw() {
+      var elapsed = Date.now() - start;
       if (elapsed > duration) { canvas.remove(); return; }
       ctx.clearRect(0, 0, W, H);
       var progress = elapsed / duration;
-
       particles.forEach(function (p) {
-        p.vy += 0.18;
-        p.vx *= 0.99;
-        p.wobble += p.wobbleSpeed;
-        p.x += p.vx + Math.sin(p.wobble) * 0.4;
-        p.y += p.vy;
-        p.rotation += p.rotSpeed;
-        var alpha = Math.max(0, 1 - Math.pow(progress, 1.5));
+        p.vy += 0.18; p.vx *= 0.99; p.wobble += p.wobbleSpeed;
+        p.x += p.vx + Math.sin(p.wobble) * 0.4; p.y += p.vy; p.rotation += p.rotSpeed;
         ctx.save();
-        ctx.globalAlpha = alpha;
+        ctx.globalAlpha = Math.max(0, 1 - Math.pow(progress, 1.5));
         ctx.translate(p.x, p.y);
         ctx.rotate(p.rotation * Math.PI / 180);
         ctx.fillStyle = p.color;
-        if (p.shape === 'rect') {
-          ctx.fillRect(-p.size / 2, -p.size * 0.28, p.size, p.size * 0.56);
-        } else {
-          ctx.beginPath();
-          ctx.arc(0, 0, p.size * 0.45, 0, Math.PI * 2);
-          ctx.fill();
-        }
+        if (p.shape === 'rect') { ctx.fillRect(-p.size / 2, -p.size * 0.28, p.size, p.size * 0.56); }
+        else { ctx.beginPath(); ctx.arc(0, 0, p.size * 0.45, 0, Math.PI * 2); ctx.fill(); }
         ctx.restore();
       });
       requestAnimationFrame(draw);
-    }
-    requestAnimationFrame(draw);
-  }
-
-  /* 3. Detect Polar checkout completion via interceptor's CustomEvent */
-  window.addEventListener('pt:checkout:done', fireConfetti);
-  window.addEventListener('polar:checkout:confirmed', fireConfetti);
-
+    })();
+  });
 })();
 </script>
 {{ end }}
