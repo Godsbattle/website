@@ -183,6 +183,42 @@
   <p class="mt-4 text-xs opacity-30 tracking-wide uppercase">v1 — built for funded traders</p>
 </div>
 
+<!-- Polar success interceptor — MUST load before embed.global.js
+     Registers the message listener first so stopImmediatePropagation()
+     prevents Polar's deferred handler from navigating window.location -->
+<script>
+(function () {
+  var done = false;
+  window.addEventListener('message', function (e) {
+    if (done || !e.data || typeof e.data !== 'object') return;
+    var d = e.data;
+
+    /* Cover all known Polar message shapes across embed versions */
+    var confirmed =
+      (d.polar === true && d.event === 'checkout.confirmed') ||
+      (d.type === 'polar:checkout:updated' && d.data && d.data.status === 'confirmed') ||
+      d.type === 'polar:checkout:confirmed' ||
+      d.status === 'confirmed';
+
+    if (!confirmed) return;
+    done = true;
+
+    /* If Polar includes a success URL, open it in a new tab */
+    var url =
+      (d.checkout && d.checkout.successUrl) ||
+      (d.data   && (d.data.successUrl || d.data.success_url)) ||
+      d.successUrl;
+    if (url) window.open(url, '_blank', 'noopener');
+
+    /* Block Polar's embed handler from also navigating window.location */
+    try { e.stopImmediatePropagation(); } catch (x) {}
+
+    /* Notify the rest of the page */
+    window.dispatchEvent(new CustomEvent('pt:checkout:done'));
+  });
+})();
+</script>
+
 <!-- Polar embed: opens checkout overlay on click -->
 <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
 
@@ -312,13 +348,8 @@
     requestAnimationFrame(draw);
   }
 
-  /* 3. Detect Polar checkout completion (postMessage + CustomEvent) */
-  window.addEventListener('message', function (e) {
-    if (!e.data || typeof e.data !== 'object') return;
-    if (e.data.type === 'polar:checkout:confirmed' || e.data.status === 'confirmed') {
-      fireConfetti();
-    }
-  });
+  /* 3. Detect Polar checkout completion via interceptor's CustomEvent */
+  window.addEventListener('pt:checkout:done', fireConfetti);
   window.addEventListener('polar:checkout:confirmed', fireConfetti);
 
 })();
