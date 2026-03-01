@@ -10,15 +10,7 @@ sharingLinks = false
 
 <style>
   /* ── Animated gradient border on experience cards ── */
-  @property --gt-angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
-  @keyframes gt-spin {
-    to { --gt-angle: 360deg; }
-  }
-
+  /* --gt-angle is driven by JS (RAF) so no @property/@keyframes needed */
   li > .flex > .break-words {
     position: relative;
     isolation: isolate;
@@ -30,7 +22,7 @@ sharingLinks = false
     border-radius: 0.5rem; /* matches rounded-lg */
     padding: 1px;
     background: conic-gradient(
-      from var(--gt-angle),
+      from var(--gt-angle, 0deg),
       transparent 50%,
       rgba(255,255,255,0.1) 63%,
       rgba(255,255,255,0.65) 80%,
@@ -42,13 +34,12 @@ sharingLinks = false
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    animation: gt-spin 5s linear infinite;
     pointer-events: none;
   }
   /* Light mode – subtler dark stroke */
   :root:not(.dark) li > .flex > .break-words::before {
     background: conic-gradient(
-      from var(--gt-angle),
+      from var(--gt-angle, 0deg),
       transparent 50%,
       rgba(0,0,0,0.05) 63%,
       rgba(0,0,0,0.22) 80%,
@@ -106,6 +97,47 @@ sharingLinks = false
   new MutationObserver(styleButtons).observe(document.documentElement, {
     attributes: true, attributeFilter: ['class']
   });
+})();
+</script>
+
+<script>
+/* ── Gradient border: RAF-driven auto-rotate + mouse tracking ── */
+(function () {
+  function init() {
+    document.querySelectorAll('li > .flex > .break-words').forEach(function (card, i) {
+      var angle  = i * 120;   /* stagger cards: 0°, 120°, 240° */
+      var target = null;      /* null = auto-rotate, number = lerp toward mouse */
+
+      (function tick() {
+        if (target !== null) {
+          /* shortest-path lerp toward cursor angle */
+          var diff = ((target - angle + 540) % 360) - 180;
+          angle += diff * 0.1;
+        } else {
+          /* auto-rotate: ~72°/s → full revolution in 5 s at 60 fps */
+          angle = (angle + 1.2) % 360;
+        }
+        card.style.setProperty('--gt-angle', angle + 'deg');
+        requestAnimationFrame(tick);
+      })();
+
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        target = (
+          (Math.atan2(
+            e.clientY - (r.top  + r.height / 2),
+            e.clientX - (r.left + r.width  / 2)
+          ) * 180 / Math.PI) + 90 + 360
+        ) % 360;
+      });
+
+      card.addEventListener('mouseleave', function () { target = null; });
+    });
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init)
+    : init();
 })();
 </script>
 
