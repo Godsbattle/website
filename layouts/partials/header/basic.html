@@ -22,7 +22,7 @@
     {{ end }}
   {{ end }}
   {{ if not .Site.Params.disableTextInHeader | default true }}
-    <a href="{{ "" | relLangURL }}" class="text-base font-medium truncate min-w-0 shrink" style="text-decoration:none;">
+    <a href="{{ "" | relLangURL }}" class="hidden md:inline text-base font-medium truncate min-w-0 shrink" style="text-decoration:none;">
       {{ .Site.Title | markdownify }}<span aria-hidden="true" style="opacity:0.3; display:inline-block; width:1px; height:0.85em; background:currentColor; vertical-align:middle; margin:0 0.4em;"></span>{{ .Site.Params.Author.name | default "" }}
     </a>
   {{ end }}

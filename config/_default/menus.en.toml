@@ -14,6 +14,8 @@
   name = "Posts"
   pageRef = "posts"
   weight = 10
+  [main.params]
+    mobileHide = true
 
 [[main]]
   name = "Resume"
@@ -24,6 +26,8 @@
   name = "Contact"
   pageRef = "contact"
   weight = 60
+  [main.params]
+    mobileHide = true
 
 [[main]]
   name = "Prop Tracker 👨🏾‍🚀"
