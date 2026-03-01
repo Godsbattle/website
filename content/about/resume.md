@@ -22,7 +22,10 @@ sharingLinks = false
   li > .flex > .break-words {
     position: relative;
     isolation: isolate;
+    will-change: transform;
+    transform-style: preserve-3d;
   }
+
   li > .flex > .break-words::before {
     content: '';
     position: absolute;
@@ -106,6 +109,39 @@ sharingLinks = false
   new MutationObserver(styleButtons).observe(document.documentElement, {
     attributes: true, attributeFilter: ['class']
   });
+})();
+</script>
+
+<script>
+/* ── 3D tilt on experience cards ── */
+(function () {
+  function init() {
+    document.querySelectorAll('li > .flex > .break-words').forEach(function (card) {
+
+      card.addEventListener('mouseenter', function () {
+        card.style.transition = 'transform 0.2s ease';
+      });
+
+      card.addEventListener('mousemove', function (e) {
+        var r  = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width  - 0.5; /* -0.5 → 0.5 */
+        var py = (e.clientY - r.top)  / r.height - 0.5;
+
+        card.style.transition = 'none'; /* instant tracking */
+        card.style.transform  =
+          'perspective(1000px) rotateX(' + (py * -6) + 'deg) rotateY(' + (px * 6) + 'deg) scale3d(1.015,1.015,1.015)';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transition = 'transform 0.6s ease';
+        card.style.transform  = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+      });
+    });
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init)
+    : init();
 })();
 </script>
 
