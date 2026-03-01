@@ -1,6 +1,6 @@
 {{ define "main" }}
 <style>
-  /* ── Switching subtitle word ───────────────────────────── */
+  /* ── Switching subtitle phrase ─────────────────────────── */
   :root {
     --pt-w1: #0f766e; /* teal-700   */
     --pt-w2: #15803d; /* green-700  */
@@ -11,11 +11,18 @@
     --pt-w2: #86efac; /* green-300  */
     --pt-w3: #c4b5fd; /* violet-300 */
   }
+  /* clip box — hides text that is above/below during the swipe */
+  .pt-word-wrap {
+    display: inline-block;
+    overflow: hidden;
+    height: 1.45em;
+    line-height: 1.45;
+    vertical-align: bottom;
+  }
   .pt-word {
-    transition: opacity 0.15s ease;
+    display: inline-block;
     font-style: italic;
   }
-  .pt-word.hidden { opacity: 0; }
 
   /* ── CTA arrow slide ────────────────────────────────────── */
   .pt-cta-arrow {
@@ -169,7 +176,7 @@
   </h1>
 
   <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto opacity-50 leading-relaxed mb-10">
-    Track every prop firm <span class="pt-word" id="ptWord" style="color:var(--pt-w1);">challenge</span> — all in one place.
+    Track every <span class="pt-word-wrap"><span class="pt-word" id="ptWord" style="color:var(--pt-w2);">prop firm payout</span></span> — all in one place.
     Built for funded traders who want clarity, not chaos.
   </p>
 
@@ -214,25 +221,45 @@
 <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
 
 <script>
-/* ── Subtitle word switcher ── */
+/* ── Subtitle phrase swiper ── */
 (function () {
   var words = [
-    { text: 'challenge', color: 'var(--pt-w1)' },
-    { text: 'payout',    color: 'var(--pt-w2)' },
-    { text: 'expense',   color: 'var(--pt-w3)' }
+    { text: 'prop firm payout',    color: 'var(--pt-w2)' },
+    { text: 'prop firm challenge', color: 'var(--pt-w1)' },
+    { text: 'trading expense',     color: 'var(--pt-w3)' }
   ];
   var idx  = 0;
   var span = document.getElementById('ptWord');
   if (!span) return;
-  setInterval(function () {
-    span.classList.add('hidden');
+
+  function swipe() {
+    /* slide current phrase up + fade out */
+    span.style.transition = 'transform 0.28s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease';
+    span.style.transform  = 'translateY(-115%)';
+    span.style.opacity    = '0';
+
     setTimeout(function () {
+      /* update content while hidden */
       idx = (idx + 1) % words.length;
       span.textContent = words[idx].text;
       span.style.color = words[idx].color;
-      span.classList.remove('hidden');
-    }, 150);
-  }, 2200);
+
+      /* snap to below without animating */
+      span.style.transition = 'none';
+      span.style.transform  = 'translateY(115%)';
+      span.style.opacity    = '0';
+
+      /* force reflow so browser registers the start position */
+      void span.offsetHeight;
+
+      /* slide up into place */
+      span.style.transition = 'transform 0.38s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease';
+      span.style.transform  = 'translateY(0)';
+      span.style.opacity    = '1';
+    }, 290);
+  }
+
+  setInterval(swipe, 2400);
 })();
 </script>
 
