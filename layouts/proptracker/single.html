@@ -1,28 +1,25 @@
 {{ define "main" }}
 <style>
   /* ── Switching subtitle phrase ─────────────────────────── */
-  :root {
-    --pt-w1: #b45309; /* amber-700  */
-    --pt-w2: #0e7490; /* cyan-700   */
-    --pt-w3: #be185d; /* pink-700   */
-  }
-  .dark {
-    --pt-w1: #fbbf24; /* amber-400  */
-    --pt-w2: #22d3ee; /* cyan-400   */
-    --pt-w3: #f472b6; /* pink-400   */
-  }
   /* clip box — hides text that is above/below during the swipe */
   .pt-word-wrap {
     display: inline-block;
     overflow: hidden;
-    height: 1.45em;
-    line-height: 1.45;
-    vertical-align: bottom;
+    height: 1.15em;
+    line-height: 1.15;
+    vertical-align: text-top;
   }
   .pt-word {
     display: inline-block;
     font-style: italic;
+    font-weight: 600;
   }
+  .pt-w1 { color: #f97316; }
+  .dark .pt-w1 { color: #fb923c; }
+  .pt-w2 { color: #16a34a; }
+  .dark .pt-w2 { color: #4ade80; }
+  .pt-w3 { color: #dc2626; }
+  .dark .pt-w3 { color: #f87171; }
 
   /* ── CTA arrow slide ────────────────────────────────────── */
   .pt-cta-arrow {
@@ -175,9 +172,9 @@
     Prop Tracker 👨🏾‍🚀
   </h1>
 
-  <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto opacity-50 leading-relaxed mb-10">
-    Track every <span class="pt-word-wrap"><span class="pt-word" id="ptWord" style="color:var(--pt-w2);">prop firm payout</span></span> — all in one place.
-    Built for funded traders who want clarity, not chaos.
+  <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto leading-relaxed mb-10">
+    <span class="opacity-50">Track every </span><span class="pt-word-wrap"><span class="pt-word pt-w2" id="ptWord">prop firm payout</span></span><span class="opacity-50"> — all in one place.
+    Built for funded traders who want clarity, not chaos.</span>
   </p>
 
 </section>
@@ -224,9 +221,9 @@
 /* ── Subtitle phrase swiper ── */
 (function () {
   var words = [
-    { text: 'prop firm payout',    color: 'var(--pt-w2)' },
-    { text: 'prop firm challenge', color: 'var(--pt-w1)' },
-    { text: 'trading expense',     color: 'var(--pt-w3)' }
+    { text: 'prop firm payout',    cls: 'pt-w2' },
+    { text: 'prop firm challenge', cls: 'pt-w1' },
+    { text: 'trading expense',     cls: 'pt-w3' }
   ];
   var idx  = 0;
   var span = document.getElementById('ptWord');
@@ -242,7 +239,7 @@
       /* update content while hidden */
       idx = (idx + 1) % words.length;
       span.textContent = words[idx].text;
-      span.style.color = words[idx].color;
+      span.className = 'pt-word ' + words[idx].cls;
 
       /* snap to below without animating */
       span.style.transition = 'none';
