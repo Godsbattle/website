@@ -79,21 +79,34 @@
     color: #fff !important;
   }
 
-  /* Subtle hover pill on desktop nav links and icon buttons */
+  /* Subtle hover pill on desktop nav links and icon buttons —
+     vertical padding matches Prop Tracker so height is consistent */
   .main-menu nav a:not([href="/proptracker/"]) {
     border-radius: 0.5rem;
-    padding: 0.25rem 0.45rem;
+    padding: 0.45rem 0.65rem;
     transition: background 0.15s ease;
   }
-  .main-menu nav a:not([href="/proptracker/"]):hover {
+  /* Background-only hover — no text colour change */
+  .main-menu nav a:not([href="/proptracker/"]):hover,
+  .main-menu nav a:not([href="/proptracker/"]):hover span {
     background: rgba(255,255,255,0.09);
+    color: inherit !important;
   }
-  :root:not(.dark) .main-menu nav a:not([href="/proptracker/"]):hover {
+  :root:not(.dark) .main-menu nav a:not([href="/proptracker/"]):hover,
+  :root:not(.dark) .main-menu nav a:not([href="/proptracker/"]):hover span {
     background: rgba(0,0,0,0.06);
+    color: inherit !important;
+  }
+  /* Fix: background bleeds onto span — only apply to the <a> */
+  .main-menu nav a:not([href="/proptracker/"]):hover span {
+    background: none;
+  }
+  :root:not(.dark) .main-menu nav a:not([href="/proptracker/"]):hover span {
+    background: none;
   }
   .main-menu nav button {
     border-radius: 0.5rem;
-    padding: 0.25rem 0.45rem;
+    padding: 0.45rem 0.55rem;
     transition: background 0.15s ease;
   }
   .main-menu nav button:hover {
