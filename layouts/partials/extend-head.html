@@ -1,4 +1,23 @@
 <style>
+  /* Thumbnail cards — responsive 16:9 landscape instead of fixed 200px height */
+  .thumbnail_card {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    min-width: 0 !important;
+  }
+  .thumbnail_card img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Remove wasted space at bottom of blog cards */
+  .article-link--card {
+    min-height: 0 !important;
+  }
+  .article-link--card > div:last-child {
+    display: none;
+  }
+
   /* White-filter brand icons (theproptrade, pokerfuckindao, etc.) are
      invisible in light mode. Invert so they appear dark on light backgrounds. */
   :root:not(.dark) .monochrome-logo {
@@ -11,40 +30,106 @@
     height: 3rem !important;
   }
 
+  /* Lighter, more minimal header text */
+  .main-menu > a {
+    font-weight: 300 !important;
+    font-size: 0.875rem !important;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+  }
+  .main-menu nav a span {
+    font-weight: 300 !important;
+    letter-spacing: 0.02em;
+  }
+
+  /* Prop Tracker nav button */
+  .main-menu nav a[href="/proptracker/"] {
+    background: rgba(255,255,255,0.92);
+    color: #111 !important;
+    border-radius: 0.75rem;
+    padding: 0.45rem 1.1rem;
+    transition: background 0.15s;
+  }
+  .main-menu nav a[href="/proptracker/"]:hover {
+    background: rgba(255,255,255,1);
+  }
+  .main-menu nav a[href="/proptracker/"] span {
+    font-weight: 400 !important;
+    letter-spacing: 0;
+    font-size: 0.9rem;
+  }
+  :root:not(.dark) .main-menu nav a[href="/proptracker/"] {
+    background: #111;
+    color: #fff !important;
+  }
+  :root:not(.dark) .main-menu nav a[href="/proptracker/"]:hover {
+    background: #333;
+  }
+  :root:not(.dark) .main-menu nav a[href="/proptracker/"] span {
+    color: #fff !important;
+  }
+
   /* Logo fills inherit text color, so it matches light/dark mode automatically */
   .logo svg path {
     fill: currentColor;
   }
 
-  /* Bio role cycling animation */
+  /* Bio role accent colours — WCAG-compliant on both backgrounds */
+  :root {
+    --bio-1: #1d4ed8; /* blue-700   — readable on white */
+    --bio-2: #6d28d9; /* violet-700 */
+    --bio-3: #0f766e; /* teal-700   */
+    --bio-4: #be123c; /* rose-700   */
+    --bio-5: #c2410c; /* orange-700 */
+  }
+  .dark {
+    --bio-1: #93c5fd; /* blue-300   — readable on near-black */
+    --bio-2: #c4b5fd; /* violet-300 */
+    --bio-3: #5eead4; /* teal-300   */
+    --bio-4: #fda4af; /* rose-300   */
+    --bio-5: #fdba74; /* orange-300 */
+  }
+
+  /* Bio role cycling */
   .bio-role {
     display: inline-block;
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(59,130,246,0.10) 100%);
     min-width: 1ch;
+    transition: opacity 0.15s ease;
+    opacity: 0.85;
   }
+  .bio-role.hidden { opacity: 0; }
 
-  @keyframes bioSnapIn {
-    from { opacity: 0; transform: scale(0.97); }
-    to   { opacity: 1; transform: scale(1);    }
+  /* Subtle dot-grid background — adapts to dark/light automatically */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
   }
-
-  @keyframes bioSnapOut {
-    from { opacity: 1; }
-    to   { opacity: 0; }
+  .dark body::before {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
   }
-
-  .bio-role.entering { animation: bioSnapIn  0.15s ease-out forwards; }
-  .bio-role.leaving  { animation: bioSnapOut 0.1s  ease-in  forwards; }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
-      { text: 'Community Manager', color: '#fbbf24' },
-      { text: 'Futures Trader',    color: '#fb923c' },
-      { text: 'Noob Dev',          color: '#f87171' },
-      { text: 'Graphics Designer', color: '#fcd34d' },
-      { text: 'Web Video Producer',color: '#fdba74' }
+      { text: 'Community Manager', color: 'var(--bio-1)' },
+      { text: 'Futures Trader',    color: 'var(--bio-2)' },
+      { text: 'Noob Dev',          color: 'var(--bio-3)' },
+      { text: 'Graphics Designer', color: 'var(--bio-4)' },
+      { text: 'Web Video Producer',color: 'var(--bio-5)' }
     ];
     var idx = 0;
 
@@ -54,19 +139,19 @@
     });
     if (!bio) return;
 
-    bio.innerHTML = '🚀 <span class="bio-role entering"></span>';
+    bio.innerHTML = '<span class="bio-role"></span>';
     var span = bio.querySelector('.bio-role');
     span.textContent = roles[0].text;
     span.style.color  = roles[0].color;
 
     setInterval(function () {
-      span.className = 'bio-role leaving';
+      span.classList.add('hidden');
       setTimeout(function () {
         idx = (idx + 1) % roles.length;
         span.textContent = roles[idx].text;
         span.style.color  = roles[idx].color;
-        span.className = 'bio-role entering';
-      }, 110);
+        span.classList.remove('hidden');
+      }, 150);
     }, 2500);
   });
 </script>

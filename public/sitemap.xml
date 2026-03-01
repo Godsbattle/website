@@ -192,6 +192,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/proptracker/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/about/resume/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

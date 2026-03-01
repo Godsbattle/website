@@ -8,6 +8,59 @@ sharingLinks = false
  
 +++
 
+<style>
+  /* Timeline date badges — more pronounced */
+  span.rounded-md.border.border-primary-400 {
+    border-color: rgba(255,255,255,0.4) !important;
+    color: rgba(255,255,255,0.85) !important;
+    background: rgba(255,255,255,0.07);
+  }
+  :root:not(.dark) span.rounded-md.border.border-primary-400 {
+    border-color: rgba(0,0,0,0.28) !important;
+    color: rgba(0,0,0,0.65) !important;
+    background: rgba(0,0,0,0.04);
+  }
+
+  /* Website buttons — base layout (colors set via JS to beat Tailwind's !important) */
+  a[role="button"][class*="bg-primary"] {
+    border-radius: 0.75rem !important;
+    padding: 0.55rem 1.4rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: opacity 0.15s !important;
+  }
+  a[role="button"][class*="bg-primary"] span,
+  a[role="button"][class*="bg-primary"] svg {
+    background: transparent !important;
+  }
+  a[role="button"][class*="bg-primary"]:hover {
+    opacity: 0.85 !important;
+  }
+</style>
+
+<script>
+(function () {
+  function styleButtons() {
+    var dark = document.documentElement.classList.contains('dark');
+    var bg   = dark ? 'rgba(255,255,255,0.92)' : '#111';
+    var fg   = dark ? '#111' : '#fff';
+    document.querySelectorAll('a[role="button"][class*="bg-primary"]').forEach(function (btn) {
+      btn.style.setProperty('background', bg, 'important');
+      btn.style.setProperty('color',      fg, 'important');
+      btn.querySelectorAll('span, svg').forEach(function (el) {
+        el.style.setProperty('color',      fg,          'important');
+        el.style.setProperty('background', 'transparent', 'important');
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', styleButtons);
+  new MutationObserver(styleButtons).observe(document.documentElement, {
+    attributes: true, attributeFilter: ['class']
+  });
+})();
+</script>
+
 ## Experience
 
 {{< timeline >}}

@@ -59,12 +59,6 @@
         
       
     
-      
-        
-          <link href="https://selar.com/335737k1f5" rel="me">
-        
-      
-    
   
 
   
@@ -123,8 +117,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.cd2c1a31da84aaa9f85d1999c16af70c07ef813c137950f7fda22d3fdcc7ad31f6f93ad08238718844046447f693741c10a2c01d0c4e3c1d39bc6b5f6bafd41e.css"
-    integrity="sha512-zSwaMdqEqqn4XRmZwWr3DAfvgTwTeVD3/aItP9zHrTH2&#43;TrQgjhxiEQEZEf2k3QcEKLAHQxOPB05vGtfa6/UHg==">
+    href="/css/main.bundle.min.2c3e4365f22f1ca4ac57538c8338a7a54671072e4edacf38e7c77ba87ff35a4b51e8b956acd0179302b474fbbcb1013551ee9ed4cd505ab84da0a07890a8ad83.css"
+    integrity="sha512-LD5DZfIvHKSsV1OMgzinpUZxBy5O2s8458d7qH/zWktR6LlWrNAXkwK0dPu8sQE1Ue6e1M1QWrhNoKB4kKitgw==">
 
   
   
@@ -278,6 +272,25 @@
   
     <style>
    
+  .thumbnail_card {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    min-width: 0 !important;
+  }
+  .thumbnail_card img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+   
+  .article-link--card {
+    min-height: 0 !important;
+  }
+  .article-link--card > div:last-child {
+    display: none;
+  }
+
+   
   :root:not(.dark) .monochrome-logo {
     filter: invert(1);
   }
@@ -289,39 +302,105 @@
   }
 
    
+  .main-menu > a {
+    font-weight: 300 !important;
+    font-size: 0.875rem !important;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+  }
+  .main-menu nav a span {
+    font-weight: 300 !important;
+    letter-spacing: 0.02em;
+  }
+
+   
+  .main-menu nav a[href="/proptracker/"] {
+    background: rgba(255,255,255,0.92);
+    color: #111 !important;
+    border-radius: 0.75rem;
+    padding: 0.45rem 1.1rem;
+    transition: background 0.15s;
+  }
+  .main-menu nav a[href="/proptracker/"]:hover {
+    background: rgba(255,255,255,1);
+  }
+  .main-menu nav a[href="/proptracker/"] span {
+    font-weight: 400 !important;
+    letter-spacing: 0;
+    font-size: 0.9rem;
+  }
+  :root:not(.dark) .main-menu nav a[href="/proptracker/"] {
+    background: #111;
+    color: #fff !important;
+  }
+  :root:not(.dark) .main-menu nav a[href="/proptracker/"]:hover {
+    background: #333;
+  }
+  :root:not(.dark) .main-menu nav a[href="/proptracker/"] span {
+    color: #fff !important;
+  }
+
+   
   .logo svg path {
     fill: currentColor;
   }
 
    
+  :root {
+    --bio-1: #1d4ed8;  
+    --bio-2: #6d28d9;  
+    --bio-3: #0f766e;  
+    --bio-4: #be123c;  
+    --bio-5: #c2410c;  
+  }
+  .dark {
+    --bio-1: #93c5fd;  
+    --bio-2: #c4b5fd;  
+    --bio-3: #5eead4;  
+    --bio-4: #fda4af;  
+    --bio-5: #fdba74;  
+  }
+
+   
   .bio-role {
     display: inline-block;
-    font-weight: 300;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(59,130,246,0.10) 100%);
     min-width: 1ch;
+    transition: opacity 0.15s ease;
+    opacity: 0.85;
   }
+  .bio-role.hidden { opacity: 0; }
 
-  @keyframes bioSnapIn {
-    from { opacity: 0; transform: scale(0.97); }
-    to   { opacity: 1; transform: scale(1);    }
+   
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
   }
-
-  @keyframes bioSnapOut {
-    from { opacity: 1; }
-    to   { opacity: 0; }
+  .dark body::before {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
   }
-
-  .bio-role.entering { animation: bioSnapIn  0.15s ease-out forwards; }
-  .bio-role.leaving  { animation: bioSnapOut 0.1s  ease-in  forwards; }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
-      { text: 'Community Manager', color: '#fbbf24' },
-      { text: 'Futures Trader',    color: '#fb923c' },
-      { text: 'Noob Dev',          color: '#f87171' },
-      { text: 'Graphics Designer', color: '#fcd34d' },
-      { text: 'Web Video Producer',color: '#fdba74' }
+      { text: 'Community Manager', color: 'var(--bio-1)' },
+      { text: 'Futures Trader',    color: 'var(--bio-2)' },
+      { text: 'Noob Dev',          color: 'var(--bio-3)' },
+      { text: 'Graphics Designer', color: 'var(--bio-4)' },
+      { text: 'Web Video Producer',color: 'var(--bio-5)' }
     ];
     var idx = 0;
 
@@ -331,22 +410,23 @@
     });
     if (!bio) return;
 
-    bio.innerHTML = '🚀 <span class="bio-role entering"></span>';
+    bio.innerHTML = '<span class="bio-role"></span>';
     var span = bio.querySelector('.bio-role');
     span.textContent = roles[0].text;
     span.style.color  = roles[0].color;
 
     setInterval(function () {
-      span.className = 'bio-role leaving';
+      span.classList.add('hidden');
       setTimeout(function () {
         idx = (idx + 1) % roles.length;
         span.textContent = roles[idx].text;
         span.style.color  = roles[idx].color;
-        span.className = 'bio-role entering';
-      }, 110);
+        span.classList.remove('hidden');
+      }, 150);
     }, 2500);
   });
 </script>
+
   
 
   
@@ -393,7 +473,7 @@
   <div
     id="menu-blur"
     class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
-  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+  <div class="relative w-full px-4 sm:px-6 leading-7">
     <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
   
     
@@ -411,35 +491,14 @@
     
   
   
-    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
-      GodsBattle
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink" style="text-decoration:none;">
+      GodsBattle<span aria-hidden="true" style="opacity:0.3; display:inline-block; width:1px; height:0.85em; background:currentColor; vertical-align:middle; margin:0 0.4em;"></span>Christian Obanaka
     </a>
   
   <div class="flex items-center ms-auto">
     <div class="hidden md:flex">
       <nav class="flex items-center gap-x-5 h-12">
   
-    
-      
-  
-    <a
-      href="https://youtube.com/godsbattle"
-      
-        target="_blank"
-      
-      class="flex items-center bf-icon-color-hover"
-      aria-label="youtube"
-      title="">
-      
-        <span >
-          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
-</span>
-        </span>
-      
-      
-    </a>
-  
-
     
       
   
@@ -462,17 +521,15 @@
       
   
     <a
-      href="https://products.godsbattle.net"
-      
-        target="_blank"
+      href="/about/resume/"
       
       class="flex items-center bf-icon-color-hover"
-      aria-label="👨🏾‍🚀 Prop Tracker"
-      title="">
+      aria-label="Resume"
+      title="Resume">
       
       
         <span class="text-base font-medium break-normal">
-          👨🏾‍🚀 Prop Tracker
+          Resume
         </span>
       
     </a>
@@ -481,76 +538,37 @@
     
       
   
-    <div class="nested-menu">
-      <div class="cursor-pointer flex items-center">
-        <a
-          
-            href="/about/"
-            
-          
-          aria-label="About"
-          class="flex items-center text-base font-medium bf-icon-color-hover"
-          title="GodsBattle | Christian Obanaka">
-          
-          <span class="text-bg font-bg break-normal" title="GodsBattle | Christian Obanaka">
-            About
-          </span>
-          <span>
-            <span class="relative block icon"><svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 20 20"
-  fill="currentColor"
-  aria-hidden="true"
->
-  <path
-    fill-rule="evenodd"
-    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-    clip-rule="evenodd"
-  />
-</svg>
-</span>
-          </span>
-        </a>
-      </div>
-      <div class="menuhide">
-        <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl bg-neutral/25 dark:bg-neutral-800/25">
-          <div class="flex flex-col space-y-3">
-            
-              <a
-                href="/about/resume/"
-                
-                aria-label="Resume"
-                class="flex items-center bf-icon-color-hover">
-                
-                  <span class="mr-1">
-                    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
-</span>
-                  </span>
-                
-                <span class="text-sm font-sm" title="Resume">
-                  Resume
-                </span>
-              </a>
-            
-              <a
-                href="/about/contact/"
-                
-                aria-label="Contact"
-                class="flex items-center bf-icon-color-hover">
-                
-                  <span class="mr-1">
-                    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span>
-                  </span>
-                
-                <span class="text-sm font-sm" title="Contact">
-                  Contact
-                </span>
-              </a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+    <a
+      href="/about/contact/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Contact"
+      title="Contact Me">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Contact
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/proptracker/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Prop Tracker 👨🏾‍🚀"
+      title="Prop Tracker">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Prop Tracker 👨🏾‍🚀
+        </span>
+      
+    </a>
   
 
     
@@ -566,7 +584,7 @@
       aria-label="Search"
       class="text-base bf-icon-color-hover"
       title="Search (/)">
-      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 </span>
     </button>
   
@@ -602,7 +620,7 @@
       aria-label="Search"
       class="flex items-center justify-center bf-icon-color-hover"
       title="Search (/)">
-      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 </span>
     </button>
   
@@ -649,30 +667,6 @@
     
     <div class="px-2">
       <a
-        href="https://youtube.com/godsbattle"
-        aria-label="youtube"
-        
-          target="_blank"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-          <span class="flex items-center justify-center h-8 w-8 text-2xl">
-            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
-</span>
-          </span>
-        
-        <span title="" class="text-2xl font-bold tracking-tight">
-          
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
         href="/posts/"
         aria-label="Posts"
         
@@ -690,15 +684,13 @@
     
     <div class="px-2">
       <a
-        href="https://products.godsbattle.net"
-        aria-label="👨🏾‍🚀 Prop Tracker"
-        
-          target="_blank"
+        href="/about/resume/"
+        aria-label="Resume"
         
         class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
         
-        <span title="" class="text-2xl font-bold tracking-tight">
-          👨🏾‍🚀 Prop Tracker
+        <span title="Resume" class="text-2xl font-bold tracking-tight">
+          Resume
         </span>
         
       </a>
@@ -709,77 +701,34 @@
     
     <div class="px-2">
       <a
-        href="/about/"
-        aria-label="About"
+        href="/about/contact/"
+        aria-label="Contact"
         
         class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
         
-        <span title="GodsBattle | Christian Obanaka" class="text-2xl font-bold tracking-tight">
-          About
+        <span title="Contact Me" class="text-2xl font-bold tracking-tight">
+          Contact
         </span>
-        
-          <label
-            for="fullscreen-submenu-about"
-            class="ms-auto flex items-center justify-center h-10 w-10 cursor-pointer rounded-lg bf-icon-color-hover border bf-border-color bf-border-color-hover">
-            <span class="relative block icon"><svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 20 20"
-  fill="currentColor"
-  aria-hidden="true"
->
-  <path
-    fill-rule="evenodd"
-    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-    clip-rule="evenodd"
-  />
-</svg>
-</span>
-          </label>
         
       </a>
 
       
-        <input checked type="checkbox" id="fullscreen-submenu-about" autocomplete="off" class="hidden peer/full">
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/proptracker/"
+        aria-label="Prop Tracker 👨🏾‍🚀"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Prop Tracker" class="text-2xl font-bold tracking-tight">
+          Prop Tracker 👨🏾‍🚀
+        </span>
+        
+      </a>
 
-        <div
-          class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 peer-checked/full:grid-rows-[1fr]">
-          <div class="overflow-hidden">
-            <div class="ms-7 mt-4">
-              
-                <a
-                  href="/about/resume/"
-                  aria-label="Resume"
-                  
-                  class="flex items-center gap-3 p-2 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-                  
-                    <span class="flex items-center justify-center h-5 w-5">
-                      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
-</span>
-                    </span>
-                  
-                  <span title="Resume" class="text-lg">
-                    Resume
-                  </span>
-                </a>
-              
-                <a
-                  href="/about/contact/"
-                  aria-label="Contact"
-                  
-                  class="flex items-center gap-3 p-2 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-                  
-                    <span class="flex items-center justify-center h-5 w-5">
-                      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span>
-                    </span>
-                  
-                  <span title="Contact" class="text-lg">
-                    Contact
-                  </span>
-                </a>
-              
-            </div>
-          </div>
-        </div>
       
     </div>
   
@@ -1156,7 +1105,10 @@
           aria-label="Envelope"
           title="Envelope"
           rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span></span></a
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+</svg>
+</span></span></a
         >
       
     
@@ -1182,20 +1134,6 @@
           title="X-Twitter"
           rel="me noopener noreferrer"
           ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></span></span></a
-        >
-      
-    
-      
-        <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
-          href="https://selar.com/335737k1f5"
-          target="_blank"
-          aria-label="Shop"
-          title="Shop"
-          rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
-  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"/>
-</svg></span></span></a
         >
       
     
@@ -1757,7 +1695,7 @@
     <header class="relative z-10 flex items-center justify-between flex-none px-2">
       <form class="flex items-center flex-auto min-w-0">
         <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
-          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 </span>
         </div>
         <input

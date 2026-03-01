@@ -40,7 +40,7 @@ defaultBackgroundImage = "" # used as default for background images
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/chillanimatedbg.svg" # used in: hero, and card
+  homepageImage = "" # used in: hero, and card
   showRecent = true
   showRecentItems = 3
   showMoreLink = true

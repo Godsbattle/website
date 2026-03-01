@@ -1,0 +1,179 @@
+{{ define "main" }}
+<style>
+  /* ── Badge ─────────────────────────────────────────────── */
+  .pt-badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    background: rgba(128,128,128,0.25);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ── CTA ────────────────────────────────────────────────── */
+  .pt-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2.5rem;
+    border-radius: 0.65rem;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #000;
+    color: #fff;
+    transition: opacity 0.15s;
+  }
+  .dark .pt-cta {
+    background: #fff;
+    color: #000;
+  }
+  .pt-cta:hover { opacity: 0.75; }
+
+  /* ── Carousel ───────────────────────────────────────────── */
+  .pt-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .pt-carousel-track::-webkit-scrollbar { display: none; }
+
+  .pt-slide {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .pt-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  /* Dots */
+  .pt-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.25;
+    transition: opacity 0.2s, width 0.2s;
+    cursor: pointer;
+  }
+  .pt-dot.active {
+    width: 20px;
+    border-radius: 3px;
+    opacity: 1;
+  }
+
+  /* ── Feature chips ──────────────────────────────────────── */
+  .pt-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(128,128,128,0.2);
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.65;
+    white-space: nowrap;
+  }
+
+  /* ── Bottom CTA ─────────────────────────────────────────── */
+  .pt-cta-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2.5rem;
+    border-radius: 0.65rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border: 1.5px solid currentColor;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+  .pt-cta-outline:hover { opacity: 1; }
+</style>
+
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="w-full max-w-4xl mx-auto px-4 sm:px-8 pt-12 pb-0 text-center">
+
+  <div class="flex justify-center mb-5">
+    <span class="pt-badge">New Product</span>
+  </div>
+
+  <h1 style="font-size: clamp(3rem, 9vw, 6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05;" class="mb-5">
+    Prop Tracker 👨🏾‍🚀
+  </h1>
+
+  <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto opacity-50 leading-relaxed mb-10">
+    Track every prop firm challenge, payout, and expense — all in one place.
+    Built for funded traders who want clarity, not chaos.
+  </p>
+
+</section>
+
+<!-- ── Mockup image (edge-to-edge feel) ──────────────────── -->
+<div class="w-full max-w-5xl mx-auto mt-12 px-4 sm:px-6">
+  <div class="pt-carousel-track rounded-2xl overflow-hidden" style="background:#ede8df; border: 6px solid #1a1a1a; box-shadow: 0 0 0 1px rgba(255,255,255,0.06);" id="ptTrack">
+    <div class="pt-slide">
+      <img src="/img/proptracker/desktop.webp" alt="Prop Tracker desktop view"
+           onerror="this.closest('.pt-slide').style.display='none'">
+    </div>
+    <div class="pt-slide">
+      <img src="/img/proptracker/mobile-1.webp" alt="Prop Tracker mobile view"
+           onerror="this.closest('.pt-slide').style.display='none'">
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="flex items-center justify-center gap-2 mt-4" id="ptDots">
+    <button class="pt-dot active" data-idx="0" aria-label="Slide 1"></button>
+    <button class="pt-dot" data-idx="1" aria-label="Slide 2"></button>
+  </div>
+</div>
+
+<!-- ── Bottom CTA ────────────────────────────────────────── -->
+<div class="text-center mt-16 mb-24">
+  <a class="gumroad-button" href="https://chrisgoingturbo.gumroad.com/l/proptracker">Buy on</a>
+  <p class="mt-4 text-xs opacity-30 tracking-wide uppercase">v1 — built for funded traders</p>
+</div>
+
+<script src="https://gumroad.com/js/gumroad.js"></script>
+
+<script>
+  (function () {
+    var track = document.getElementById('ptTrack');
+    var dots  = document.querySelectorAll('#ptDots .pt-dot');
+    if (!track || !dots.length) return;
+
+    var slides = track.querySelectorAll('.pt-slide');
+
+    function goTo(idx) {
+      slides[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () { goTo(parseInt(dot.dataset.idx)); });
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var idx = Array.from(slides).indexOf(e.target);
+          if (idx !== -1) dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+        }
+      });
+    }, { root: track, threshold: 0.6 });
+
+    slides.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+{{ end }}
