@@ -30,6 +30,16 @@
     height: 3rem !important;
   }
 
+  /* Site title — hidden on mobile, visible on desktop */
+  .header-site-title {
+    display: none;
+  }
+  @media (width >= 853px) {
+    .header-site-title {
+      display: inline;
+    }
+  }
+
   /* Lighter, more minimal header text */
   .main-menu > a {
     font-weight: 300 !important;
@@ -67,6 +77,30 @@
   }
   :root:not(.dark) .main-menu nav a[href="/proptracker/"] span {
     color: #fff !important;
+  }
+
+  /* Subtle hover pill on desktop nav links and icon buttons */
+  .main-menu nav a:not([href="/proptracker/"]) {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.45rem;
+    transition: background 0.15s ease;
+  }
+  .main-menu nav a:not([href="/proptracker/"]):hover {
+    background: rgba(255,255,255,0.09);
+  }
+  :root:not(.dark) .main-menu nav a:not([href="/proptracker/"]):hover {
+    background: rgba(0,0,0,0.06);
+  }
+  .main-menu nav button {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.45rem;
+    transition: background 0.15s ease;
+  }
+  .main-menu nav button:hover {
+    background: rgba(255,255,255,0.09);
+  }
+  :root:not(.dark) .main-menu nav button:hover {
+    background: rgba(0,0,0,0.06);
   }
 
   /* Logo fills inherit text color, so it matches light/dark mode automatically */
