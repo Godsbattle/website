@@ -9,7 +9,7 @@
           {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}
             target="_blank"
           {{ end }}
-          class="text-sm font-medium whitespace-nowrap"
+          class="text-base font-medium whitespace-nowrap"
           style="text-decoration:none; background:rgba(255,255,255,0.92); color:#111; border-radius:0.75rem; padding:0.4rem 1rem; transition:background 0.15s;">
           {{ .Name | markdownify }}
         </a>
@@ -19,7 +19,7 @@
           {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}
             target="_blank"
           {{ end }}
-          class="text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 whitespace-nowrap"
+          class="text-base font-medium text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 whitespace-nowrap"
           style="text-decoration:none;">
           {{ .Name | markdownify }}
         </a>
