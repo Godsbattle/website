@@ -33,6 +33,8 @@
   name = "Prop Tracker 👨🏾‍🚀"
   pageRef = "proptracker"
   weight = 70
+  [main.params]
+    mobileButton = true
 
 
 

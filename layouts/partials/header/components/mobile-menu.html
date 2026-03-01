@@ -1,4 +1,33 @@
 <div class="flex items-center h-14 gap-4">
+
+  {{/* Inline nav — Resume plain, Prop Tracker as button */}}
+  {{ range .Site.Menus.main }}
+    {{ if not .Params.mobileHide }}
+      {{ if .Params.mobileButton }}
+        <a
+          href="{{ .URL }}"
+          {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}
+            target="_blank"
+          {{ end }}
+          class="text-sm font-medium whitespace-nowrap"
+          style="text-decoration:none; background:rgba(255,255,255,0.92); color:#111; border-radius:0.75rem; padding:0.4rem 1rem; transition:background 0.15s;">
+          {{ .Name | markdownify }}
+        </a>
+      {{ else }}
+        <a
+          href="{{ .URL }}"
+          {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}
+            target="_blank"
+          {{ end }}
+          class="text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 whitespace-nowrap"
+          style="text-decoration:none;">
+          {{ .Name | markdownify }}
+        </a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Search icon — end of bar */}}
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button-mobile"
@@ -9,18 +38,4 @@
     </button>
   {{ end }}
 
-  {{/* Inline nav — Resume and Prop Tracker only (mobile-visible items) */}}
-  {{ range .Site.Menus.main }}
-    {{ if not .Params.mobileHide }}
-      <a
-        href="{{ .URL }}"
-        {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}
-          target="_blank"
-        {{ end }}
-        class="text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 whitespace-nowrap"
-        style="text-decoration:none;">
-        {{ .Name | markdownify }}
-      </a>
-    {{ end }}
-  {{ end }}
 </div>
