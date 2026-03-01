@@ -1,5 +1,31 @@
 {{ define "main" }}
 <style>
+  /* ── Switching subtitle word ───────────────────────────── */
+  :root {
+    --pt-w1: #0f766e; /* teal-700   */
+    --pt-w2: #15803d; /* green-700  */
+    --pt-w3: #7c3aed; /* violet-600 */
+  }
+  .dark {
+    --pt-w1: #5eead4; /* teal-300   */
+    --pt-w2: #86efac; /* green-300  */
+    --pt-w3: #c4b5fd; /* violet-300 */
+  }
+  .pt-word {
+    transition: opacity 0.15s ease;
+    font-style: italic;
+  }
+  .pt-word.hidden { opacity: 0; }
+
+  /* ── CTA arrow slide ────────────────────────────────────── */
+  .pt-cta-arrow {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+  }
+  .pt-cta:hover .pt-cta-arrow {
+    transform: translateX(5px);
+  }
+
   /* ── Badge ─────────────────────────────────────────────── */
   .pt-badge {
     display: inline-block;
@@ -143,7 +169,7 @@
   </h1>
 
   <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto opacity-50 leading-relaxed mb-10">
-    Track every prop firm challenge, payout, and expense — all in one place.
+    Track every prop firm <span class="pt-word" id="ptWord" style="color:var(--pt-w1);">challenge</span> — all in one place.
     Built for funded traders who want clarity, not chaos.
   </p>
 
@@ -179,13 +205,36 @@
     class="pt-cta"
     style="text-decoration:none;">
     Get Prop Tracker
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <span class="pt-cta-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
   </a>
   <p class="mt-4 text-xs opacity-30 tracking-wide uppercase">v1 — built for funded traders</p>
 </div>
 
 <!-- Polar embed: opens checkout overlay on click -->
 <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
+
+<script>
+/* ── Subtitle word switcher ── */
+(function () {
+  var words = [
+    { text: 'challenge', color: 'var(--pt-w1)' },
+    { text: 'payout',    color: 'var(--pt-w2)' },
+    { text: 'expense',   color: 'var(--pt-w3)' }
+  ];
+  var idx  = 0;
+  var span = document.getElementById('ptWord');
+  if (!span) return;
+  setInterval(function () {
+    span.classList.add('hidden');
+    setTimeout(function () {
+      idx = (idx + 1) % words.length;
+      span.textContent = words[idx].text;
+      span.style.color = words[idx].color;
+      span.classList.remove('hidden');
+    }, 150);
+  }, 2200);
+})();
+</script>
 
 <script>
   (function () {
