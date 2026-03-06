@@ -52,31 +52,35 @@
     letter-spacing: 0.02em;
   }
 
-  /* Prop Tracker nav button */
+  /* trackmyprop nav button */
   .main-menu nav a[href="https://www.trackmyprop.app"] {
-    background: rgba(255,255,255,0.92);
-    color: #111 !important;
+    background: #bfff80 !important;
+    color: #0a0a0a !important;
     border-radius: 0.5rem;
     padding: 0.45rem 1.1rem;
-    transition: background 0.15s;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    transition: box-shadow 0.15s, opacity 0.15s;
   }
   .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
-    background: rgba(255,255,255,1);
+    opacity: 0.88;
+    box-shadow: 0 4px 18px rgba(191,255,128,0.45);
   }
   .main-menu nav a[href="https://www.trackmyprop.app"] span {
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     letter-spacing: 0;
     font-size: 0.9rem;
+    color: #0a0a0a !important;
   }
-  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"] {
-    background: #111;
-    color: #fff !important;
-  }
-  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
-    background: #333;
-  }
-  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"] span {
-    color: #fff !important;
+  .main-menu nav a[href="https://www.trackmyprop.app"]::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    background: url('https://www.trackmyprop.app/trackmyprop.svg') center/contain no-repeat;
+    filter: brightness(0);
   }
 
   /* Subtle hover pill on desktop nav links and icon buttons —
@@ -202,7 +206,7 @@
     var roles = [
       { text: 'Community Manager', color: 'var(--bio-1)' },
       { text: 'Futures Trader',    color: 'var(--bio-2)' },
-      { text: 'Noob Dev',          color: 'var(--bio-3)' },
+      { text: 'Web Developer',      color: 'var(--bio-3)' },
       { text: 'Graphics Designer', color: 'var(--bio-4)' },
       { text: 'Web Video Producer',color: 'var(--bio-5)' }
     ];
