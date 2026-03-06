@@ -212,16 +212,14 @@
     ];
     var idx = 0;
 
-    var bio = Array.from(document.querySelectorAll('p')).find(function (p) {
-      return p.textContent.includes('Community Manager') &&
-             p.textContent.includes('Futures Trader');
-    });
+    var bio = document.getElementById('bio-subtitle');
     if (!bio) return;
 
     bio.innerHTML = '<span class="bio-role"></span>';
     var span = bio.querySelector('.bio-role');
     span.textContent = roles[0].text;
     span.style.color  = roles[0].color;
+    bio.style.visibility = 'visible';
 
     setInterval(function () {
       span.classList.add('hidden');
