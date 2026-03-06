@@ -234,6 +234,7 @@ Currently managing thePropTrade, with steady community growth and ongoing improv
     <ul>
       <li><a href="/posts">{{< icon "link" >}} GodsBattle</a></li>
       <li><a href="https://products.godsbattle.net/" target="_blank">{{< icon "link" >}} 👨🏾‍🚀 Prop Tracker</a></li>
+      <li><a href="https://www.trackmyprop.app" target="_blank">{{< icon "link" >}} trackmyprop</a></li>
     </ul>
   {{< /tab >}}
 

@@ -30,8 +30,8 @@
     mobileHide = true
 
 [[main]]
-  name = "Prop Tracker 👨🏾‍🚀"
-  pageRef = "proptracker"
+  name = "trackmyprop"
+  url = "https://www.trackmyprop.app"
   weight = 70
   [main.params]
     mobileButton = true

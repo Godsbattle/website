@@ -21,6 +21,10 @@
   .pt-w3 { color: #dc2626; }
   .dark .pt-w3 { color: #f87171; }
 
+  /* ── trackmyprop CTA brand override ─────────────────────── */
+  .pt-cta-tmp { background: #bfff80 !important; color: #0a0a0a !important; }
+  .pt-cta-tmp:hover { box-shadow: 0 8px 28px rgba(191,255,128,0.45), 0 2px 8px rgba(191,255,128,0.2) !important; }
+
   /* ── CTA arrow slide ────────────────────────────────────── */
   .pt-cta-arrow {
     display: inline-flex;
@@ -202,20 +206,16 @@
 <!-- ── Bottom CTA ────────────────────────────────────────── -->
 <div class="text-center mt-16 mb-24">
   <a
-    href="https://buy.polar.sh/polar_cl_jyT5xv586SOPKMeldcNMrAq5nOfuMQknlmc6o3MGCvx"
-    data-polar-checkout
-    data-polar-checkout-theme="dark"
-    data-polar-checkout-success-url="{{ .Site.BaseURL }}proptracker/success/"
-    class="pt-cta"
+    href="https://www.trackmyprop.app"
+    class="pt-cta pt-cta-tmp"
     style="text-decoration:none;">
-    Get Prop Tracker
+    <img src="https://www.trackmyprop.app/trackmyprop.svg" alt="" aria-hidden="true" style="width:20px;height:20px;flex-shrink:0;filter:brightness(0);">
+    trackmyprop
     <span class="pt-cta-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
   </a>
   <p class="mt-4 text-xs opacity-30 tracking-wide uppercase">v1 — built for funded traders</p>
 </div>
 
-<!-- Polar embed: opens checkout overlay on click -->
-<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
 
 <script>
 /* ── Subtitle phrase swiper ── */
