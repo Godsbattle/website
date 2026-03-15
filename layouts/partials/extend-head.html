@@ -54,8 +54,6 @@
 
   /* trackmyprop nav button */
   .main-menu nav a[href="https://www.trackmyprop.app"] {
-    background: #bfff80 !important;
-    color: #0a0a0a !important;
     border-radius: 0.5rem;
     padding: 0.45rem 1.1rem;
     display: inline-flex !important;
@@ -65,13 +63,11 @@
   }
   .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
     opacity: 0.88;
-    box-shadow: 0 4px 18px rgba(191,255,128,0.45);
   }
   .main-menu nav a[href="https://www.trackmyprop.app"] span {
     font-weight: 500 !important;
     letter-spacing: 0;
     font-size: 0.9rem;
-    color: #0a0a0a !important;
   }
   .main-menu nav a[href="https://www.trackmyprop.app"]::before {
     content: '';
@@ -80,7 +76,34 @@
     height: 15px;
     flex-shrink: 0;
     background: url('https://www.trackmyprop.app/trackmyprop.svg') center/contain no-repeat;
+  }
+  /* Dark mode: white button */
+  .main-menu nav a[href="https://www.trackmyprop.app"] {
+    background: rgba(255,255,255,0.92) !important;
+    color: #111 !important;
+  }
+  .main-menu nav a[href="https://www.trackmyprop.app"] span {
+    color: #111 !important;
+  }
+  .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
+    box-shadow: 0 4px 18px rgba(255,255,255,0.2);
+  }
+  .main-menu nav a[href="https://www.trackmyprop.app"]::before {
     filter: brightness(0);
+  }
+  /* Light mode: black button */
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"] {
+    background: #111 !important;
+    color: #fff !important;
+  }
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"] span {
+    color: #fff !important;
+  }
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  }
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"]::before {
+    filter: brightness(0) invert(1);
   }
 
   /* Subtle hover pill on desktop nav links and icon buttons —
