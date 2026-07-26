@@ -53,7 +53,8 @@ export default async function Home() {
             alt=""
             width={52}
             height={52}
-            priority
+            loading="eager"
+            fetchPriority="high"
             className="size-[52px] rounded-full ring-1 ring-border"
             style={{ viewTransitionName: "site-avatar" }}
           />
@@ -151,7 +152,7 @@ export default async function Home() {
               height={2148}
               sizes="(min-width: 768px) 712px, calc(100vw - 64px)"
               className="h-auto w-full"
-              priority
+              loading="lazy"
             />
           </div>
           <div className="flex items-start gap-4 px-3 pb-3 pt-4 sm:items-center">
