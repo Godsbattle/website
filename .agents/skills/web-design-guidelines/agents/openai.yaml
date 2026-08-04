@@ -1,0 +1,6 @@
+interface:
+  display_name: "Web Design Guidelines"
+  short_description: "Explicit public-web standards audit"
+  default_prompt: "Use $web-design-guidelines for this explicitly requested public-web standards audit."
+policy:
+  allow_implicit_invocation: false

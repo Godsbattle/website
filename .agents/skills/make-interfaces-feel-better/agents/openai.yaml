@@ -1,0 +1,6 @@
+interface:
+  display_name: "Make Interfaces Feel Better"
+  short_description: "Explicit legacy UI polish lens"
+  default_prompt: "Use $make-interfaces-feel-better for this explicitly requested legacy polish pass."
+policy:
+  allow_implicit_invocation: false

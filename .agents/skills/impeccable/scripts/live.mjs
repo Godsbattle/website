@@ -2,7 +2,7 @@
  * CLI entry point: prepare everything needed to enter the live variant poll loop.
  *
  * Does (all in one command):
- *   1. Check config.json (returns config_missing if first-ever run)
+ *   1. Check .impeccable-live/config.json (returns config_missing if first-ever run)
  *   2. Start the live server in the background (or reuse a running one)
  *   3. Inject the browser script tag into the project's entry file
  *   4. Read .impeccable.md for design context (if present)
@@ -17,7 +17,7 @@
  *   node live.mjs --help
  */
 
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -34,7 +34,7 @@ async function liveCli() {
     console.log(`Usage: node live.mjs
 
 Prepare everything for live variant mode in a single command:
-  - Checks scripts/config.json (required, created once per project)
+  - Checks .impeccable-live/config.json (required, created once per project)
   - Starts (or reuses) the live server in the background
   - Injects the browser script tag
   - Reads .impeccable.md for design context
@@ -60,6 +60,21 @@ The agent should then:
     process.exit(0);
   }
 
+  // Resolve and contain every configured target before starting a helper
+  // process. Unsafe config must not leave a live server running.
+  let resolvedFiles;
+  try {
+    resolvedFiles = resolveFiles(process.cwd(), checkResult.config);
+  } catch (error) {
+    console.log(JSON.stringify({
+      ok: false,
+      error: 'unsafe_target',
+      detail: error.message,
+      configPath: checkResult.path,
+    }));
+    process.exit(1);
+  }
+
   // 2. Start server (or reuse existing)
   const serverInfo = ensureServerRunning();
   if (!serverInfo) {
@@ -68,26 +83,49 @@ The agent should then:
   }
 
   // 3. Inject the script tag at the current port
-  const injectOut = runScript('live-inject.mjs', ['--port', String(serverInfo.port)]);
+  const injectOut = runScript('live-inject.mjs', [
+    '--port', String(serverInfo.port),
+    '--token', serverInfo.token,
+  ]);
   const injectResult = safeParse(injectOut);
   if (!injectResult || !injectResult.ok) {
+    // A reported injection failure is pre-commit: the injector preflights all
+    // targets and rolls back failed writes. Preserve any markup that predated
+    // this invocation, but stop a helper server we just created.
+    const stoppedNewServer = stopStartedServer(serverInfo);
     console.log(JSON.stringify({
       ok: false,
       error: 'inject_failed',
       detail: injectResult || injectOut,
       serverPort: serverInfo.port,
+      stoppedNewServer,
     }));
     process.exit(1);
   }
 
-  // 4. Load PRODUCT.md + DESIGN.md context (auto-migrates legacy .impeccable.md)
-  const ctx = loadContext(process.cwd());
+  let ctx;
+  let drift;
+  try {
+    // 4. Load PRODUCT.md + DESIGN.md context (auto-migrates legacy .impeccable.md)
+    ctx = loadContext(process.cwd());
 
-  // 5. Compute drift-heal: compare resolved inject targets against the
-  //    project's HTML files. Orphans are HTML files not covered by config.
-  //    Warning only — the agent decides whether to act.
-  const resolvedFiles = resolveFiles(process.cwd(), checkResult.config);
-  const drift = scanForDrift(process.cwd(), resolvedFiles, checkResult.config);
+    // 5. Compute drift-heal: compare resolved inject targets against the
+    //    project's HTML files. Orphans are HTML files not covered by config.
+    //    Warning only — the agent decides whether to act.
+    drift = scanForDrift(process.cwd(), resolvedFiles, checkResult.config);
+  } catch (error) {
+    // Injection committed successfully, so always undo it. Stop the server
+    // only when this invocation created it; a reused session is not ours.
+    const cleanup = cleanupInjectedSetup(serverInfo);
+    console.log(JSON.stringify({
+      ok: false,
+      error: 'setup_failed',
+      detail: error.message,
+      serverPort: serverInfo.port,
+      ...cleanup,
+    }));
+    process.exit(1);
+  }
 
   // 6. Emit everything the agent needs
   console.log(JSON.stringify({
@@ -202,15 +240,29 @@ function globToRegex(pattern) {
 // Helpers
 // ---------------------------------------------------------------------------
 
+export function buildScriptInvocation(scriptDirectory, name, args) {
+  return {
+    executable: process.execPath,
+    args: [path.join(scriptDirectory, name), ...args],
+  };
+}
+
 function runScript(name, args) {
-  const scriptPath = path.join(__dirname, name);
-  const cmd = `node "${scriptPath}" ${args.map(a => `"${a}"`).join(' ')}`;
   try {
-    return execSync(cmd, { encoding: 'utf-8', cwd: process.cwd(), timeout: 15_000 });
+    return runScriptStrict(name, args);
   } catch (err) {
-    // execSync throws on non-zero exit; return stdout if any
+    // execFileSync throws on non-zero exit; return stdout if any
     return err.stdout || err.message || '';
   }
+}
+
+function runScriptStrict(name, args) {
+  const invocation = buildScriptInvocation(__dirname, name, args);
+  return execFileSync(invocation.executable, invocation.args, {
+    encoding: 'utf-8',
+    cwd: process.cwd(),
+    timeout: 15_000,
+  });
 }
 
 function safeParse(out) {
@@ -218,7 +270,9 @@ function safeParse(out) {
 }
 
 /**
- * Return { pid, port, token } for the running live server, starting one if needed.
+ * Return { pid, port, token, started } for the running live server, starting
+ * one if needed. `started` lets setup failures clean up only the server this
+ * invocation owns, never a pre-existing session.
  */
 function ensureServerRunning() {
   // Try to reuse an existing server
@@ -227,14 +281,47 @@ function ensureServerRunning() {
     if (existing && existing.pid) {
       try {
         process.kill(existing.pid, 0); // throws if dead
-        return existing;
+        return { ...existing, started: false };
       } catch { /* stale PID file — the server script will clean it up */ }
     }
   } catch { /* no PID file */ }
 
   // Start a new server
   const out = runScript('live-server.mjs', ['--background']);
-  return safeParse(out);
+  const started = safeParse(out);
+  return started ? { ...started, started: true } : null;
+}
+
+/**
+ * Stop a server created by this live.mjs invocation without changing markup.
+ * Reused sessions are deliberately left alone.
+ */
+export function stopStartedServer(serverInfo, runner = runScriptStrict) {
+  if (!serverInfo?.started) return false;
+  try {
+    runner('live-server.mjs', ['stop', '--keep-inject']);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Undo a successful injection after a later setup failure. Removal applies to
+ * both new and reused sessions; stopping applies only to a newly owned server.
+ * Run the two cleanup commands independently so one failure cannot skip the
+ * other and callers can report each result accurately.
+ */
+export function cleanupInjectedSetup(serverInfo, runner = runScriptStrict) {
+  let removedInjection = false;
+  try {
+    runner('live-inject.mjs', ['--remove']);
+    removedInjection = true;
+  } catch {
+    // Best effort; still stop an owned helper below.
+  }
+  const stoppedNewServer = stopStartedServer(serverInfo, runner);
+  return { removedInjection, stoppedNewServer };
 }
 
 // ---------------------------------------------------------------------------

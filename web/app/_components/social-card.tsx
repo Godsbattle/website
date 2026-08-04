@@ -35,7 +35,10 @@ export function SocialCard({
       <div
         style={{
           position: "absolute",
-          inset: 28,
+          top: 28,
+          right: 28,
+          bottom: 28,
+          left: 28,
           display: "flex",
           border: "1px solid #d8d5cc",
           borderRadius: 28,

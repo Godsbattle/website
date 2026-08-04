@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 
 const RESUME_DESCRIPTION =
-  "Design engineer, futures trader, and former prop-firm community lead focused on trading and fintech products.";
+  "Software engineer, design engineer, and futures trader focused on trading and fintech products.";
 
 export const metadata: Metadata = {
   title: "resume",
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "https://godsbattle.net/resume/",
-    title: "Christian Obanaka — design engineer résumé",
+    title: "Christian Obanaka — software engineer résumé",
     description: RESUME_DESCRIPTION,
   },
   twitter: {
     card: "summary",
-    title: "Christian Obanaka — design engineer résumé",
+    title: "Christian Obanaka — software engineer résumé",
     description: RESUME_DESCRIPTION,
   },
 };
@@ -30,43 +30,81 @@ type Role = {
   logo: string;
   url?: string;
   title: string;
+  employment: "Full-Time" | "Part-Time";
   start: string;
   end: string;
   blurb: string;
+  preserveLogoColor?: boolean;
 };
 
 const experience: Role[] = [
   {
+    company: "Tradara",
+    logo: "/tradara-logo.svg",
+    url: "https://tradara.com",
+    title: "Software Engineer",
+    employment: "Full-Time",
+    start: "Aug 2026",
+    end: "Present",
+    blurb:
+      "Building Tradara’s futures terminal and prop-trading infrastructure.",
+    preserveLogoColor: true,
+  },
+  {
     company: "thePropTrade",
     logo: "/theproptrade-logo.svg",
     url: "https://theproptrade.com",
-    title: "head of community",
+    title: "Head of Community",
+    employment: "Full-Time",
     start: "Nov 2025",
     end: "Jul 2026",
     blurb:
-      "scaled the community, drove organic engagement, and shaped a space traders actually feel at home in.",
+      "Scaled the community and improved day-to-day support for active traders.",
   },
   {
     company: "PipFarm",
     logo: "/pipfarm-logo.svg",
     url: "https://pipfarm.com",
-    title: "community + affiliate manager",
+    title: "Community + Affiliate Manager",
+    employment: "Full-Time",
     start: "Feb 2025",
     end: "Nov 2025",
     blurb:
-      "scaled the discord community from 5k → 10k in five months, drove +40% activity and +25% referrals through targeted engagement, competitions, and affiliate partnerships.",
+      "Grew Discord from 5k to 10k members in five months while improving activity and referrals.",
   },
   {
     company: "PokerDAO",
     logo: "/pokerdao-logo.svg",
     url: "https://link3.to/pokerdao",
-    title: "community manager",
+    title: "Community Manager",
+    employment: "Part-Time",
     start: "Apr 2022",
     end: "Dec 2024",
     blurb:
-      "built and moderated discord and telegram communities, grew membership from 3k → 7.5k through interactive events and web3 content, cut support response times by 50%.",
+      "Grew Discord and Telegram from 3k to 7.5k members while halving support response time.",
   },
 ];
+
+const education = [
+  {
+    school: "University of Port Harcourt",
+    location: "Port Harcourt, Nigeria",
+    dates: "2021 - Oct 2025",
+    qualification: "Bachelor’s degree in Mathematics & Computer Science",
+  },
+  {
+    school: "Federal Government College",
+    location: "Port Harcourt, Nigeria",
+    dates: "2017 - 2020",
+    qualification: "Senior Secondary 1-3",
+  },
+  {
+    school: "Wisdom Gate Intl. College",
+    location: "Port Harcourt, Nigeria",
+    dates: "2015 - 2017",
+    qualification: "Junior Secondary 1-3",
+  },
+] as const;
 
 const capabilities = [
   "product and interface design for desktop and responsive web experiences",
@@ -81,7 +119,10 @@ const capabilities = [
 const tools = [
   ["design", ["figma", "design systems", "prototyping"]],
   ["frontend", ["react", "typescript", "next.js", "tailwind css"]],
-  ["product", ["electron", "git", "accessibility testing"]],
+  [
+    "delivery",
+    ["electron", "git", "cloudflare", "vercel", "railway", "accessibility testing"],
+  ],
   ["operations", ["notion", "clickup", "intercom", "zendesk", "slack"]],
 ] as const;
 
@@ -106,18 +147,34 @@ export default function ResumePage() {
             christian obanaka
           </h1>
           <p className="mt-3 max-w-[620px] text-pretty text-[15px] leading-[1.7] text-muted">
-            Design engineer, futures trader, and former prop-firm community
-            lead. I combine product design, frontend implementation, and
-            firsthand trader knowledge to build focused financial-product
-            experiences.
+            Software engineer, design engineer, and futures trader. I combine
+            product design, engineering, and firsthand trader knowledge to
+            build focused financial-product experiences.
           </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href="/downloads/christian-obanaka-resume.pdf"
+              download
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[14px] font-medium text-background"
+            >
+              <Download aria-hidden className="size-3.5" strokeWidth={2} />
+              Download PDF
+            </a>
+            <a
+              href="/downloads/christian-obanaka-resume.png"
+              download
+              className="inline-flex min-h-11 items-center rounded-full border border-border bg-card px-4 py-2 text-[14px] font-medium text-foreground hover:bg-foreground/[0.04]"
+            >
+              Download image
+            </a>
+          </div>
         </header>
 
         <Section title="experience">
           <p className="mb-6 text-pretty text-[14px] leading-[1.7] text-foreground/80">
-            Before moving into design engineering, I worked directly with
-            traders through community, support, affiliate, and growth roles at
-            prop firms. That experience now informs the products I design.
+            I build futures-trading software at Tradara. Earlier community,
+            support, affiliate, and growth roles at prop firms continue to
+            inform the products I design and engineer.
           </p>
           <ol className="space-y-2">
             {experience.map((role) => (
@@ -135,7 +192,9 @@ export default function ResumePage() {
                       alt=""
                       width={40}
                       height={40}
-                      className="h-10 w-10 object-contain dark:invert"
+                      className={`h-10 w-10 object-contain ${
+                        role.preserveLogoColor ? "" : "dark:invert"
+                      }`}
                     />
                   </span>
                   <div className="min-w-0 flex-1">
@@ -151,12 +210,40 @@ export default function ResumePage() {
                         {role.start} &rarr; {role.end}
                       </p>
                     </div>
-                    <p className="text-[14px] text-muted">{role.title}</p>
+                    <p className="text-[14px] text-muted">
+                      {role.title} · {role.employment}
+                    </p>
                     <p className="mt-2 text-[14px] leading-[1.65] text-foreground/80">
                       {role.blurb}
                     </p>
                   </div>
                 </div>
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        <Section title="education">
+          <ol className="space-y-4">
+            {education.map((item) => (
+              <li
+                key={item.school}
+                className="grid gap-1 sm:grid-cols-[1fr_auto] sm:gap-x-5"
+              >
+                <div>
+                  <h3 className="text-[15px] font-medium text-foreground">
+                    {item.school}
+                  </h3>
+                  <p className="mt-0.5 text-[14px] text-muted">
+                    {item.qualification}
+                  </p>
+                  <p className="mt-0.5 text-[13px] text-muted/80">
+                    {item.location}
+                  </p>
+                </div>
+                <p className="text-[13px] text-muted tabular-nums">
+                  {item.dates}
+                </p>
               </li>
             ))}
           </ol>
@@ -223,6 +310,10 @@ export default function ResumePage() {
             reach out:{" "}
             <ExtLink href="mailto:christian@godsbattle.net">
               christian@godsbattle.net
+            </ExtLink>{" "}
+            ·{" "}
+            <ExtLink href="https://www.linkedin.com/in/christian-obanaka/">
+              LinkedIn
             </ExtLink>
           </p>
         </footer>

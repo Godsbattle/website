@@ -1,0 +1,6 @@
+interface:
+  display_name: "Fixing Accessibility"
+  short_description: "Explicit legacy accessibility checklist"
+  default_prompt: "Use $fixing-accessibility for this explicitly requested focused accessibility pass."
+policy:
+  allow_implicit_invocation: false

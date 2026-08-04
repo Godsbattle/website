@@ -26,9 +26,15 @@ const libreBaskerville = Libre_Baskerville({
 
 const SITE_URL = "https://godsbattle.net";
 const SITE_NAME = "Christian Obanaka";
-const SITE_TITLE = "Christian Obanaka — Design Engineer";
+const SITE_TITLE = "Christian Obanaka — Software Engineer";
 const SITE_DESCRIPTION =
-  "Christian Obanaka is a design engineer and futures trader creating polished product experiences for trading and fintech companies.";
+  "Software engineer at Tradara building clear, polished products for trading and fintech.";
+const SOCIAL_IMAGE = {
+  url: "/og/design-engineer-2026/",
+  width: 1200,
+  height: 630,
+  alt: "Christian Obanaka — Software engineer",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -44,6 +50,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    images: [SOCIAL_IMAGE],
     locale: "en_US",
     firstName: "Christian",
     lastName: "Obanaka",
@@ -54,10 +61,12 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     creator: "@chrisgoingturbo",
+    images: [SOCIAL_IMAGE],
   },
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   keywords: [
+    "software engineer",
     "design engineer",
     "product design engineer",
     "frontend engineer",

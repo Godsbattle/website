@@ -8,11 +8,12 @@
  *   npx impeccable poll --reply <id> error "msg" # Reply with error
  */
 
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
+import { isSafeLiveIdentifier } from './live-event-safety.mjs';
 
 // Node's built-in fetch (undici under the hood) enforces a 300s headers
 // timeout that can't be lowered per-request. We cap each request below
@@ -140,24 +141,29 @@ Options:
 
     // Auto-handle accept/discard via deterministic script
     if (event.type === 'accept' || event.type === 'discard') {
-      const __dirname = path.dirname(fileURLToPath(import.meta.url));
-      const acceptScript = path.join(__dirname, 'live-accept.mjs');
-      const scriptArgs = event.type === 'discard'
-        ? ['--id', event.id, '--discard']
-        : ['--id', event.id, '--variant', event.variantId];
-      if (event.type === 'accept' && event.paramValues && Object.keys(event.paramValues).length > 0) {
-        // Pass through a JSON blob; the shell-safe wrap uses single quotes because
-        // values are finite {id, number|string|boolean} pairs from a validated payload.
-        scriptArgs.push('--param-values', `'${JSON.stringify(event.paramValues).replace(/'/g, "'\\''")}'`);
-      }
-      try {
-        const out = execSync(
-          `node "${acceptScript}" ${scriptArgs.join(' ')}`,
-          { encoding: 'utf-8', cwd: process.cwd(), timeout: 30_000 }
-        );
-        event._acceptResult = JSON.parse(out.trim());
-      } catch (err) {
-        event._acceptResult = { handled: false, error: err.message };
+      const hasSafeIdentifiers = isSafeLiveIdentifier(event.id)
+        && (event.type === 'discard' || isSafeLiveIdentifier(event.variantId));
+      if (!hasSafeIdentifiers) {
+        event._acceptResult = { handled: false, error: 'Rejected unsafe live event identifier' };
+      } else {
+        const __dirname = path.dirname(fileURLToPath(import.meta.url));
+        const acceptScript = path.join(__dirname, 'live-accept.mjs');
+        const scriptArgs = event.type === 'discard'
+          ? ['--id', event.id, '--discard']
+          : ['--id', event.id, '--variant', event.variantId];
+        if (event.type === 'accept' && event.paramValues && Object.keys(event.paramValues).length > 0) {
+          scriptArgs.push('--param-values', JSON.stringify(event.paramValues));
+        }
+        try {
+          const out = execFileSync(
+            process.execPath,
+            [acceptScript, ...scriptArgs],
+            { encoding: 'utf-8', cwd: process.cwd(), timeout: 30_000 }
+          );
+          event._acceptResult = JSON.parse(out.trim());
+        } catch (err) {
+          event._acceptResult = { handled: false, error: err.message };
+        }
       }
     }
 

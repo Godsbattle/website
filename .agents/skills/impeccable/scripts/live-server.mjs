@@ -21,6 +21,13 @@ import path from 'node:path';
 import net from 'node:net';
 import { fileURLToPath } from 'node:url';
 import { parseDesignMd } from './design-parser.mjs';
+import { isSafeLiveIdentifier } from './live-event-safety.mjs';
+import {
+  applyLoopbackCors,
+  hasValidSessionToken,
+  isProtectedScriptPath,
+  resolveProjectSourcePath,
+} from './live-http-safety.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // PID file in the project root so both the server and agent can find it
@@ -123,7 +130,7 @@ function statOrNull(filePath) {
 }
 
 // ---------------------------------------------------------------------------
-// Validation (inline — no external import needed for self-contained script)
+// Validation
 // ---------------------------------------------------------------------------
 
 const VISUAL_ACTIONS = [
@@ -136,6 +143,7 @@ function validateEvent(msg) {
   switch (msg.type) {
     case 'generate':
       if (!msg.id || typeof msg.id !== 'string') return 'generate: missing id';
+      if (!isSafeLiveIdentifier(msg.id)) return 'generate: invalid id';
       if (!msg.action || !VISUAL_ACTIONS.includes(msg.action)) return 'generate: invalid action';
       if (!Number.isInteger(msg.count) || msg.count < 1 || msg.count > 8) return 'generate: count must be 1-8';
       if (!msg.element || !msg.element.outerHTML) return 'generate: missing element context';
@@ -146,7 +154,9 @@ function validateEvent(msg) {
       return null;
     case 'accept':
       if (!msg.id) return 'accept: missing id';
+      if (!isSafeLiveIdentifier(msg.id)) return 'accept: invalid id';
       if (!msg.variantId) return 'accept: missing variantId';
+      if (!isSafeLiveIdentifier(msg.variantId)) return 'accept: invalid variantId';
       if (msg.paramValues !== undefined) {
         if (typeof msg.paramValues !== 'object' || msg.paramValues === null || Array.isArray(msg.paramValues)) {
           return 'accept: paramValues must be an object';
@@ -154,7 +164,8 @@ function validateEvent(msg) {
       }
       return null;
     case 'discard':
-      return msg.id ? null : 'discard: missing id';
+      if (!msg.id) return 'discard: missing id';
+      return isSafeLiveIdentifier(msg.id) ? null : 'discard: invalid id';
     case 'exit':
       return null;
     case 'prefetch':
@@ -172,12 +183,19 @@ function validateEvent(msg) {
 function createRequestHandler({ detectScript, livePath }) {
   return (req, res) => {
     const url = new URL(req.url, `http://localhost:${state.port}`);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (!applyLoopbackCors(req.headers.origin, res)) {
+      res.writeHead(403, { 'Content-Type': 'text/plain' });
+      res.end('Forbidden origin');
+      return;
+    }
     if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
 
     const p = url.pathname;
+    if (isProtectedScriptPath(p) && !hasValidSessionToken(url, state.token)) {
+      res.writeHead(401, { 'Content-Type': 'text/plain' });
+      res.end('Unauthorized');
+      return;
+    }
 
     // --- Scripts ---
     if (p === '/live.js') {
@@ -194,7 +212,7 @@ function createRequestHandler({ detectScript, livePath }) {
         return;
       }
       const body =
-        `window.__IMPECCABLE_TOKEN__ = '${state.token}';\n` +
+        `window.__IMPECCABLE_TOKEN__ = ${JSON.stringify(state.token)};\n` +
         `window.__IMPECCABLE_PORT__ = ${state.port};\n` +
         liveScript;
       res.writeHead(200, {
@@ -220,7 +238,7 @@ function createRequestHandler({ detectScript, livePath }) {
       try {
         res.writeHead(200, {
           'Content-Type': 'application/javascript',
-          'Cache-Control': 'public, max-age=31536000, immutable',
+          'Cache-Control': 'no-store',
         });
         res.end(fs.readFileSync(vendorPath));
       } catch {
@@ -366,9 +384,8 @@ function createRequestHandler({ detectScript, livePath }) {
       const token = url.searchParams.get('token');
       if (token !== state.token) { res.writeHead(401); res.end('Unauthorized'); return; }
       const filePath = url.searchParams.get('path');
-      if (!filePath || filePath.includes('..')) { res.writeHead(400); res.end('Bad path'); return; }
-      const absPath = path.resolve(process.cwd(), filePath);
-      if (!absPath.startsWith(process.cwd())) { res.writeHead(403); res.end('Forbidden'); return; }
+      const absPath = resolveProjectSourcePath(process.cwd(), filePath);
+      if (!absPath) { res.writeHead(400); res.end('Bad path'); return; }
       let content;
       try { content = fs.readFileSync(absPath, 'utf-8'); }
       catch { res.writeHead(404); res.end('File not found'); return; }
@@ -565,9 +582,9 @@ Options:
   --help        Show this help
 
 Endpoints:
-  /live.js             Browser script (element picker + variant cycling)
-  /detect.js           Detection overlay (backwards compatible)
-  /modern-screenshot.js Vendored modern-screenshot UMD build (lazy-loaded by live.js)
+  /live.js             Browser script (element picker + variant cycling; token required)
+  /detect.js           Detection overlay (token required)
+  /modern-screenshot.js Vendored modern-screenshot UMD build (token required)
   /annotation          POST raw image/png to stage a variant screenshot
   /events              SSE stream (server→browser) + POST (browser→server)
   /poll                Long-poll for agent CLI
@@ -669,9 +686,10 @@ httpServer = http.createServer(createRequestHandler({ detectScript, livePath }))
 httpServer.listen(state.port, '127.0.0.1', () => {
   fs.writeFileSync(LIVE_PID_FILE, JSON.stringify({ pid: process.pid, port: state.port, token: state.token }));
   const url = `http://localhost:${state.port}`;
+  const scriptUrl = `${url}/live.js?token=${encodeURIComponent(state.token)}`;
   console.log(`\nImpeccable live server running on ${url}`);
   console.log(`Token: ${state.token}\n`);
-  console.log(`Inject: <script src="${url}/live.js"><\/script>`);
+  console.log(`Inject: <script src="${scriptUrl}"><\/script>`);
   console.log(`Stop:   node ${path.basename(fileURLToPath(import.meta.url))} stop`);
 });
 

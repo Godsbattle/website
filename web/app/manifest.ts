@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "christian obanaka",
     short_name: "godsbattle",
     description:
-      "Design engineer and futures trader creating product experiences for trading and fintech companies.",
+      "Software engineer at Tradara and futures trader building products for trading and fintech.",
     start_url: "/",
     display: "minimal-ui",
     background_color: "#fcfcfc",

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Desktop Feature"
+  short_description: "Ship trackmyprop desktop UI with focused checks"
+  default_prompt: "Use $create-feature to implement this trackmyprop desktop UI change through the existing product system."

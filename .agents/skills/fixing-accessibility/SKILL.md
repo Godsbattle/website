@@ -1,6 +1,10 @@
 ---
 name: fixing-accessibility
-description: Audit and fix HTML accessibility issues including ARIA labels, keyboard navigation, focus management, color contrast, and form errors. Use when adding interactive controls, forms, dialogs, or reviewing WCAG compliance.
+description: >-
+  Legacy focused accessibility checklist kept for explicit compatibility with
+  prompts that name fixing-accessibility. Do not invoke automatically or
+  alongside better-accessibility; create-feature uses better-accessibility as
+  the canonical owner for ARIA, keyboard, focus, forms, and screen readers.
 ---
 
 # fixing-accessibility

@@ -21,6 +21,7 @@
 
   const TOKEN = window.__IMPECCABLE_TOKEN__;
   const PORT = window.__IMPECCABLE_PORT__;
+  const TOKEN_QUERY = '?token=' + encodeURIComponent(TOKEN);
   if (!TOKEN || !PORT) {
     window.__IMPECCABLE_LIVE_INIT__ = false; // reset so the real load can init
     return;
@@ -2515,7 +2516,7 @@
     if (msLoadPromise) return msLoadPromise;
     msLoadPromise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = 'http://localhost:' + PORT + '/modern-screenshot.js';
+      s.src = 'http://localhost:' + PORT + '/modern-screenshot.js' + TOKEN_QUERY;
       s.onload = () => resolve(window.modernScreenshot);
       s.onerror = () => { msLoadPromise = null; reject(new Error('modern-screenshot failed to load')); };
       document.head.appendChild(s);
@@ -3569,7 +3570,7 @@ void main() {
     if (detectScriptLoaded) return;
     detectScriptLoaded = true;
     const s = document.createElement('script');
-    s.src = 'http://localhost:' + PORT + '/detect.js';
+    s.src = 'http://localhost:' + PORT + '/detect.js' + TOKEN_QUERY;
     s.dataset.impeccableExtension = 'true';
     document.head.appendChild(s);
   }

@@ -1,6 +1,10 @@
 ---
 name: emil-design-eng
-description: This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.
+description: >-
+  Deep Emil Kowalski design-engineering guidance for explicitly requested or
+  orchestrator-selected bespoke motion: gestures, springs, drag, clip-path,
+  physicality, and custom component craft. Do not invoke for routine polish or
+  generic UI review; use better-ui or review-animations instead.
 ---
 
 # Design Engineering

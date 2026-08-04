@@ -2,15 +2,15 @@
  * CLI helper: insert/remove the live variant mode script tag in the project's
  * main HTML entry point.
  *
- * On first live run, the agent generates `config.json` in this script's
- * directory with the project's insertion target (framework-specific). On
+ * On first live run, the agent generates `.impeccable-live/config.json` in
+ * the project root with the insertion target (framework-specific). On
  * every subsequent run, this script handles insert/remove deterministically
  * with zero LLM involvement.
  *
  * Usage:
- *   node live-inject.mjs --port PORT   # Insert the live script tag
+ *   node live-inject.mjs --port PORT --token TOKEN   # Insert the live script tag
  *   node live-inject.mjs --remove      # Remove the live script tag
- *   node live-inject.mjs --check       # Check whether config.json exists
+ *   node live-inject.mjs --check       # Check .impeccable-live/config.json
  */
 
 import fs from 'node:fs';
@@ -18,7 +18,25 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CONFIG_PATH = process.env.IMPECCABLE_LIVE_CONFIG || path.join(__dirname, 'config.json');
+export function resolveLiveConfigPath(
+  projectRoot = process.cwd(),
+  override = process.env.IMPECCABLE_LIVE_CONFIG,
+) {
+  const lexicalRoot = path.resolve(projectRoot);
+  if (override) {
+    // The explicit environment override is a trusted operator path and may
+    // intentionally live outside the project (for example, in a managed
+    // temporary directory). The default path never receives that exception.
+    return path.resolve(lexicalRoot, override);
+  }
+  const resolvedRoot = fs.realpathSync(lexicalRoot);
+  return resolveContainedTarget(
+    lexicalRoot,
+    resolvedRoot,
+    path.join('.impeccable-live', 'config.json'),
+  );
+}
+
 const MARKER_OPEN_TEXT = 'impeccable-live-start';
 const MARKER_CLOSE_TEXT = 'impeccable-live-end';
 
@@ -39,65 +57,127 @@ export async function injectCli() {
     console.log(`Usage: node live-inject.mjs [options]
 
 Insert or remove the live mode script tag in the project's HTML entry point.
-Reads configuration from config.json (in this same directory).
+Reads configuration from .impeccable-live/config.json in the project root.
+Set IMPECCABLE_LIVE_CONFIG only for a trusted operator-controlled override;
+the override may resolve outside the project root.
 
 Modes:
-  --port PORT   Insert script tag pointing at http://localhost:PORT/live.js
+  --port PORT   Insert script tag pointing at http://localhost:PORT/live.js (requires --token)
+  --token TOKEN Session token embedded in the protected script URL
   --remove      Remove the script tag (if present)
-  --check       Print whether config.json exists and its content
+  --check       Print whether the selected config exists and its content
 
 Output (JSON):
   { ok, file, inserted|removed, config? }`);
     process.exit(0);
   }
 
+  let configPath;
+  try {
+    configPath = resolveLiveConfigPath();
+  } catch (error) {
+    console.error(JSON.stringify({
+      ok: false,
+      error: 'unsafe_config_path',
+      message: error.message,
+    }));
+    process.exitCode = 1;
+    return;
+  }
+
   if (args.includes('--check')) {
-    if (!fs.existsSync(CONFIG_PATH)) {
-      console.log(JSON.stringify({ ok: false, error: 'config_missing', path: CONFIG_PATH }));
+    if (!fs.existsSync(configPath)) {
+      fs.mkdirSync(path.dirname(configPath), { recursive: true, mode: 0o700 });
+      console.log(JSON.stringify({ ok: false, error: 'config_missing', path: configPath }));
       process.exit(0);
     }
     let cfg;
     try {
-      cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+      cfg = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
     } catch (err) {
-      console.log(JSON.stringify({ ok: false, error: 'config_invalid', message: err.message, path: CONFIG_PATH }));
+      console.log(JSON.stringify({ ok: false, error: 'config_invalid', message: err.message, path: configPath }));
       return;
     }
     try {
       validateConfig(cfg);
     } catch (err) {
-      console.log(JSON.stringify({ ok: false, error: 'config_invalid', message: err.message, path: CONFIG_PATH }));
+      console.log(JSON.stringify({ ok: false, error: 'config_invalid', message: err.message, path: configPath }));
       return;
     }
-    console.log(JSON.stringify({ ok: true, config: cfg, path: CONFIG_PATH }));
+    console.log(JSON.stringify({ ok: true, config: cfg, path: configPath }));
     return;
   }
 
   // Load config
-  if (!fs.existsSync(CONFIG_PATH)) {
-    console.error(JSON.stringify({ ok: false, error: 'config_missing', path: CONFIG_PATH }));
+  if (!fs.existsSync(configPath)) {
+    console.error(JSON.stringify({ ok: false, error: 'config_missing', path: configPath }));
     process.exit(1);
   }
-  const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
   validateConfig(config);
 
-  const resolvedFiles = resolveFiles(process.cwd(), config);
+  let resolvedTargets;
+  try {
+    resolvedTargets = resolveFileTargets(process.cwd(), config);
+  } catch (error) {
+    console.error(JSON.stringify({
+      ok: false,
+      error: 'unsafe_target',
+      message: error.message,
+    }));
+    process.exitCode = 1;
+    return;
+  }
+
+  if (resolvedTargets.length === 0) {
+    console.error(JSON.stringify({ ok: false, error: 'no_targets' }));
+    process.exitCode = 1;
+    return;
+  }
 
   if (args.includes('--remove')) {
-    const results = resolvedFiles.map((relFile) => {
-      const absFile = path.resolve(process.cwd(), relFile);
-      if (!fs.existsSync(absFile)) return { file: relFile, error: 'file_not_found' };
-      const content = fs.readFileSync(absFile, 'utf-8');
+    const prepared = resolvedTargets.map(({ relativePath: relFile, absolutePath: absFile }) => {
+      if (!fs.existsSync(absFile)) {
+        return { result: { file: relFile, error: 'file_not_found' } };
+      }
+      let content;
+      try {
+        content = fs.readFileSync(absFile, 'utf-8');
+      } catch (error) {
+        return { result: { file: relFile, error: 'file_read_failed', message: error.message } };
+      }
       const detagged = removeTag(content, config.commentSyntax);
       const updated = revertCspMeta(detagged);
-      if (updated === content) return { file: relFile, removed: false, note: 'no tag present' };
-      fs.writeFileSync(absFile, updated, 'utf-8');
+      const result = updated === content
+        ? { file: relFile, removed: false, note: 'no tag present' }
+        : {
+            file: relFile,
+            removed: detagged !== content,
+            cspReverted: updated !== detagged,
+          };
       return {
-        file: relFile,
-        removed: detagged !== content,
-        cspReverted: updated !== detagged,
+        result,
+        update: {
+          absolutePath: absFile,
+          originalContent: content,
+          updatedContent: updated,
+        },
       };
     });
+
+    const results = prepared.map(({ result }) => result);
+    if (results.some((result) => result.error)) {
+      console.error(JSON.stringify({ ok: false, error: 'target_preflight_failed', results }));
+      process.exitCode = 1;
+      return;
+    }
+    try {
+      commitFileUpdates(prepared.map(({ update }) => update));
+    } catch (error) {
+      console.error(JSON.stringify({ ok: false, error: 'write_failed', message: error.message }));
+      process.exitCode = 1;
+      return;
+    }
     console.log(JSON.stringify({ ok: true, results }));
     return;
   }
@@ -105,31 +185,98 @@ Output (JSON):
   // Insert mode — need --port
   const portIdx = args.indexOf('--port');
   const port = portIdx !== -1 ? parseInt(args[portIdx + 1], 10) : NaN;
+  const tokenIdx = args.indexOf('--token');
+  const token = tokenIdx !== -1 ? args[tokenIdx + 1] : '';
   if (!Number.isFinite(port)) {
     console.error(JSON.stringify({ ok: false, error: 'missing_port' }));
     process.exit(1);
   }
+  if (!token) {
+    console.error(JSON.stringify({ ok: false, error: 'missing_token' }));
+    process.exit(1);
+  }
 
-  const results = resolvedFiles.map((relFile) => {
-    const absFile = path.resolve(process.cwd(), relFile);
-    if (!fs.existsSync(absFile)) return { file: relFile, error: 'file_not_found' };
-    const content = fs.readFileSync(absFile, 'utf-8');
+  const prepared = resolvedTargets.map(({ relativePath: relFile, absolutePath: absFile }) => {
+    if (!fs.existsSync(absFile)) {
+      return { result: { file: relFile, error: 'file_not_found' } };
+    }
+    let content;
+    try {
+      content = fs.readFileSync(absFile, 'utf-8');
+    } catch (error) {
+      return { result: { file: relFile, error: 'file_read_failed', message: error.message } };
+    }
     const withoutOld = revertCspMeta(removeTag(content, config.commentSyntax));
-    const withTag = insertTag(withoutOld, config, port);
+    const withTag = insertTag(withoutOld, config, port, token);
     if (withTag === withoutOld) {
-      return { file: relFile, error: 'insertion_point_not_found', anchor: config.insertBefore || config.insertAfter };
+      return {
+        result: {
+          file: relFile,
+          error: 'insertion_point_not_found',
+          anchor: config.insertBefore || config.insertAfter,
+        },
+      };
     }
     const updated = patchCspMeta(withTag, port);
-    fs.writeFileSync(absFile, updated, 'utf-8');
     return {
-      file: relFile,
-      inserted: true,
-      cspPatched: updated !== withTag,
+      result: {
+        file: relFile,
+        inserted: true,
+        cspPatched: updated !== withTag,
+      },
+      update: {
+        absolutePath: absFile,
+        originalContent: content,
+        updatedContent: updated,
+      },
     };
   });
-  const anyInserted = results.some((r) => r.inserted);
-  console.log(JSON.stringify({ ok: anyInserted, port, results }));
-  if (!anyInserted) process.exit(1);
+  const results = prepared.map(({ result }) => result);
+  if (results.some((result) => result.error)) {
+    console.error(JSON.stringify({ ok: false, error: 'target_preflight_failed', results }));
+    process.exitCode = 1;
+    return;
+  }
+  try {
+    commitFileUpdates(prepared.map(({ update }) => update));
+  } catch (error) {
+    console.error(JSON.stringify({ ok: false, error: 'write_failed', message: error.message }));
+    process.exitCode = 1;
+    return;
+  }
+  console.log(JSON.stringify({ ok: true, port, results }));
+}
+
+/**
+ * Apply a prepared set of file updates. Every update is computed before this
+ * function runs. If a later write fails, restore every attempted target in
+ * reverse order so callers do not leave a mixed injected/clean state.
+ */
+export function commitFileUpdates(
+  updates,
+  writeFile = (file, content) => fs.writeFileSync(file, content, 'utf-8'),
+) {
+  const attempted = [];
+  try {
+    for (const update of updates) {
+      if (update.updatedContent === update.originalContent) continue;
+      attempted.push(update);
+      writeFile(update.absolutePath, update.updatedContent);
+    }
+  } catch (error) {
+    const rollbackErrors = [];
+    for (const update of attempted.reverse()) {
+      try {
+        writeFile(update.absolutePath, update.originalContent);
+      } catch (rollbackError) {
+        rollbackErrors.push(`${update.absolutePath}: ${rollbackError.message}`);
+      }
+    }
+    const rollbackDetail = rollbackErrors.length > 0
+      ? `; rollback failed for ${rollbackErrors.join(', ')}`
+      : '';
+    throw new Error(`${error.message}${rollbackDetail}`, { cause: error });
+  }
 }
 
 /**
@@ -140,44 +287,141 @@ Output (JSON):
  * first appearance.
  */
 export function resolveFiles(rootDir, config) {
+  return resolveFileTargets(rootDir, config).map((target) => target.relativePath);
+}
+
+export function resolveFileTargets(rootDir, config) {
   const patterns = config.files;
   const userExcludes = Array.isArray(config.exclude) ? config.exclude : [];
-  const allExcludes = [...HARD_EXCLUDES, ...userExcludes];
-  const excludeRegexes = allExcludes.map(globToRegex);
+  // Dependency/VCS directories are hard exclusions even on a
+  // case-insensitive filesystem or when reached through a case alias.
+  const hardExcludeRegexes = HARD_EXCLUDES.map((pattern) => globToRegex(pattern, 'i'));
+  const userExcludeRegexes = userExcludes.map(globToRegex);
+  const resolvedRoot = fs.realpathSync(path.resolve(rootDir));
+  const lexicalRoot = path.resolve(rootDir);
 
-  const isExcluded = (relPath) => excludeRegexes.some((re) => re.test(relPath));
+  const isHardExcluded = (relPath) => hardExcludeRegexes.some((re) => re.test(relPath));
+  const isUserExcluded = (relPath) => userExcludeRegexes.some((re) => re.test(relPath));
   const isGlob = (s) => /[*?[]/.test(s);
 
   const seen = new Set();
   const out = [];
   for (const pat of patterns) {
-    if (!isGlob(pat)) {
+    const normalizedPattern = normalizeTargetPattern(pat);
+    assertLexicallyContained(lexicalRoot, normalizedPattern);
+
+    if (!isGlob(normalizedPattern)) {
       // Literal path — include even if it doesn't exist yet; the caller
-      // reports file_not_found per-entry. Exclude list doesn't apply to
-      // explicit literal entries (user named it on purpose).
-      if (!seen.has(pat)) {
-        seen.add(pat);
-        out.push(pat);
+      // reports file_not_found per-entry. Hard exclusions remain absolute.
+      if (isHardExcluded(normalizedPattern)) {
+        throw new Error(`inject target is hard-excluded: ${pat}`);
       }
+      if (isUserExcluded(normalizedPattern)) continue;
+      addTarget(normalizedPattern);
       continue;
     }
     let matches;
     try {
-      matches = fs.globSync(pat, { cwd: rootDir, withFileTypes: true });
+      matches = fs.globSync(normalizedPattern, { cwd: lexicalRoot, withFileTypes: true });
     } catch {
       continue;
     }
     for (const ent of matches) {
       if (!ent.isFile || !ent.isFile()) continue;
-      const abs = path.join(ent.parentPath || ent.path || rootDir, ent.name);
-      const rel = path.relative(rootDir, abs).split(path.sep).join('/');
-      if (isExcluded(rel)) continue;
-      if (seen.has(rel)) continue;
-      seen.add(rel);
-      out.push(rel);
+      const parentPath = ent.parentPath || ent.path || lexicalRoot;
+      const abs = path.isAbsolute(parentPath)
+        ? path.join(parentPath, ent.name)
+        : path.resolve(lexicalRoot, parentPath, ent.name);
+      const rel = path.relative(lexicalRoot, abs).split(path.sep).join('/');
+      if (isHardExcluded(rel) || isUserExcluded(rel)) continue;
+      addTarget(rel);
     }
   }
   return out;
+
+  function addTarget(relativeTarget) {
+    const absolutePath = resolveContainedTarget(lexicalRoot, resolvedRoot, relativeTarget);
+    const canonicalRelative = path.relative(resolvedRoot, absolutePath).split(path.sep).join('/');
+    if (isHardExcluded(canonicalRelative)) {
+      throw new Error(`inject target is hard-excluded: ${relativeTarget}`);
+    }
+    if (isUserExcluded(canonicalRelative)) return;
+    if (seen.has(absolutePath)) return;
+    seen.add(absolutePath);
+    out.push({
+      relativePath: canonicalRelative,
+      absolutePath,
+    });
+  }
+}
+
+function normalizeTargetPattern(pattern) {
+  if (pattern.includes('\0')) {
+    throw new Error('inject target must stay inside the project root: malformed path');
+  }
+  if (path.isAbsolute(pattern) || path.win32.isAbsolute(pattern)) {
+    throw new Error(`inject target must stay inside the project root: ${pattern}`);
+  }
+  const normalized = pattern.replaceAll('\\', '/');
+  if (normalized.split('/').includes('..')) {
+    throw new Error(`inject target must stay inside the project root: ${pattern}`);
+  }
+  return normalized;
+}
+
+function assertLexicallyContained(root, relativeTarget) {
+  const candidate = path.resolve(root, relativeTarget);
+  if (!isContainedPath(root, candidate)) {
+    throw new Error(`inject target must stay inside the project root: ${relativeTarget}`);
+  }
+}
+
+function resolveContainedTarget(lexicalRoot, resolvedRoot, relativeTarget) {
+  const lexicalPath = path.resolve(lexicalRoot, relativeTarget);
+  if (!isContainedPath(lexicalRoot, lexicalPath)) {
+    throw new Error(`inject target must stay inside the project root: ${relativeTarget}`);
+  }
+
+  let existingAncestor = lexicalPath;
+  const missingSegments = [];
+  while (!pathEntryExists(existingAncestor)) {
+    const parent = path.dirname(existingAncestor);
+    if (parent === existingAncestor) {
+      throw new Error(`inject target must stay inside the project root: ${relativeTarget}`);
+    }
+    missingSegments.unshift(path.basename(existingAncestor));
+    existingAncestor = parent;
+  }
+
+  let resolvedAncestor;
+  try {
+    resolvedAncestor = fs.realpathSync(existingAncestor);
+  } catch {
+    throw new Error(`inject target must stay inside the project root: ${relativeTarget}`);
+  }
+  const resolvedPath = path.resolve(resolvedAncestor, ...missingSegments);
+  if (!isContainedPath(resolvedRoot, resolvedPath)) {
+    throw new Error(`inject target must stay inside the project root: ${relativeTarget}`);
+  }
+  return resolvedPath;
+}
+
+function pathEntryExists(candidate) {
+  try {
+    fs.lstatSync(candidate);
+    return true;
+  } catch (error) {
+    if (error?.code === 'ENOENT' || error?.code === 'ENOTDIR') return false;
+    throw error;
+  }
+}
+
+function isContainedPath(root, candidate) {
+  const relative = path.relative(root, candidate);
+  return relative.length > 0
+    && relative !== '..'
+    && !relative.startsWith(`..${path.sep}`)
+    && !path.isAbsolute(relative);
 }
 
 /**
@@ -187,7 +431,7 @@ export function resolveFiles(rootDir, config) {
  *   ?   → any single char except `/`
  * Paths are normalized to forward slashes before matching.
  */
-function globToRegex(pattern) {
+function globToRegex(pattern, flags = '') {
   let re = '';
   let i = 0;
   while (i < pattern.length) {
@@ -218,7 +462,7 @@ function globToRegex(pattern) {
       i += 1;
     }
   }
-  return new RegExp('^' + re + '$');
+  return new RegExp('^' + re + '$', flags);
 }
 
 // ---------------------------------------------------------------------------
@@ -255,18 +499,18 @@ function validateConfig(cfg) {
 function commentOpen(syntax) { return syntax === 'jsx' ? '{/*' : '<!--'; }
 function commentClose(syntax) { return syntax === 'jsx' ? '*/}' : '-->'; }
 
-function buildTagBlock(syntax, port) {
+function buildTagBlock(syntax, port, token) {
   const open = commentOpen(syntax);
   const close = commentClose(syntax);
   return (
     open + ' ' + MARKER_OPEN_TEXT + ' ' + close + '\n' +
-    '<script src="http://localhost:' + port + '/live.js"></script>\n' +
+    '<script src="http://localhost:' + port + '/live.js?token=' + encodeURIComponent(token) + '"></script>\n' +
     open + ' ' + MARKER_CLOSE_TEXT + ' ' + close + '\n'
   );
 }
 
-function insertTag(content, config, port) {
-  const block = buildTagBlock(config.commentSyntax, port);
+function insertTag(content, config, port, token) {
+  const block = buildTagBlock(config.commentSyntax, port, token);
   // insertBefore: match the LAST occurrence. Anchors like `</body>` naturally
   // belong at the end, and the same literal can appear earlier in code blocks
   // within rendered documentation pages.
@@ -280,9 +524,11 @@ function insertTag(content, config, port) {
   const idx = content.indexOf(config.insertAfter);
   if (idx === -1) return content;
   const after = idx + config.insertAfter.length;
-  // Preserve a single trailing newline if the anchor didn't end with one
-  const prefix = content[after] === '\n' ? content.slice(0, after + 1) : content.slice(0, after) + '\n';
-  return prefix + block + content.slice(prefix.length);
+  // If the source already has a newline after the anchor, keep it before the
+  // injected block. Otherwise inject directly beside the anchor. Adding a
+  // synthetic newline here would make removal unable to restore exact bytes.
+  const insertionPoint = content[after] === '\n' ? after + 1 : after;
+  return content.slice(0, insertionPoint) + block + content.slice(insertionPoint);
 }
 
 /**

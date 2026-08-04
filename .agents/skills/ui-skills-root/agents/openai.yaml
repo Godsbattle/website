@@ -1,0 +1,6 @@
+interface:
+  display_name: "UI Skills Router"
+  short_description: "Explicit generic UI skill router"
+  default_prompt: "Use $ui-skills-root to select UI skills where no project-specific catalyst exists."
+policy:
+  allow_implicit_invocation: false

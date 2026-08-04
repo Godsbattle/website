@@ -63,9 +63,19 @@ export default function TrackmypropCaseStudy() {
 
         <header className="max-w-[780px]">
           <p className="text-[13px] text-muted">Case study · product design + engineering</p>
-          <h1 className="mt-4 text-balance text-[38px] font-medium leading-[1.08] text-foreground sm:text-[52px]">
-            trackmyprop
-          </h1>
+          <div className="mt-4 flex items-center gap-3 sm:gap-4">
+            <Image
+              src="/trackmyprop-logo.svg"
+              alt=""
+              width={52}
+              height={52}
+              className="size-10 shrink-0 object-contain sm:size-[52px]"
+              priority
+            />
+            <h1 className="text-balance text-[38px] font-medium leading-[1.08] text-foreground sm:text-[52px]">
+              trackmyprop
+            </h1>
+          </div>
           <p className="mt-5 max-w-[720px] text-pretty text-[18px] leading-[1.65] text-foreground/80 sm:text-[20px]">
             A desktop-first workspace for traders managing the operational
             complexity of prop-firm accounts.
@@ -358,6 +368,14 @@ export default function TrackmypropCaseStudy() {
                 className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
               >
                 christian@godsbattle.net
+              </a>
+              <a
+                href="https://www.linkedin.com/in/christian-obanaka/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
+              >
+                LinkedIn
               </a>
             </div>
           </section>

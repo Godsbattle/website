@@ -1,0 +1,6 @@
+interface:
+  display_name: "User Interface Wiki"
+  short_description: "Deep niche UI implementation reference"
+  default_prompt: "Use $userinterface-wiki for the relevant advanced UI rule category in this task."
+policy:
+  allow_implicit_invocation: false

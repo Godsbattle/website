@@ -16,7 +16,6 @@ Execute in order. No step skipped, no step reordered.
 6. On `exit` — run the cleanup at the bottom.
 
 Harness policy:
-- **Claude Code**: run the poll as a **background task** (no short timeout). The harness notifies you when it completes, so the main conversation stays free. Do not block the shell.
 - **Cursor**: run the poll in the **foreground** (blocking shell — not a background terminal, not a subagent). Cursor background terminals and subagents do not reliably resume the chat with poll stdout.
 - **Codex**: run the poll in the **foreground** (blocking shell — not a background task, not a subagent). Codex background exec sessions do not reliably surface poll stdout back into the conversation at the moment events arrive, so a "fire-and-forget" background poll will stall live mode.
 - **Other harnesses**: foreground unless you know stdout reliably returns to this session.
@@ -375,7 +374,7 @@ When the poll returns `exit`, proceed to cleanup. If the poll is still running a
 node .agents/skills/impeccable/scripts/live-server.mjs stop
 ```
 
-Stops the HTTP server and runs `live-inject.mjs --remove` to strip `localhost:…/live.js` from the HTML entry. To stop the server but keep the inject tag (for a quick restart), use `stop --keep-inject`. `config.json` persists for future sessions.
+Stops the HTTP server and runs `live-inject.mjs --remove` to strip `localhost:…/live.js` from the HTML entry. To stop the server but keep the inject tag (for a quick restart), use `stop --keep-inject`. `.impeccable-live/config.json` persists locally for future sessions. If `IMPECCABLE_LIVE_CONFIG` selected a different config, provide the same environment variable when running cleanup directly.
 
 Then:
 - Remove any leftover variant wrappers (search for `impeccable-variants-start` markers).
@@ -383,7 +382,7 @@ Then:
 
 ## First-time setup (config missing or invalid)
 
-If `live.mjs` outputs `{ ok: false, error: "config_missing" | "config_invalid", path }`, write `config.json` at the reported path.
+If `live.mjs` outputs `{ ok: false, error: "config_missing" | "config_invalid", path }`, write the config at the reported path. The default is the ignored project-local `.impeccable-live/config.json`; `--check` verifies that the path stays inside the canonical project root before it creates the parent directory. A parent symlink that escapes the project is rejected. `IMPECCABLE_LIVE_CONFIG` is a trusted operator override: it is resolved from the project root, may intentionally point outside the project, and has its parent prepared at that explicit location.
 
 Schema:
 
@@ -403,9 +402,9 @@ Schema:
 
 `cspChecked` tracks whether the CSP detection step below has already run. Absent on first setup; set to `true` after CSP is checked (whether patched, declined, or not needed).
 
-**Hard-excluded paths (cannot be overridden).** `**/node_modules/**` and `**/.git/**` are never matched regardless of what the user writes. These are vendor/metadata directories and injecting into them would silently instrument third-party code.
+**Hard-excluded paths (cannot be overridden).** `**/node_modules/**` and `**/.git/**` are never matched, even when named as literals. These are vendor/metadata directories and injecting into them would silently instrument third-party code.
 
-**Glob syntax.** `**` matches any number of path segments (including zero), `*` matches any characters except `/`, `?` matches a single character except `/`. Paths are always relative to the project root with forward slashes.
+**Glob syntax.** `**` matches any number of path segments (including zero), `*` matches any characters except `/`, `?` matches a single character except `/`. Paths are always relative to the project root with forward slashes. Absolute paths, `..`, out-of-root glob matches, and symlink escapes are rejected before any target file is read or written.
 
 | Framework | `files` | `insertBefore` | `commentSyntax` |
 |-----------|---------|----------------|-----------------|
@@ -463,7 +462,7 @@ node .agents/skills/impeccable/scripts/detect-csp.mjs
 
 Output: `{ shape, signals }` where `shape` is one of `append-arrays`, `append-string`, `middleware`, `meta-tag`, or `null`. The shape is named by *patch mechanism*, so one template covers many frameworks.
 
-- **`null`** — no CSP; skip to writing `config.json` with `cspChecked: true`.
+- **`null`** — no CSP; skip to writing `.impeccable-live/config.json` with `cspChecked: true`.
 - **`append-arrays`** — CSP defined as structured directive arrays. Auto-patchable. See *append-arrays* below. Covers:
   - Monorepo helpers with `additionalScriptSrc` / `additionalConnectSrc` options (Next.js + shared config package)
   - SvelteKit `kit.csp.directives`
@@ -540,6 +539,6 @@ Reference outputs:
 
 ### Troubleshooting
 
-If a user says "no" to the CSP patch at setup time and later complains that live doesn't work: their dev CSP blocks `http://localhost:8400`. Fix: delete `cspChecked` from `config.json` and re-run `live.mjs` — setup will ask again.
+If a user says "no" to the CSP patch at setup time and later complains that live doesn't work: their dev CSP blocks `http://localhost:8400`. Fix: delete `cspChecked` from `.impeccable-live/config.json` (or the explicit override) and re-run `live.mjs` — setup will ask again.
 
 Then re-run `live.mjs`.
