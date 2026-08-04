@@ -60,7 +60,10 @@ function PostThumb({ post, eager }: { post: PostMeta; eager: boolean }) {
       href={`/posts/${post.slug}/`}
       className="group block"
     >
-      <ViewTransition name={`post-hero-${post.slug}`}>
+      <ViewTransition
+        name={`post-hero-${post.slug}`}
+        default="post-hero-transition"
+      >
         <div className="relative overflow-hidden rounded-xl ring-1 ring-foreground/[0.06]">
           <div className="relative aspect-video w-full bg-muted/10">
             {post.hasFeaturedImage ? (

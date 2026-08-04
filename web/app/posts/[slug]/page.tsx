@@ -53,7 +53,10 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
               {post.displayTitle}
             </h1>
             {post.heroYouTubeId ? (
-              <ViewTransition name={`post-hero-${post.slug}`}>
+              <ViewTransition
+                name={`post-hero-${post.slug}`}
+                default="post-hero-transition"
+              >
                 <div className="mt-10 overflow-hidden rounded-xl ring-1 ring-foreground/[0.08]">
                   <lite-youtube
                     videoid={post.heroYouTubeId}
@@ -62,7 +65,10 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                 </div>
               </ViewTransition>
             ) : post.hasFeaturedImage ? (
-              <ViewTransition name={`post-hero-${post.slug}`}>
+              <ViewTransition
+                name={`post-hero-${post.slug}`}
+                default="post-hero-transition"
+              >
                 <div className="mt-10 overflow-hidden rounded-xl bg-card ring-1 ring-foreground/[0.08]">
                   <Image
                     src={`/posts/${post.slug}/featured.webp`}

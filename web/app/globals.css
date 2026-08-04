@@ -94,18 +94,22 @@
 }
 
 /* View transitions — shared element morph from blog thumb → post hero.
-   The default crossfade is replaced with a soft blur-through to hide
-   the aspect-ratio interpolation between 16:10 grid and 16:9 hero. */
-::view-transition-group(*) {
+   Keep the effect off the root snapshot: applying these rules to `*` can
+   leave a scaled copy of the previous page floating after navigation. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+::view-transition-group(.post-hero-transition) {
   animation-duration: 420ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
-::view-transition-old(*),
-::view-transition-new(*) {
+::view-transition-old(.post-hero-transition),
+::view-transition-new(.post-hero-transition) {
   animation-duration: 320ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
-::view-transition-image-pair(*) {
+::view-transition-image-pair(.post-hero-transition) {
   isolation: isolate;
   animation-name: vt-blur-through;
   animation-duration: 420ms;
@@ -121,10 +125,10 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(*),
-  ::view-transition-new(*),
-  ::view-transition-group(*),
-  ::view-transition-image-pair(*) {
+  ::view-transition-old(.post-hero-transition),
+  ::view-transition-new(.post-hero-transition),
+  ::view-transition-group(.post-hero-transition),
+  ::view-transition-image-pair(.post-hero-transition) {
     animation-duration: 0s !important;
     animation-delay: 0s !important;
   }
