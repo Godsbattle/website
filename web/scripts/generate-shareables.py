@@ -253,7 +253,7 @@ def build_resume(output_path: Path) -> None:
 
     section_heading("Experience", 618)
     roles = [
-        ("Tradara", "Software Engineer - Full-Time", "Aug 2026 - Present", "Building Tradara's futures terminal and prop-trading infrastructure."),
+        ("Tradara", "Software Engineer - Full-Time", "Aug 2026 - Aug 2026", "Built Tradara's futures terminal and prop-trading infrastructure."),
         ("thePropTrade", "Head of Community - Full-Time", "Nov 2025 - Jul 2026", "Scaled the community and improved day-to-day support for active traders."),
         ("PipFarm", "Community + Affiliate Manager - Full-Time", "Feb 2025 - Nov 2025", "Grew Discord from 5k to 10k members in five months while improving activity and referrals."),
         ("PokerDAO", "Community Manager - Part-Time", "Apr 2022 - Dec 2024", "Grew Discord and Telegram from 3k to 7.5k members while halving support response time."),
@@ -358,7 +358,7 @@ def build_portfolio(output_path: Path) -> None:
         color=MUTED,
     )
     facts = [
-        ("Current role", "Software Engineer · Tradara"),
+        ("Recent role", "Software Engineer · Tradara"),
         ("Independent build", "trackmyprop"),
         ("Specialism", "Trading + fintech products"),
         ("Practice", "Product design + engineering"),
@@ -372,7 +372,7 @@ def build_portfolio(output_path: Path) -> None:
     canvas.setFillColor(ACCENT_SOFT)
     canvas.roundRect(margin, 84, content_w, 70, 10, stroke=0, fill=1)
     draw_text(canvas, "CURRENTLY", margin + 18, 127, 7.2, "Portfolio-Medium", ACCENT)
-    draw_paragraph(canvas, "Software Engineer at Tradara · Building trackmyprop", margin + 18, 105, content_w - 36, 10, 14, color=INK)
+    draw_paragraph(canvas, "Building trackmyprop · Futures trader", margin + 18, 105, content_w - 36, 10, 14, color=INK)
     canvas.showPage()
 
     draw_page_base(canvas, 2)
@@ -449,7 +449,7 @@ def build_portfolio(output_path: Path) -> None:
     draw_rule(canvas, margin, 327, content_w)
     draw_label(canvas, "DOMAIN EXPERIENCE", margin, 303)
     experience = [
-        ("Tradara", "Software Engineer", "2026 - Present"),
+        ("Tradara", "Software Engineer", "Aug 2026"),
         ("thePropTrade", "Head of Community", "2025 - 2026"),
         ("PipFarm", "Community + Affiliate Manager", "2025"),
         ("PokerDAO", "Community Manager", "2022 - 2024"),

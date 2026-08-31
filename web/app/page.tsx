@@ -52,10 +52,10 @@ const experience = [
     href: "https://tradara.com",
     logo: "/tradara-logo.svg",
     role: "Software Engineer",
-    period: "Aug 2026 – Present",
+    period: "Aug 2026 – Aug 2026",
     employment: "Full-Time",
     description:
-      "Building Tradara’s futures terminal and prop-trading infrastructure.",
+      "Built Tradara’s futures terminal and prop-trading infrastructure.",
   },
   {
     company: "thePropTrade",
@@ -142,7 +142,8 @@ export default function Home() {
 
         <div className="mt-16 max-w-[610px] space-y-5 text-pretty">
           <p className="text-[16px] leading-[1.65] text-foreground/70 sm:text-[17px]">
-            I&rsquo;m a software engineer at{" "}
+            I&rsquo;m a software engineer and futures trader focused on the tools
+            traders use every day. Most recently, I worked at{" "}
             <a
               href="https://tradara.com"
               target="_blank"
@@ -151,9 +152,7 @@ export default function Home() {
             >
               Tradara
               <span className="sr-only"> (opens in a new tab)</span>
-            </a>{" "}
-            and a futures trader focused on the tools traders use every day. I
-            also design and build{" "}
+            </a>. I also design and build{" "}
             <a
               href="https://trackmyprop.app"
               target="_blank"

@@ -28,7 +28,7 @@ const SITE_URL = "https://godsbattle.net";
 const SITE_NAME = "Christian Obanaka";
 const SITE_TITLE = "Christian Obanaka — Software Engineer";
 const SITE_DESCRIPTION =
-  "Software engineer at Tradara building clear, polished products for trading and fintech.";
+  "Software engineer and futures trader building clear, polished products for trading and fintech.";
 const SOCIAL_IMAGE = {
   url: "/og/design-engineer-2026/",
   width: 1200,

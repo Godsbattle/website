@@ -45,9 +45,9 @@ const experience: Role[] = [
     title: "Software Engineer",
     employment: "Full-Time",
     start: "Aug 2026",
-    end: "Present",
+    end: "Aug 2026",
     blurb:
-      "Building Tradara’s futures terminal and prop-trading infrastructure.",
+      "Built Tradara’s futures terminal and prop-trading infrastructure.",
     preserveLogoColor: true,
   },
   {
@@ -172,9 +172,9 @@ export default function ResumePage() {
 
         <Section title="experience">
           <p className="mb-6 text-pretty text-[14px] leading-[1.7] text-foreground/80">
-            I build futures-trading software at Tradara. Earlier community,
-            support, affiliate, and growth roles at prop firms continue to
-            inform the products I design and engineer.
+            Most recently, I built futures-trading software at Tradara. Earlier
+            community, support, affiliate, and growth roles at prop firms
+            continue to inform the products I design and engineer.
           </p>
           <ol className="space-y-2">
             {experience.map((role) => (
