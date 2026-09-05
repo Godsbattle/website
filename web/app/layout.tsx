@@ -26,14 +26,14 @@ const libreBaskerville = Libre_Baskerville({
 
 const SITE_URL = "https://godsbattle.net";
 const SITE_NAME = "Christian Obanaka";
-const SITE_TITLE = "Christian Obanaka — Software Engineer";
+const SITE_TITLE = "Christian Obanaka — Design Engineer";
 const SITE_DESCRIPTION =
-  "Software engineer and futures trader building clear, polished products for trading and fintech.";
+  "Design engineer and futures trader building clear, polished products for trading and fintech.";
 const SOCIAL_IMAGE = {
   url: "/og/design-engineer-2026/",
   width: 1200,
   height: 630,
-  alt: "Christian Obanaka — Software engineer",
+  alt: "Christian Obanaka — Design engineer",
 };
 
 export const metadata: Metadata = {

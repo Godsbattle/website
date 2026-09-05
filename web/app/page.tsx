@@ -9,7 +9,6 @@ import {
   GithubActivity,
   GithubActivityFallback,
 } from "@/components/github-activity";
-import { RoleFlip } from "@/components/role-flip";
 import { StackSection } from "@/components/stack-section";
 import {
   PortfolioAccordion,
@@ -27,9 +26,9 @@ const personJsonLd = {
   alternateName: "chrisgoingturbo",
   url: SITE_URL,
   image: `${SITE_URL}/avatar.webp`,
-  jobTitle: "Software Engineer",
+  jobTitle: "Design Engineer",
   description:
-    "Software engineer and futures trader building products for trading and fintech companies.",
+    "Design engineer and futures trader building products for trading and fintech companies.",
   sameAs: [
     "https://github.com/chrisgoingturbo",
     "https://x.com/chrisgoingturbo",
@@ -134,7 +133,7 @@ export default function Home() {
               Christian Obanaka
             </h1>
             <div className="mt-1 text-[14px] font-medium tracking-[-0.01em] text-muted">
-              <RoleFlip />
+              Design engineer
             </div>
           </div>
           <ResumeDownloadButton />
@@ -142,7 +141,7 @@ export default function Home() {
 
         <div className="mt-16 max-w-[610px] space-y-5 text-pretty">
           <p className="text-[16px] leading-[1.65] text-foreground/70 sm:text-[17px]">
-            I&rsquo;m a software engineer and futures trader focused on the tools
+            I&rsquo;m a design engineer and futures trader focused on the tools
             traders use every day. Most recently, I worked at{" "}
             <a
               href="https://tradara.com"

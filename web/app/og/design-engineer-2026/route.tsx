@@ -14,7 +14,7 @@ export async function GET() {
     <SocialCard
       index="01 / PORTFOLIO"
       eyebrow="Portfolio"
-      title="Software engineer."
+      title="Design engineer."
       description="I build clear, polished products for traders."
       footer="SOFTWARE ENGINEERING · PRODUCT DESIGN"
     />,

@@ -27,7 +27,7 @@ export function PortfolioAccordion({ children }: { children: ReactNode }) {
           setOpenSection((current) => (current === section ? null : section)),
       }}
     >
-      <div className="mt-14 flex flex-col gap-1.5">{children}</div>
+      <div className="-mx-3 mt-14 flex flex-col">{children}</div>
     </AccordionContext.Provider>
   );
 }
@@ -66,7 +66,7 @@ export function PortfolioAccordionItem({
           aria-expanded={isOpen}
           aria-controls={contentId}
           onClick={() => accordion.toggleSection(title)}
-          className="flex min-h-11 w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-2.5 text-left"
+          className="portfolio-accordion-trigger flex min-h-12 w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3 text-left"
         >
           <span className="text-[14px] font-medium text-foreground">
             {title}
